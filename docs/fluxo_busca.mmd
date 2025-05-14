@@ -1,8 +1,12 @@
 flowchart TD
-  A[Carregamento da página] --> B[Desativar botão de busca]
+  A[Carregamento da página] --> B[Desativar botão e aplicar estilo inativo]
+
   B --> C[Usuário digita no campo de busca]
-  C --> D{Número de caracteres >= 2?}
-  D -- Sim --> E[Ativar botão de busca]
-  D -- Não --> F[Desativar botão de busca]
+
+  C --> D{Comprimento do texto ≥ 2?}
+
+  D -- Sim --> E[Habilitar botão e aplicar estilo ativo]
+  D -- Não --> F[Desativar botão e aplicar estilo inativo]
+
   E --> C
   F --> C
