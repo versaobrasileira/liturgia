@@ -133,35 +133,49 @@ body {
   border-color: var(--accent);
 }
 
-/* EXIBIÇÃO DE CONTEÚDO */
+/* Esconde por padrão */
 #content-display {
-  margin-top: 1.5rem;
-  padding: 1.5rem;
-  background: #282828;
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  max-height: 60vh;
-  overflow-y: auto;
-  text-align: left;
+  display: none;
 }
 
-#content-display h2 {
+/* Card “antigo” quando tiver .visible */
+#content-display.visible {
+  display: block;
+  background: var(--card);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  text-align: left;
+
+  /* scroll vertical ok, horizontal escondido */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* quebras automáticas só em espaço */
+  white-space: normal;
+  word-wrap: normal;
+}
+
+
+/* Título dentro do card */
+#content-display.visible h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: var(--accent);
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.5rem;
-  overflow-y: auto;
-  overflow-x: hidden;      /* esconde scroll horizontal */
-  white-space: pre-wrap;    /* preserva quebras e quebra linhas longas */
-  word-wrap: break-word;    /* força quebra de palavras muito longas */
 }
 
-#content-display p {
+/* Linhas do texto */
+#content-display.visible p {
   margin-bottom: 0.75rem;
   line-height: 1.6;
   color: var(--text-light);
 }
+
+
 
 @media (max-width: 500px) {
   .search-container {
@@ -183,4 +197,33 @@ body {
   pointer-events: none; /* não interfere em cliques */
   user-select: none;
 }
+
+.title-bar {
+  display: flex;
+  align-items: flex-start;    
+  justify-content: space-between;
+}
+
+
+.resize-buttons button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.resize-buttons button:hover {
+  color: #fff;
+}
+
+.resize-buttons {
+  position: relative;
+  top: -1rem;   
+}
+
 
