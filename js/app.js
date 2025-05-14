@@ -94,13 +94,13 @@ async function loadContent(item) {
   const results = document.getElementById('results');
   const display = document.getElementById('content-display');
 
-  // limpeza
+  // limpa e esconde
   results.innerHTML = '';
   display.innerHTML = '';
   display.classList.remove('visible');
   currentFontSize = null;
 
-  // fetch
+  // fetch JSON
   let data;
   try {
     const res = await fetch(`./content/${item.file}`);
@@ -113,66 +113,53 @@ async function loadContent(item) {
     return;
   }
 
-  // Monta título + botões
+  // monta título + subtítulo + botões
   const titleBar = document.createElement('div');
   titleBar.className = 'title-bar';
 
-  const titleEl = document.createElement('h2');
-  titleEl.textContent = `${data.title} (pg. ${data.page})`;
+  const titleText = document.createElement('div');
+  titleText.className = 'title-text';
+  const titleEl   = document.createElement('h2');
+  titleEl.textContent = data.title;
+  const subtitle  = document.createElement('div');
+  subtitle.className = 'subtitle';
+  subtitle.textContent = `pg. ${data.page}`;
+  titleText.append(titleEl, subtitle);
 
   const btns = document.createElement('div');
   btns.className = 'resize-buttons';
-
-  const minus = document.createElement('button');
-  minus.type = 'button';
-  minus.textContent = 'A–';
-  minus.title = 'Diminuir fonte';
+  const minus = Object.assign(document.createElement('button'), {
+    type: 'button', textContent: 'A–', title: 'Diminuir fonte'
+  });
   minus.addEventListener('click', () => changeFontSize(-2));
-
-  const plus = document.createElement('button');
-  plus.type = 'button';
-  plus.textContent = 'A+';
-  plus.title = 'Aumentar fonte';
+  const plus = Object.assign(document.createElement('button'), {
+    type: 'button', textContent: 'A+', title: 'Aumentar fonte'
+  });
   plus.addEventListener('click', () => changeFontSize(+2));
-
   btns.append(minus, plus);
-  titleBar.append(titleEl, btns);
+
+  titleBar.append(titleText, btns);
   display.appendChild(titleBar);
 
-  // Monta as linhas
+  // monta container de letras
+  const lyricsContainer = document.createElement('div');
+  lyricsContainer.className = 'lyrics-container';
   data.lyrics.forEach(line => {
     const p = document.createElement('p');
     p.textContent = line;
-    display.appendChild(p);
+    lyricsContainer.appendChild(p);
   });
+  display.appendChild(lyricsContainer);
 
-  // exibe e ajusta font-size inicial
+  // exibe e ajusta fonte
   display.classList.add('visible');
-  adjustFontSize();
-  // depois do ajuste, grava o valor inicial
-  currentFontSize =
-    parseFloat(getComputedStyle(display).fontSize);
+  adjustFontSize(lyricsContainer);
+
+  currentFontSize = parseFloat(getComputedStyle(lyricsContainer).fontSize);
 }
 
 
 let currentFontSize = null;
-
-/**
- * Aumenta/Reduz o font-size atual em delta (px), respeitando min/max.
- */
-function changeFontSize(delta) {
-  const container = document.getElementById('content-display');
-  // obtém valor atual (inline ou computed)
-  let size = currentFontSize ||
-             parseFloat(getComputedStyle(container).fontSize);
-  size = Math.max(fontConfig.minFontSize,
-          Math.min(fontConfig.maxFontSize, size + delta));
-  container.style.fontSize = `${size}px`;
-  currentFontSize = size;
-}
-
-
-
 /**
  * Ajusta o font-size do container #content-display para que a linha
  * mais longa ocupe exatamente a largura disponível (sem scroll horizontal),
@@ -183,50 +170,47 @@ function changeFontSize(delta) {
  * que a linha mais longa ocupe toda a largura
  * disponível (sem overflow-x), respeitando min/max.
  */
-function adjustFontSize() {
-  const container = document.getElementById('content-display');
+function adjustFontSize(container = document.querySelector('.lyrics-container')) {
   const paras = Array.from(container.querySelectorAll('p'));
   if (!paras.length) return;
 
-  // Reset inline antes de medir
-  container.style.fontSize = '';
+  container.style.fontSize = ''; // reset
 
-  // Estilos atuais
   const style      = getComputedStyle(container);
   const fontFamily = style.fontFamily;
   const fontWeight = style.fontWeight;
-  const availableW = container.clientWidth; // já desconta bordas
+  const availableW = container.clientWidth;
 
-  // Configurações
-  const minFS = fontConfig.minFontSize;
-  const maxFS = fontConfig.maxFontSize;
+  const { minFontSize: minFS, maxFontSize: maxFS } = fontConfig;
 
-  // Cria canvas para medir
   const canvas = document.createElement('canvas');
   const ctx    = canvas.getContext('2d');
-  // Use o max tamanho como referência
-  let testSize = maxFS;
+  const testSize = maxFS;
   ctx.font = `${fontWeight} ${testSize}px ${fontFamily}`;
 
-  // Mede a largura que cada parágrafo ocuparia em testSize
   let maxTextW = 0;
   paras.forEach(p => {
     const w = ctx.measureText(p.textContent).width;
     if (w > maxTextW) maxTextW = w;
   });
+  if (!maxTextW || !availableW) return;
 
-  if (maxTextW <= 0 || availableW <= 0) return;
-
-  // escala proporcional
   let newSize = testSize * (availableW / maxTextW);
-  // clamp
   newSize = Math.max(minFS, Math.min(maxFS, newSize));
 
   container.style.fontSize = `${newSize}px`;
 }
 
+function changeFontSize(delta) {
+  const lyrics = document.querySelector('.lyrics-container');
+  let size = currentFontSize || parseFloat(getComputedStyle(lyrics).fontSize);
+  size = Math.max(fontConfig.minFontSize, Math.min(fontConfig.maxFontSize, size + delta));
+  lyrics.style.fontSize = `${size}px`;
+  currentFontSize = size;
+}
 
-// opcional: refaz o cálculo ao redimensionar a janela
 window.addEventListener('resize', () => {
-  if (display.innerHTML.trim()) adjustFontSize();
+  if (document.getElementById('content-display').classList.contains('visible')) {
+    adjustFontSize();
+  }
 });
