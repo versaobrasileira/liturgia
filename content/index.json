@@ -3,150 +3,200 @@
     "id": "yedid_nefesh",
     "file": "yedid_nefesh.json",
     "title": "YEDID NEFESH",
-    "page": "245"
+    "page": "245",
+    "hebrew": "yedid_nefesh_he.json",
+    "portuguese": "yedid_nefesh_pt.json"
   },
   {
     "id": "shiviti",
     "file": "shiviti.json",
     "title": "SHIVITI",
-    "page": "284"
+    "page": "284",
+    "hebrew": "shiviti_he.json",
+    "portuguese": "shiviti_pt.json"
   },
   {
     "id": "mode_ani",
     "file": "mode_ani.json",
     "title": "MODE ANI",
-    "page": "284"
+    "page": "284",
+    "hebrew": "mode_ani_he.json",
+    "portuguese": "mode_ani_pt.json"
   },
   {
     "id": "asher_yatsar",
     "file": "asher_yatsar.json",
     "title": "ASHER YATSAR",
-    "page": "284"
+    "page": "284",
+    "hebrew": "asher_yatsar_he.json",
+    "portuguese": "asher_yatsar_pt.json"
   },
   {
     "id": "birkat_hatora",
     "file": "birkat_hatora.json",
     "title": "BIRKAT HA TORÁ",
-    "page": "285"
+    "page": "285",
+    "hebrew": "birkat_hatora_he.json",
+    "portuguese": "birkat_hatora_pt.json"
   },
   {
     "id": "elohai_neshama",
     "file": "elohai_neshama.json",
     "title": "ELOHAI NESHAMÁ",
-    "page": "285"
+    "page": "285",
+    "hebrew": "elohai_neshama_he.json",
+    "portuguese": "elohai_neshama_pt.json"
   },
   {
     "id": "birkat_kohanim",
     "file": "birkat_kohanim.json",
     "title": "BIRKAT KOHANIM",
-    "page": "286"
+    "page": "286",
+    "hebrew": "birkat_kohanim_he.json",
+    "portuguese": "birkat_kohanim_pt.json"
   },
   {
     "id": "ma_tovu",
     "file": "ma_tovu.json",
     "title": "MA TOVU",
-    "page": "288"
+    "page": "288",
+    "hebrew": "ma_tovu_he.json",
+    "portuguese": "ma_tovu_pt.json"
   },
   {
     "id": "vaani_tefilati",
     "file": "vaani_tefilati.json",
     "title": "VA’ANI TEFILATI",
-    "page": "288"
+    "page": "288",
+    "hebrew": "vaani_tefilati_he.json",
+    "portuguese": "vaani_tefilati_pt.json"
   },
   {
     "id": "adon_olam",
     "file": "adon_olam.json",
     "title": "ADON OLAM",
-    "page": "288"
+    "page": "288",
+    "hebrew": "adon_olam_he.json",
+    "portuguese": "adon_olam_pt.json"
   },
   {
     "id": "birkot_hashachar",
     "file": "birkot_hashachar.json",
     "title": "BIRKOT HASHACHAR",
-    "page": "289"
+    "page": "289",
+    "hebrew": "birkot_hashachar_he.json",
+    "portuguese": "birkot_hashachar_pt.json"
   },
   {
     "id": "ana_bechoach",
     "file": "ana_bechoach.json",
     "title": "ANA BECHOACH",
-    "page": "299"
+    "page": "299",
+    "hebrew": "ana_bechoach_he.json",
+    "portuguese": "ana_bechoach_pt.json"
   },
   {
     "id": "adonai_tsevaot_imanu",
     "file": "adonai_tsevaot_imanu.json",
     "title": "YHWH TS’VAOT IMANU",
-    "page": "306"
+    "page": "306",
+    "hebrew": "adonai_tsevaot_imanu_he.json",
+    "portuguese": "adonai_tsevaot_imanu_pt.json"
   },
   {
     "id": "hashem_melech",
     "file": "hashem_melech.json",
     "title": "HASHEM MELECH",
-    "page": "308"
+    "page": "308",
+    "hebrew": "hashem_melech_he.json",
+    "portuguese": "hashem_melech_pt.json"
   },
   {
     "id": "shir_lamaalot",
     "file": "shir_lamaalot.json",
     "title": "SHIR LAMAALOT",
-    "page": "313"
+    "page": "313",
+    "hebrew": "shir_lamaalot_he.json",
+    "portuguese": "shir_lamaalot_pt.json"
   },
   {
     "id": "hodu_lashem",
     "file": "hodu_lashem.json",
     "title": "HODU LASHEM KI TOV",
-    "page": "316"
+    "page": "316",
+    "hebrew": "hodu_lashem_he.json",
+    "portuguese": "hodu_lashem_pt.json"
   },
   {
     "id": "shabat_shalom",
     "file": "shabat_shalom.json",
     "title": "SHABAT SHALOM",
-    "page": ""
+    "page": "",
+    "hebrew": "shabat_shalom_he.json",
+    "portuguese": "shabat_shalom_pt.json"
   },
   {
     "id": "shema",
     "file": "shema.json",
     "title": "SHEMÁ",
-    "page": "339/61"
+    "page": "339/61",
+    "hebrew": "shema_he.json",
+    "portuguese": "shema_pt.json"
   },
   {
     "id": "vaiehi",
     "file": "vaiehi.json",
     "title": "VAIEHÍ",
-    "page": "353"
+    "page": "353",
+    "hebrew": "vaiehi_he.json",
+    "portuguese": "vaiehi_pt.json"
   },
   {
     "id": "ki_mitsion",
     "file": "ki_mitsion.json",
     "title": "KI MITSION",
-    "page": "353"
+    "page": "353",
+    "hebrew": "ki_mitsion_he.json",
+    "portuguese": "ki_mitsion_pt.json"
   },
   {
     "id": "barechu",
     "file": "barechu.json",
     "title": "BARECHÚ",
-    "page": "357"
+    "page": "357",
+    "hebrew": "barechu_he.json",
+    "portuguese": "barechu_pt.json"
   },
   {
     "id": "bracha_antes_leitura_tora",
     "file": "bracha_antes_leitura_tora.json",
     "title": "B’RACHÁ ANTES DA LEITURA DA TORÁ",
-    "page": "357"
+    "page": "357",
+    "hebrew": "bracha_antes_leitura_tora_he.json",
+    "portuguese": "bracha_antes_leitura_tora_pt.json"
   },
   {
     "id": "bracha_apos_leitura_tora",
     "file": "bracha_apos_leitura_tora.json",
     "title": "B’RACHÁ APÓS A LEITURA DA TORÁ",
-    "page": "357"
+    "page": "357",
+    "hebrew": "bracha_apos_leitura_tora_he.json",
+    "portuguese": "bracha_apos_leitura_tora_pt.json"
   },
   {
     "id": "vezot_hatora",
     "file": "vezot_hatora.json",
     "title": "VEZOT HATORÁ",
-    "page": "361"
+    "page": "361",
+    "hebrew": "vezot_hatora_he.json",
+    "portuguese": "vezot_hatora_pt.json"
   },
   {
     "id": "ets_chayim",
     "file": "ets_chayim.json",
     "title": "ETS CHAYIM",
-    "page": "369"
+    "page": "369",
+    "hebrew": "ets_chayim_he.json",
+    "portuguese": "ets_chayim_pt.json"
   }
 ]
