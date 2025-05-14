@@ -1,0 +1,8 @@
+flowchart TD
+  A[Carregamento da página] --> B[Desativar botão de busca]
+  B --> C[Usuário digita no campo de busca]
+  C --> D{Número de caracteres >= 2?}
+  D -- Sim --> E[Ativar botão de busca]
+  D -- Não --> F[Desativar botão de busca]
+  E --> C
+  F --> C
