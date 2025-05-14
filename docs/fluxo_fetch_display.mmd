@@ -1,0 +1,11 @@
+flowchart TD
+  A[Usuário submete busca] --> B[Fetch content/index.json]
+  B --> C{index.json carregado com sucesso?}
+  C -- Não --> D[Exibir 'Erro ao carregar dados']
+  C -- Sim --> E[Filtrar por página ou título]
+  E --> F{Número de resultados}
+  F -- 0 --> G[Exibir 'Nenhum resultado encontrado']
+  F -- 1 --> H[loadContent(item)]
+  F -- >1 --> I[Mostrar lista de opções (botões)]
+  I --> J[Usuário clica em opção]
+  J --> H

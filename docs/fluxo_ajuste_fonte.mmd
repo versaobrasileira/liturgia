@@ -1,0 +1,13 @@
+flowchart TD
+  A[loadContent: conteúdo inserido no DOM] --> B[chamar adjustFontSize()]
+  B --> C[Resetar container.style.fontSize]
+  C --> D[Para cada <p> medir p.scrollWidth]
+  D --> E[Encontrar maior largura maxW]
+  E --> F[Obter largura do container cw]
+  F --> G{maxW > 0?}
+  G -- Não --> H[Fim sem alteração]
+  G -- Sim --> I[scale = cw / maxW]
+  I --> J[baseSize = computedStyle.fontSize]
+  J --> K[newSize = baseSize * scale]
+  K --> L[Aplicar container.style.fontSize = newSize]
+  L --> M[Fim]
