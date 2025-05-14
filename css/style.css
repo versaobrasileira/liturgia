@@ -171,3 +171,16 @@ body {
     max-height: 50vh;
   }
 }
+
+/* Versão discreta no canto */
+#version {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  pointer-events: none; /* não interfere em cliques */
+  user-select: none;
+}
+
