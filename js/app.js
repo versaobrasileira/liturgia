@@ -4,7 +4,7 @@ const button  = document.getElementById('search-button');
 const results = document.getElementById('results');
 const display = document.getElementById('content-display');
 
-let fontConfig = { minFontSize: 12, maxFontSize: 100 };
+let fontConfig = { minFontSize: 20, maxFontSize: 100 };
 (async () => {
   try {
     const res = await fetch('./config/fontConfig.json');

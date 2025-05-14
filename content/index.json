@@ -1,5 +1,152 @@
 [
-  { "id": "shiviti",  "file": "shiviti.json",  "title": "SHIVITI",   "page": "284" },
-  { "id": "mode_ani", "file": "mode_ani.json", "title": "MODE ANI",  "page": "284" },
-  { "id": "ma_tovu",  "file": "ma_tovu.json",  "title": "MA TOVU",   "page": "288" }
+  {
+    "id": "yedid_nefesh",
+    "file": "yedid_nefesh.json",
+    "title": "YEDID NEFESH",
+    "page": "245"
+  },
+  {
+    "id": "shiviti",
+    "file": "shiviti.json",
+    "title": "SHIVITI",
+    "page": "284"
+  },
+  {
+    "id": "mode_ani",
+    "file": "mode_ani.json",
+    "title": "MODE ANI",
+    "page": "284"
+  },
+  {
+    "id": "asher_yatsar",
+    "file": "asher_yatsar.json",
+    "title": "ASHER YATSAR",
+    "page": "284"
+  },
+  {
+    "id": "birkat_hatora",
+    "file": "birkat_hatora.json",
+    "title": "BIRKAT HA TORÁ",
+    "page": "285"
+  },
+  {
+    "id": "elohai_neshama",
+    "file": "elohai_neshama.json",
+    "title": "ELOHAI NESHAMÁ",
+    "page": "285"
+  },
+  {
+    "id": "birkat_kohanim",
+    "file": "birkat_kohanim.json",
+    "title": "BIRKAT KOHANIM",
+    "page": "286"
+  },
+  {
+    "id": "ma_tovu",
+    "file": "ma_tovu.json",
+    "title": "MA TOVU",
+    "page": "288"
+  },
+  {
+    "id": "vaani_tefilati",
+    "file": "vaani_tefilati.json",
+    "title": "VA’ANI TEFILATI",
+    "page": "288"
+  },
+  {
+    "id": "adon_olam",
+    "file": "adon_olam.json",
+    "title": "ADON OLAM",
+    "page": "288"
+  },
+  {
+    "id": "birkot_hashachar",
+    "file": "birkot_hashachar.json",
+    "title": "BIRKOT HASHACHAR",
+    "page": "289"
+  },
+  {
+    "id": "ana_bechoach",
+    "file": "ana_bechoach.json",
+    "title": "ANA BECHOACH",
+    "page": "299"
+  },
+  {
+    "id": "adonai_tsevaot_imanu",
+    "file": "adonai_tsevaot_imanu.json",
+    "title": "YHWH TS’VAOT IMANU",
+    "page": "306"
+  },
+  {
+    "id": "hashem_melech",
+    "file": "hashem_melech.json",
+    "title": "HASHEM MELECH",
+    "page": "308"
+  },
+  {
+    "id": "shir_lamaalot",
+    "file": "shir_lamaalot.json",
+    "title": "SHIR LAMAALOT",
+    "page": "313"
+  },
+  {
+    "id": "hodu_lashem",
+    "file": "hodu_lashem.json",
+    "title": "HODU LASHEM KI TOV",
+    "page": "316"
+  },
+  {
+    "id": "shabat_shalom",
+    "file": "shabat_shalom.json",
+    "title": "SHABAT SHALOM",
+    "page": ""
+  },
+  {
+    "id": "shema",
+    "file": "shema.json",
+    "title": "SHEMÁ",
+    "page": "339/61"
+  },
+  {
+    "id": "vaiehi",
+    "file": "vaiehi.json",
+    "title": "VAIEHÍ",
+    "page": "353"
+  },
+  {
+    "id": "ki_mitsion",
+    "file": "ki_mitsion.json",
+    "title": "KI MITSION",
+    "page": "353"
+  },
+  {
+    "id": "barechu",
+    "file": "barechu.json",
+    "title": "BARECHÚ",
+    "page": "357"
+  },
+  {
+    "id": "bracha_antes_leitura_tora",
+    "file": "bracha_antes_leitura_tora.json",
+    "title": "B’RACHÁ ANTES DA LEITURA DA TORÁ",
+    "page": "357"
+  },
+  {
+    "id": "bracha_apos_leitura_tora",
+    "file": "bracha_apos_leitura_tora.json",
+    "title": "B’RACHÁ APÓS A LEITURA DA TORÁ",
+    "page": "357"
+  },
+  {
+    "id": "vezot_hatora",
+    "file": "vezot_hatora.json",
+    "title": "VEZOT HATORÁ",
+    "page": "361"
+  },
+  {
+    "id": "ets_chayim",
+    "file": "ets_chayim.json",
+    "title": "ETS CHAYIM",
+    "page": "369"
+  }
 ]
