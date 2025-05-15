@@ -12,16 +12,14 @@
     "file": "shiviti.json",
     "title": "SHIVITI",
     "page": "284",
-    "hebrew": "shiviti_he.json",
-    "portuguese": "shiviti_pt.json"
+    "hebrew": "shiviti_he.json"
   },
   {
     "id": "mode_ani",
     "file": "mode_ani.json",
     "title": "MODE ANI",
     "page": "284",
-    "hebrew": "mode_ani_he.json",
-    "portuguese": "mode_ani_pt.json"
+    "hebrew": "mode_ani_he.json"
   },
   {
     "id": "asher_yatsar",
@@ -60,8 +58,7 @@
     "file": "ma_tovu.json",
     "title": "MA TOVU",
     "page": "288",
-    "hebrew": "ma_tovu_he.json",
-    "portuguese": "ma_tovu_pt.json"
+    "hebrew": "ma_tovu_he.json"
   },
   {
     "id": "vaani_tefilati",
@@ -123,9 +120,7 @@
     "id": "hodu_lashem",
     "file": "hodu_lashem.json",
     "title": "HODU LASHEM KI TOV",
-    "page": "316",
-    "hebrew": "hodu_lashem_he.json",
-    "portuguese": "hodu_lashem_pt.json"
+    "page": "316"
   },
   {
     "id": "shabat_shalom",
@@ -139,9 +134,7 @@
     "id": "shema",
     "file": "shema.json",
     "title": "SHEMÁ",
-    "page": "339/61",
-    "hebrew": "shema_he.json",
-    "portuguese": "shema_pt.json"
+    "page": "339/61"
   },
   {
     "id": "vaiehi",
@@ -180,8 +173,7 @@
     "file": "bracha_apos_leitura_tora.json",
     "title": "B’RACHÁ APÓS A LEITURA DA TORÁ",
     "page": "357",
-    "hebrew": "bracha_apos_leitura_tora_he.json",
-    "portuguese": "bracha_apos_leitura_tora_pt.json"
+    "hebrew": "bracha_apos_leitura_tora_he.json"
   },
   {
     "id": "vezot_hatora",
