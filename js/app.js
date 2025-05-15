@@ -91,8 +91,10 @@ form.addEventListener('submit', async e => {
  * @param {{ file: string, title: string, page: string }} item
  */
 async function loadContent(item) {
+  const results = document.getElementById('results');
   const display = document.getElementById('content-display');
 
+  results.innerHTML = ''; 
   // Limpa e esconde antes de carregar novo conteúdo
   display.innerHTML = '';
   display.classList.remove('visible');
