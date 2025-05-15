@@ -8,6 +8,7 @@
   --text: #e0e0e0;
   --text-light: #a0a0a0;
   --border: #333;
+  --btn-text: #fff;
 }
 
 * {
@@ -25,6 +26,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .search-container {
@@ -148,15 +150,9 @@ body {
   margin: 1.5rem auto 0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   text-align: left;
-
-  /* scroll vertical ok, horizontal escondido */
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  /* quebras automáticas só em espaço */
-  white-space: normal;
-  word-wrap: normal;
+  position: relative; /* Mantém estrutura fixa */
 }
+
 
 
 /* Título dentro do card */
@@ -181,8 +177,18 @@ body {
   .search-container {
     padding: 1.5rem;
   }
+
+  .content-scroll {
+    max-height: 60vh; /* Ajuste para telas menores */
+    min-height: 30vh; /* Garante um espaço mínimo */
+    overflow-y: auto; /* Mantém rolagem ativa */
+    overflow-x: hidden; /* Impede rolagem horizontal */
+    display: block;
+  }
+
   #content-display {
-    max-height: 50vh;
+    max-height: 90vh; /* Ajusta para ocupar mais espaço */
+    overflow: hidden; /* Impede rolagem indesejada */
   }
 }
 
@@ -227,30 +233,138 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Container das letras, cuja fonte será ajustada */
-.lyrics-container {
-  font-size: 1rem;      /* base inicial antes de ajustar */
-  line-height: 1.6;
-  color: var(--text-light);
-}
 
+
+/* Mantém título e controles fixos */
 .title-bar {
   display: flex;
-  align-items: flex-start;    
+  align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  padding: 0.25rem 0.5rem; /* Reduz o espaçamento para subir um pouco */
+  z-index: 10;
+  width: 100%;
+}
+
+
+
+/* Permite rolagem apenas no conteúdo */
+.content-scroll {
+  max-height: 50vh; /* Ajuste conforme necessário */
+  overflow-y: auto; /* Apenas rolagem vertical */
+  width: 100%; /* Certifica que ocupa todo o espaço */
+  padding-top: 0.5rem;
+  display: block; /* Certifica que não está expandindo inesperadamente */
+  position: relative;
+}
+
+/* Container das letras, cuja fonte será ajustada */
+.lyrics-container {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  padding: 1rem;
+  word-wrap: break-word;
+  max-width: 100%; /* Certifica que não ultrapassa os limites */
 }
 
 
 .resize-buttons button {
-  background: transparent;
+  background-color: var(--accent);
+  color: var(--text);
   border: none;
-  color: var(--accent);
-  font-size: 1.25rem;
-  line-height: 1;
-  padding: 0.25rem;
-  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: background-color 0.2s, transform 0.1s;
+  width: 12rem;
 }
 
 
+.resize-buttons button:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.resize-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.controls button {
+  all: unset; /* Remove estilos padrão de botão */
+  color: var(--accent); /* Mesma cor do título */
+  font-size: 1.75rem; /* Ajusta o tamanho */
+  cursor: pointer; /* Mantém a indicação de que pode ser clicado */
+  padding: 0.25rem 0.5rem; /* Pequeno espaçamento para conforto */
+}
+
+.controls button:hover {
+  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+  color: hsl(275, 78%, 75%); /* Um tom mais claro ao interagir */
+}
+
+
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: -5.25rem; /* Eleva um pouco os botões */
+}
+
+
+.controls select {
+  font-size: 1rem;       /* mesmo tamanho dos botões */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+}
+
+/* Barra de rolagem mais estilizada para desktop */
+#content-display.visible::-webkit-scrollbar {
+  width: 8px; /* Largura da barra */
+}
+
+#content-display.visible::-webkit-scrollbar-track {
+  background: var(--card); /* Cor do fundo */
+  border-radius: 4px;
+}
+
+#content-display.visible::-webkit-scrollbar-thumb {
+  background: var(--accent); /* Cor do indicador de rolagem */
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+#content-display.visible::-webkit-scrollbar-thumb:hover {
+  background: hsl(275, 78%, 75%); /* Tom mais claro ao passar o mouse */
+}
+
+
+
+
+/* Barra de rolagem personalizada */
+.content-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-scroll::-webkit-scrollbar-track {
+  background: var(--card);
+  border-radius: 4px;
+}
+
+.content-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.content-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(275, 78%, 75%);
+}

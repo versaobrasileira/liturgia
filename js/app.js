@@ -91,16 +91,12 @@ form.addEventListener('submit', async e => {
  * @param {{ file: string, title: string, page: string }} item
  */
 async function loadContent(item) {
-  const results = document.getElementById('results');
   const display = document.getElementById('content-display');
 
-  // limpa e esconde
-  results.innerHTML = '';
+  // Limpa e esconde antes de carregar novo conteúdo
   display.innerHTML = '';
   display.classList.remove('visible');
-  currentFontSize = null;
 
-  // fetch JSON
   let data;
   try {
     const res = await fetch(`./content/${item.file}`);
@@ -113,35 +109,51 @@ async function loadContent(item) {
     return;
   }
 
-  // monta título + subtítulo + botões
+  // Criando container para texto com rolagem
+  const contentScroll = document.createElement('div');
+  contentScroll.className = 'content-scroll';
+
+  // Adicionando título e subtítulo fixos
   const titleBar = document.createElement('div');
   titleBar.className = 'title-bar';
 
   const titleText = document.createElement('div');
   titleText.className = 'title-text';
-  const titleEl   = document.createElement('h2');
+
+  const titleEl = document.createElement('h2');
   titleEl.textContent = data.title;
-  const subtitle  = document.createElement('div');
+  
+  const subtitle = document.createElement('div');
   subtitle.className = 'subtitle';
   subtitle.textContent = `pg. ${data.page}`;
+  
   titleText.append(titleEl, subtitle);
+  titleBar.appendChild(titleText);
 
-  const btns = document.createElement('div');
-  btns.className = 'resize-buttons';
+  // Criando botões de fonte
+  const controls = document.createElement('div');
+  controls.className = 'controls';
+
   const minus = Object.assign(document.createElement('button'), {
-    type: 'button', textContent: 'A–', title: 'Diminuir fonte'
+    type: 'button', textContent: '–', title: 'Diminuir fonte'
   });
   minus.addEventListener('click', () => changeFontSize(-2));
+  minus.addEventListener('touchend', () => changeFontSize(-2));
+
   const plus = Object.assign(document.createElement('button'), {
-    type: 'button', textContent: 'A+', title: 'Aumentar fonte'
+    type: 'button', textContent: '+', title: 'Aumentar fonte'
   });
   plus.addEventListener('click', () => changeFontSize(+2));
-  btns.append(minus, plus);
+  plus.addEventListener('touchend', () => changeFontSize(+2));
 
-  titleBar.append(titleText, btns);
-  display.appendChild(titleBar);
+  const langSel = setupLangSelector(item);
+  
+  controls.append(minus, plus, langSel);
+  titleBar.appendChild(controls);
+  
+  display.appendChild(titleBar); // Mantém titleBar fixo no topo
 
-  // monta container de letras
+  // Adicionando conteúdo dentro do container rolável
   const lyricsContainer = document.createElement('div');
   lyricsContainer.className = 'lyrics-container';
   data.lyrics.forEach(line => {
@@ -149,13 +161,19 @@ async function loadContent(item) {
     p.textContent = line;
     lyricsContainer.appendChild(p);
   });
-  display.appendChild(lyricsContainer);
 
-  // exibe e ajusta fonte
+  contentScroll.appendChild(lyricsContainer);
+  display.appendChild(contentScroll);
+
+  // Exibe o content-display corretamente
   display.classList.add('visible');
-  adjustFontSize(lyricsContainer);
 
-  currentFontSize = parseFloat(getComputedStyle(lyricsContainer).fontSize);
+  // **Aqui garantimos que a altura do content-scroll seja respeitada**
+  contentScroll.style.maxHeight = '50vh';
+  contentScroll.style.overflowY = 'auto';
+
+  // Ajusta a fonte do texto carregado
+  adjustFontSize(lyricsContainer);
 }
 
 
@@ -205,8 +223,12 @@ function changeFontSize(delta) {
   const lyrics = document.querySelector('.lyrics-container');
   let size = currentFontSize || parseFloat(getComputedStyle(lyrics).fontSize);
   size = Math.max(fontConfig.minFontSize, Math.min(fontConfig.maxFontSize, size + delta));
+  
   lyrics.style.fontSize = `${size}px`;
   currentFontSize = size;
+  
+  // Garante que o content-display seja atualizado corretamente
+  document.getElementById('content-display').style.maxHeight = '70vh'; 
 }
 
 window.addEventListener('resize', () => {
@@ -214,3 +236,64 @@ window.addEventListener('resize', () => {
     adjustFontSize();
   }
 });
+
+/**
+ * Monta o <select> de idioma (TL, עב, PT) dentro dos botões de redimensionar fonte.
+ * @param {{ file: string, hebrew?: string, portuguese?: string }} item
+ */
+function setupLangSelector(item) {
+  const sel = document.createElement('select');
+  sel.id = 'lang-selector';
+  sel.title = 'Escolha o idioma';
+  sel.className = 'lang-selector';
+
+  // transliteração sempre disponível
+  sel.add(new Option('TL', 'default'));
+
+  // hebraico?
+  if (item.hebrew) {
+    sel.add(new Option('עב', 'hebrew'));
+  }
+  // português?
+  if (item.portuguese) {
+    sel.add(new Option('PT', 'portuguese'));
+  }
+
+  // valor inicial
+  sel.value = 'default';
+
+  // ao trocar, busca e renderiza a variante
+  sel.addEventListener('change', async () => {
+    let filename = item.file;
+    if (sel.value === 'hebrew')      filename = item.hebrew;
+    else if (sel.value === 'portuguese') filename = item.portuguese;
+
+    try {
+      const res  = await fetch(`./content/${filename}`);
+      const data = await res.json();
+      renderLyrics(data.lyrics);
+      currentFontSize = null;
+      adjustFontSize(document.querySelector('.lyrics-container'));
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
+  return sel;
+}
+
+/**
+ * Renderiza as linhas na <div class="lyrics-container">,
+ * limpando primeiro o que havia lá.
+ */
+function renderLyrics(lines) {
+  const container = document.querySelector('.lyrics-container');
+  container.innerHTML = '';             // limpa tudo
+
+  lines.forEach(line => {
+    const p = document.createElement('p');
+    p.textContent = line;
+    container.appendChild(p);
+  });
+}
+
