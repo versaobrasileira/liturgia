@@ -96,6 +96,10 @@ body.content-open .search-container {
   margin: 2rem auto 0;  /* ajuste esse “3rem” até casar visualmente com seu botão */
 }
 
+body.content-open .search-container h1 {
+  display: none;
+}
+
 /* 5) Resultados */
 #results {
   margin-top: 1rem;
