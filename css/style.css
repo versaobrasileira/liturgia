@@ -232,15 +232,19 @@ body {
   z-index: 100;
 }
 
+.content-scroll {
+  /* limite a altura para 80% da viewport, por exemplo */
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 /* 12) Responsivo */
 @media (max-width: 500px) {
   .search-container { padding: 1.5rem; }
   #content-display.visible { max-height: 90vh; }
   .content-scroll {
-    max-height: 60vh;
     min-height: 30vh;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 }
 
