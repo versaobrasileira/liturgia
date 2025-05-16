@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Liturgia • Busca</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 1) Variáveis globais (sempre ativas) -->
+  <link rel="stylesheet" href="css/variables.css" />
+
+  <!-- 2) Estilos base da aplicação -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 3) Tema claro (começa desabilitado; JS irá habilitar se for o preferido) -->
+  <link
+    id="tema-claro-css"
+    rel="stylesheet"
+    href="css/tema_claro.css"
+    disabled
+  />
 </head>
+
 <body>
+  <!-- 
+    Botão de alternar tema, fixo no canto.
+    O ícone e o estado (disabled/!disabled) serão ajustados pelo tema.js 
+  -->
+  <button id="theme-toggle" title="Alternar tema">🌙</button>
+
   <div class="search-container">
     <h1>Liturgia</h1>
     <form id="search-form">
-      <input 
-        type="text" 
-        id="search-input" 
-        placeholder="Digite página ou termo..." 
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Digite página ou termo…"
         autocomplete="off"
-      >
+      />
       <button type="submit" id="search-button">🔍 Buscar</button>
     </form>
-
-    <!-- onde aparecem os resultados da busca -->
     <div id="results"></div>
-
-    <!-- onde aparece o conteúdo carregado -->
     <div id="content-display"></div>
   </div>
 
   <div id="version">v0.1.1</div>
+
   <script src="js/app.js"></script>
+  <script src="js/tema.js"></script>
 </body>
 </html>

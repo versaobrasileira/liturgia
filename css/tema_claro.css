@@ -1,0 +1,15 @@
+:root {
+  --bg:               #f4e5d1;  /* ex: fundo sépia claro */
+  --card:             #e2d0b3;  /* card sépia mais claro */
+  --surface:       #d3c3a0;  /* sépia claro para inputs, cards secundários etc */
+  --surface-hover: #c8b790;  /* hover/focus */
+  
+  --accent:           #6b4b27;  /* marrom escuro */
+  --accent-t:           #6b4b27;
+  --text:             #3c2f2f;  /* texto principal */
+  --text-light:       #5a4a4a;  /* texto secundário */
+  --border:           #bba07d;  /* bordas suaves */
+  --btn-text: #f4e0c2;
+}
+
+
