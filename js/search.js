@@ -9,12 +9,14 @@ const input   = document.getElementById('search-input');
 const button  = document.getElementById('search-button');
 const results = document.getElementById('results');
 
+let noResultTimer = null;  // timer para fallback de lista completa
+
 /**
  * Mapa de sinônimos “especiais” para YHWH (valores em CAIXA ALTA).
  */
 const synonymsMap = {
-  hashem:               'YHWH',
-  adonai:               'YHWH',
+  hashem: 'YHWH',
+  adonai: 'YHWH',
 };
 
 /** Remove acentos, diacríticos e apóstrofos, e põe em lowercase */
@@ -53,20 +55,39 @@ function levenshtein(a, b) {
   return dp[m][n];
 }
 
+/**
+ * Exibe uma lista de todos os itens (ordenados por título).
+ */
+function renderFullList(index) {
+  clearTimeout(noResultTimer);
+  results.innerHTML = '';
+  const sorted = index.slice().sort((a, b) =>
+    a.title.localeCompare(b.title)
+  );
+  const ul = document.createElement('ul');
+  ul.className = 'result-list';
+  sorted.forEach(item => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.textContent = `${item.title} (pg. ${item.page})`;
+    btn.addEventListener('click', () => loadContent(item));
+    li.append(btn);
+    ul.append(li);
+  });
+  results.append(ul);
+}
+
 /** Estado inicial: botão desabilitado */
 button.disabled = true;
 
 /**
- * Sempre que o usuário digita:
- * - habilita/desabilita botão,
- * - limpa resultados e display,
- * - dispara busca (sem auto-load do conteúdo).
+ * input “ao digitar”: limpa estados, dispara uma busca sem auto-load
  */
 input.addEventListener('input', () => {
   const v = input.value.trim();
   button.disabled = v.length < 2;
 
-  // limpa antigos resultados e esconde display
+  clearTimeout(noResultTimer);
   results.innerHTML = '';
   document.getElementById('content-display').classList.remove('visible');
   document.body.classList.remove('content-open');
@@ -77,18 +98,17 @@ input.addEventListener('input', () => {
 });
 
 /**
- * Ao submeter (clicar no botão Buscar):
- * - faz a mesma busca, mas com autoLoad = true
- *   permitindo carregar o conteúdo se houver 1 resultado.
+ * submit (botão Buscar): faz busca com autoLoad = true
  */
-form.addEventListener('submit', async e => {
+form.addEventListener('submit', e => {
   e.preventDefault();
+  clearTimeout(noResultTimer);
   performSearch(true);
 });
 
 /**
- * Faz a busca no índice e renderiza a lista de resultados.
- * Se autoLoad=true e houver exatamente 1 resultado, chama loadContent().
+ * Faz a busca no índice e renderiza resultados.
+ * Se autoLoad=true e 1 resultado, abre; se 0, renderiza lista completa.
  *
  * @param {boolean} autoLoad
  */
@@ -109,9 +129,7 @@ async function performSearch(autoLoad) {
     return;
   }
 
-  const isNum = /^\d+$/.test(raw);
-
-  // prepara termo de busca
+  const isNum      = /^\d+$/.test(raw);
   const searchNorm = normalize(raw);
   const searchKey  = applySynonym(searchNorm).toLowerCase();
 
@@ -120,39 +138,46 @@ async function performSearch(autoLoad) {
     if (isNum) {
       return item.page === raw;
     } else {
-      // normaliza e aplica sinônimo ao título
       const titleNorm = normalize(item.title);
       const titleSyn  = applySynonym(titleNorm);
+      const fullTitle = titleSyn.toLowerCase();
 
-      // testa cada "palavra" do título
-      return titleSyn
-        .split(/\s+/)
-        .some(w => {
-          const lw = w.toLowerCase();
-          return (
-            lw.includes(searchKey) ||
-            levenshtein(lw, searchKey) <= 1
-          );
-        });
+      return (
+        fullTitle.includes(searchKey) ||
+        levenshtein(fullTitle, searchKey) <= 1
+      );
     }
   });
 
-  // renderiza UI conforme quantidade de matches
+  // se não encontrar nada:
   if (!matches.length) {
-    results.textContent = 'Nenhum resultado encontrado.';
-  } else if (matches.length === 1 && autoLoad) {
-    loadContent(matches[0]);
-  } else {
-    const ul = document.createElement('ul');
-    ul.className = 'result-list';
-    matches.forEach(item => {
-      const li = document.createElement('li');
-      const btn = document.createElement('button');
-      btn.textContent = `${item.title} (pg. ${item.page})`;
-      btn.addEventListener('click', () => loadContent(item));
-      li.append(btn);
-      ul.append(li);
-    });
-    results.append(ul);
+    if (autoLoad) {
+      // botão Buscar: renderiza lista completa
+      renderFullList(idx);
+    } else {
+      // digitação: após 3s renderiza lista completa
+      noResultTimer = setTimeout(() => renderFullList(idx), 3000);
+    }
+    return;
   }
+
+  // se há um só resultado e for submit, carrega
+  if (matches.length === 1 && autoLoad) {
+    loadContent(matches[0]);
+    return;
+  }
+
+  // senão mostra lista filtrada
+  clearTimeout(noResultTimer);
+  const ul = document.createElement('ul');
+  ul.className = 'result-list';
+  matches.forEach(item => {
+    const li = document.createElement('li');
+    const btn= document.createElement('button');
+    btn.textContent = `${item.title} (pg. ${item.page})`;
+    btn.addEventListener('click', () => loadContent(item));
+    li.append(btn);
+    ul.append(li);
+  });
+  results.append(ul);
 }
