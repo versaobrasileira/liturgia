@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Liturgia • Busca</title>
 
+  <!-- PWA Manifest & Icons -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icons/icon-192.png" sizes="192x192" />
+  <meta name="theme-color" content="#121212" />
+
   <!-- 1) Variáveis globais (sempre ativas) -->
   <link rel="stylesheet" href="css/variables.css" />
-
   <!-- 2) Estilos base da aplicação -->
   <link rel="stylesheet" href="css/style.css" />
-
   <!-- 3) Tema claro (começa desabilitado; JS irá habilitar se for o preferido) -->
   <link
     id="tema-claro-css"
@@ -19,33 +22,45 @@
     disabled
   />
 </head>
-
 <body>
-  <!-- 
-    Botão de alternar tema, fixo no canto.
-    O ícone e o estado (disabled/!disabled) serão ajustados pelo tema.js 
-  -->
+  <!-- Botão de alternar tema, fixo no canto superior esquerdo -->
   <button id="theme-toggle" title="Alternar tema">🌙</button>
 
+  <!-- Card de busca -->
   <div class="search-container">
     <h1>Liturgia</h1>
     <form id="search-form">
       <input
         type="text"
         id="search-input"
-        placeholder="Digite nº da página ou termo…"
+        placeholder="Digite página ou termo…"
         autocomplete="off"
       />
       <button type="submit" id="search-button"> 🔍 </button>
     </form>
     <div id="results"></div>
-    <div id="content-display"></div>
   </div>
 
+  <!-- Área de exibição do conteúdo (inicialmente escondida) -->
+  <div id="content-display"></div>
+
+  <!-- Versão discreta no canto inferior direito -->
   <div id="version">v0.3.0</div>
 
+  <!-- Scripts como módulos -->
   <script type="module" src="js/app.js"></script>
-  <script src="js/tema.js"></script>
+  <script type="module" src="js/tema.js"></script>
 
+  <!-- Service Worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then(() => console.log('Service Worker registrado'))
+          .catch(err => console.error('Falha ao registrar SW:', err));
+      });
+    }
+  </script>
 </body>
 </html>
