@@ -87,6 +87,15 @@ body {
   filter: none;
 }
 
+body.content-open {
+  justify-content: flex-start;
+  align-items: start;
+}
+
+body.content-open .search-container {
+  margin: 2rem auto 0;  /* ajuste esse “3rem” até casar visualmente com seu botão */
+}
+
 /* 5) Resultados */
 #results {
   margin-top: 1rem;
