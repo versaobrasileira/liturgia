@@ -266,7 +266,6 @@ body {
   all: unset;
   display: inline-block;
   font-size: 2rem;
-  padding: 0.6rem 0.6rem;
   width: auto;
   height: 1rem;
   color: var(--accent);
@@ -274,6 +273,15 @@ body {
   transition: color 0.2s;
   margin-top: -1rem;
 }
+
+.controls button[title="Diminuir fonte"]{
+    padding: 0.6rem 0.4rem 0.0rem 0.6rem;
+}
+
+.controls button[title="Aumentar fonte"] {
+    padding: 0.6rem 0.4rem 1.0rem 0.0rem;
+}
+
 .controls button[title="Diminuir fonte"]:hover,
 .controls button[title="Aumentar fonte"]:hover {
   color: hsl(275,78%,75%);
