@@ -55,6 +55,11 @@ function levenshtein(a, b) {
   return dp[m][n];
 }
 
+/** Escapa caracteres especiais para uso em RegExp */
+function escapeRegExp(str) {
+  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
 /**
  * Exibe uma lista de todos os itens (ordenados por título).
  */
@@ -77,7 +82,7 @@ function renderFullList(index) {
   results.append(ul);
 }
 
-/** Estado inicial: botão desabilitado */
+// Estado inicial: botão desabilitado
 button.disabled = true;
 
 /**
@@ -149,35 +154,50 @@ async function performSearch(autoLoad) {
     }
   });
 
-  // se não encontrar nada:
+  // se não encontrar nada
   if (!matches.length) {
     if (autoLoad) {
-      // botão Buscar: renderiza lista completa
       renderFullList(idx);
     } else {
-      // digitação: após 3s renderiza lista completa
       noResultTimer = setTimeout(() => renderFullList(idx), 3000);
     }
     return;
   }
 
-  // se há um só resultado e for submit, carrega
+  // se houver exatamente 1 resultado e for submit, carrega direto
   if (matches.length === 1 && autoLoad) {
     loadContent(matches[0]);
     return;
   }
 
-  // senão mostra lista filtrada
+  // exibe lista filtrada com o trecho em negrito
   clearTimeout(noResultTimer);
   const ul = document.createElement('ul');
   ul.className = 'result-list';
+
+  // regex para capturar trecho buscado (case-insensitive)
+  const re = new RegExp(`(${escapeRegExp(raw)})`, 'ig');
+
   matches.forEach(item => {
     const li = document.createElement('li');
-    const btn= document.createElement('button');
-    btn.textContent = `${item.title} (pg. ${item.page})`;
+    const btn = document.createElement('button');
+
+    // envolve o trecho encontrado em <strong>
+    const highlighted = item.title.replace(
+      re,
+      '<strong>$1</strong>'
+    );
+
+    btn.innerHTML = `
+      ${highlighted}
+      <span class="page">(pg. ${item.page})</span>
+    `;
     btn.addEventListener('click', () => loadContent(item));
     li.append(btn);
     ul.append(li);
   });
+
   results.append(ul);
 }
+
+export { performSearch };
