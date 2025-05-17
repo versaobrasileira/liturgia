@@ -1,5 +1,5 @@
 // public/service-worker.js
-
+/*
 const CACHE_NAME   = 'liturgia-v1';
 const MAX_AGE      = 5 * 24 * 60 * 60 * 1000; // 5 dias em ms
 const STATIC_ASSETS = [
@@ -12,8 +12,6 @@ const STATIC_ASSETS = [
   '/css/tema_claro.css',
   '/js/app.js',
   '/js/tema.js',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
   '/content/index.json'
 ];
 
@@ -21,9 +19,18 @@ const STATIC_ASSETS = [
 self.addEventListener('install', evt => {
   evt.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    await cache.addAll(STATIC_ASSETS);
+    // Cache estático com proteção
+    await Promise.all(
+      STATIC_ASSETS.map(async file => {
+        try {
+          await cache.add(file);
+        } catch (err) {
+          console.warn('SW: Falhou ao cachear', file, err);
+        }
+      })
+    );
 
-    // buscar index.json e pré-cachear todos os arquivos de conteúdo
+    // Cache de conteúdo dinâmico
     try {
       const res   = await fetch('/content/index.json');
       const index = await res.json();
@@ -33,7 +40,15 @@ self.addEventListener('install', evt => {
         if (item.portuguese) out.push(`/content/${item.portuguese}`);
         return out;
       });
-      await cache.addAll(contentFiles);
+      await Promise.all(
+        contentFiles.map(async file => {
+          try {
+            await cache.add(file);
+          } catch (err) {
+            console.warn('SW: Falhou ao cachear', file, err);
+          }
+        })
+      );
     } catch (err) {
       console.error('SW pré-cache de conteúdo falhou:', err);
     }
@@ -41,6 +56,7 @@ self.addEventListener('install', evt => {
     await self.skipWaiting();
   })());
 });
+
 
 // 2) Ativando e limpando caches antigos
 self.addEventListener('activate', evt => {
@@ -95,4 +111,4 @@ self.addEventListener('fetch', evt => {
       throw err;
     }
   })());
-});
+});*/

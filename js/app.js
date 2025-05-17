@@ -1,9 +1,12 @@
 // js/app.js
-// apenas injeta os módulos na página
 
+// 1) Configuração de fonte (é um módulo que só carrega o JSON e expõe fontConfig)
 import './fontConfig.js';
-import './content.js';
-import './search.js';
 
-// o tema.js permanece fora deste ecossistema de ES modules,
-// inclusive pode ficar carregado logo após este app.js no HTML
+// 2) Content module (exporta loadContent, adjustFontSize, etc.)
+import './content.js';
+
+// 3) Search UI module (antes chamado search.js, agora separado em utils/engine/ui)
+import './search-ui.js';
+
+import './tema.js';

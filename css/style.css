@@ -304,3 +304,8 @@ body.content-open .search-container h1 {
 .controls button[title="Aumentar fonte"]:hover {
   color: hsl(275,78%,75%);
 }
+
+.result-list button.low-relevance {
+  opacity: 0.6;               /* ou outra marcação visual */
+  font-style: italic;
+}
