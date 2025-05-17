@@ -243,13 +243,21 @@ body.content-open .search-container h1 {
   border-radius: 0.5rem;
   font-size: 1.25rem;
   padding: 0.3rem 0.6rem;
+  display: flex;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   z-index: 1000;
   transition: background 0.2s, color 0.2s;
+  
 }
 #share-button:hover  { background: var(--accent); color: var(--card); }
 #share-button:active { background: var(--card);   color: var(--accent); }
+
+#share-button img {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: block;
+}
 
 /* 11) Versão */
 #version {
