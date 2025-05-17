@@ -1,0 +1,20 @@
+/* css/tema_escuro.css */
+
+/* 1) Inverte tudo quando existir data-invert em <html> */
+:root[data-invert] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* 2) Re‐inverte imagens/ícones para não ficarem “negativos” */
+:root[data-invert] img,
+:root[data-invert] video,
+:root[data-invert] picture,
+:root[data-invert] svg {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* 3) Pseudo‐elementos também herdam a inversão */
+:root[data-invert] *::before,
+:root[data-invert] *::after {
+  filter: inherit;
+}

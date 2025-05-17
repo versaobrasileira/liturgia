@@ -1,27 +1,47 @@
-// tema.js
+// js/tema.js
 
-const linkClaro = document.getElementById('tema-claro-css')
-const btn       = document.getElementById('theme-toggle')
+const linkClaro = document.getElementById('tema-claro-css');
+const btn       = document.getElementById('theme-toggle');
+const root      = document.documentElement;
 
-// on load: read localStorage, default to 'light'
-let theme = localStorage.getItem('theme') || 'light'
-applyTheme(theme)
+// sequência de temas e emojis  
+const themes = ['light', 'dark', 'light-invert', 'dark-invert'];
+const emojis = {
+  'light':       '🌒',  // próximo é dark
+  'dark':        '🌙',  // próximo é light-invert
+  'light-invert':'☀️',  // próximo é dark-invert
+  'dark-invert': '🌅'   // próximo é light
+};
 
-// when the user clicks, toggle between light/dark
+// carrega do localStorage, ou default 'light'
+let current = localStorage.getItem('theme') || 'light';
+if (!themes.includes(current)) current = 'light';
+
+applyTheme(current);
+
 btn.addEventListener('click', () => {
-  theme = theme === 'light' ? 'dark' : 'light'
-  localStorage.setItem('theme', theme)
-  applyTheme(theme)
-})
+  // avança no ciclo
+  const idx = themes.indexOf(current);
+  current = themes[(idx + 1) % themes.length];
+  localStorage.setItem('theme', current);
+  applyTheme(current);
+});
 
 function applyTheme(mode) {
-  if (mode === 'light') {
-    // habilita tema claro, mostra lua para indicar "claro está ativo"
-    linkClaro.disabled = false
-    btn.textContent     = '🌙'
+  // light vs dark: controla o tema_claro.css
+  if (mode.startsWith('light')) {
+    linkClaro.disabled = false;
   } else {
-    // desabilita tema claro, volta ao dark, mostra sol
-    linkClaro.disabled = true
-    btn.textContent    = '☀️'
+    linkClaro.disabled = true;
   }
+
+  // invertido?
+  if (mode.endsWith('invert')) {
+    root.setAttribute('data-invert', '');
+  } else {
+    root.removeAttribute('data-invert');
+  }
+
+  // atualiza o ícone
+  btn.textContent = emojis[mode] || '🌙';
 }
