@@ -10,3 +10,5 @@ import './content.js';
 import './search-ui.js';
 
 import './tema.js';
+
+import './share.js'; 

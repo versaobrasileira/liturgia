@@ -232,6 +232,25 @@ body.content-open .search-container h1 {
 #theme-toggle:hover  { background: var(--accent); color: var(--card); }
 #theme-toggle:active { background: var(--card);   color: var(--accent); }
 
+/* Botão de compartilhar (direito superior) */
+#share-button {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--card);
+  color: var(--accent);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.2s, color 0.2s;
+}
+#share-button:hover  { background: var(--accent); color: var(--card); }
+#share-button:active { background: var(--card);   color: var(--accent); }
+
 /* 11) Versão */
 #version {
   position: fixed;
