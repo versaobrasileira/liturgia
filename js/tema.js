@@ -7,15 +7,15 @@ const root      = document.documentElement;
 // sequência de temas e emojis  
 const themes = ['light', 'dark', 'light-invert', 'dark-invert'];
 const emojis = {
-  'light':       '🌒',  // próximo é dark
-  'dark':        '🌙',  // próximo é light-invert
-  'light-invert':'☀️',  // próximo é dark-invert
-  'dark-invert': '🌅'   // próximo é light
+  'light':        '🌒',  // próximo é dark
+  'dark':         '🌙',  // próximo é light-invert
+  'light-invert': '☀️',  // próximo é dark-invert
+  'dark-invert':  '🌅'   // próximo é light
 };
 
-// carrega do localStorage, ou default 'light'
-let current = localStorage.getItem('theme') || 'light';
-if (!themes.includes(current)) current = 'light';
+// CARREGA do localStorage, ou DEFAULT 'light-invert'
+let current = localStorage.getItem('theme') || 'light-invert';
+if (!themes.includes(current)) current = 'light-invert';
 
 applyTheme(current);
 
@@ -29,11 +29,7 @@ btn.addEventListener('click', () => {
 
 function applyTheme(mode) {
   // light vs dark: controla o tema_claro.css
-  if (mode.startsWith('light')) {
-    linkClaro.disabled = false;
-  } else {
-    linkClaro.disabled = true;
-  }
+  linkClaro.disabled = !mode.startsWith('light');
 
   // invertido?
   if (mode.endsWith('invert')) {
