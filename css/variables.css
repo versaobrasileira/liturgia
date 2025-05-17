@@ -16,5 +16,7 @@
   --border:           #333;
   --btn-text:         #fff;
   --zoom-btn-base-width: 6rem;
+  --line-bg-odd:  rgba(255,255,255,0.05);
+  --line-bg-even: transparent;
 }
 

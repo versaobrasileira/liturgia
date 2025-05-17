@@ -10,6 +10,7 @@
   --text-light:       #5a4a4a;  /* texto secundário */
   --border:           #bba07d;  /* bordas suaves */
   --btn-text: #f4e0c2;
+  --line-bg-odd:  rgba(0,0,0,0.03);
 }
 
 

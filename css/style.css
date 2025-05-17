@@ -156,6 +156,19 @@ body.content-open .search-container h1 {
   color: var(--text-light);
 }
 
+/* 6.1) Zebra striping nas linhas do conteúdo */
+#content-display.visible .lyrics-container p {
+  /* pra garantir que o padding carregue o fundo */
+  padding: 0.2rem 0.5rem;
+}
+#content-display.visible .lyrics-container p:nth-child(odd) {
+  background-color: var(--line-bg-odd);
+}
+#content-display.visible .lyrics-container p:nth-child(even) {
+  background-color: var(--line-bg-even);
+}
+
+
 /* 7) Header do conteúdo e controles */
 .title-bar {
   display: flex;

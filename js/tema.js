@@ -7,20 +7,19 @@ const root      = document.documentElement;
 // sequência de temas e emojis  
 const themes = ['light', 'dark', 'light-invert', 'dark-invert'];
 const emojis = {
-  'light':        '🌒',  // próximo é dark
-  'dark':         '🌙',  // próximo é light-invert
-  'light-invert': '☀️',  // próximo é dark-invert
-  'dark-invert':  '🌅'   // próximo é light
+  'light':        '🌒',
+  'dark':         '🌙',
+  'light-invert': '☀️',
+  'dark-invert':  '🌅'
 };
 
-// CARREGA do localStorage, ou DEFAULT 'light-invert'
+// **default** para quem não tiver nada em localStorage:
 let current = localStorage.getItem('theme') || 'light-invert';
 if (!themes.includes(current)) current = 'light-invert';
 
 applyTheme(current);
 
 btn.addEventListener('click', () => {
-  // avança no ciclo
   const idx = themes.indexOf(current);
   current = themes[(idx + 1) % themes.length];
   localStorage.setItem('theme', current);
@@ -28,16 +27,15 @@ btn.addEventListener('click', () => {
 });
 
 function applyTheme(mode) {
-  // light vs dark: controla o tema_claro.css
+  // se for qualquer "light", ativa o tema claro
   linkClaro.disabled = !mode.startsWith('light');
 
-  // invertido?
+  // se termina em "-invert", marca o data-invert
   if (mode.endsWith('invert')) {
     root.setAttribute('data-invert', '');
   } else {
     root.removeAttribute('data-invert');
   }
 
-  // atualiza o ícone
   btn.textContent = emojis[mode] || '🌙';
 }
