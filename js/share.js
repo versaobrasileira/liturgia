@@ -1,18 +1,22 @@
 // js/share.js
 
 /**
- * Centraliza toda a lógica de compartilhamento de link.
- * Usa a Web Share API quando disponível, ou fallback para WhatsApp.
+ * Mensagem padrão que será enviada junto com o link.
  */
+const DEFAULT_MESSAGE =
+  'Não tem um Sidur em mãos? Prefere acompanhar pelo celular? ' +
+  'Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.';
 
-const DEFAULT_MESSAGE = 'Não tem um Sidur em mãos? Prefere acompanhar pelo celular? Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.';
-
+/**
+ * Abre o diálogo de compartilhamento:
+ * - usa Web Share API quando disponível
+ * - senão, abre WhatsApp Web com mensagem + URL
+ */
 async function sharePage() {
   const url   = window.location.href;
   const title = document.title;
   const text  = `${DEFAULT_MESSAGE} `;
 
-  // Web Share API nativa
   if (navigator.share) {
     try {
       await navigator.share({ title, text, url });
@@ -20,23 +24,49 @@ async function sharePage() {
       console.error('Compartilhamento cancelado ou falhou:', err);
     }
   } else {
-    // Fallback para WhatsApp (pode ajustar para outras redes)
-    const msg = `${text}${url}`;
+    const msg   = `${text}${url}`;
     const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, '_blank');
   }
 }
 
+/**
+ * Inicializa o botão de compartilhamento:
+ * - tenta carregar o ícone PNG
+ * - em onerror, usa emoji de fallback
+ * - adiciona listener de click para sharePage()
+ */
 function initShareButton(buttonId = 'share-button') {
   document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById(buttonId);
     if (!btn) return;
+
+    // Caminho absoluto ao ícone (ajuste se necessário)
+    const iconPath = '/img/icons/compartilhar.png';
+    const img = new Image();
+    img.src = iconPath;
+    img.alt = 'Compartilhar';
+    img.style.width  = '1.5rem';
+    img.style.height = '1.5rem';
+
+    img.onload = () => {
+      // substitui qualquer texto existente pelo <img>
+      btn.textContent = '';
+      btn.appendChild(img);
+    };
+
+    img.onerror = () => {
+      // fallback para emoji
+      btn.textContent = '➡️';
+    };
+
+    // clique dispara compartilhamento
     btn.addEventListener('click', sharePage);
   });
 }
 
-// Inicializa automaticamente ao importar este módulo
+// inicializa automaticamente
 initShareButton();
 
-// Exporta para uso manual, se necessário
+// exportações opcionais
 export { sharePage, initShareButton };

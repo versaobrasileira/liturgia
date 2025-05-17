@@ -14,7 +14,7 @@ const STATIC_ASSETS = [
   '/js/app.js',
   '/js/tema.js',
   '/content/index.json',
-  '/img/icons/compartilhar_.png',
+  '/img/icons/compartilhar.png',
 ];
 
 // detecta ambiente local para pular cache em dev
