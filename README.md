@@ -10,7 +10,7 @@
 Liturgia • Busca é uma Progressive Web App (PWA) que permite:
 - **Buscar páginas ou termos** em um índice de cânticos litúrgicos.
 - **Fuzzy search** com tolerância a erros de digitação, janelas de fragmento e sinônimos.
-- **Filtro de relevância**: descarta resultados com menos de 40% da relevância máxima e marca “low‐relevance”.
+- **Filtro de relevância**: Filtro inteligente que encontra resultados mais relevântes.
 - **Suporte offline** via Service Worker, com cache de ativos estáticos e conteúdo dinâmico.
 - **Temas personalizáveis**: light, dark, light-invert e dark-invert, com inversão CSS para imagens.
 - **Compartilhamento nativo** (Web Share API) ou fallback para WhatsApp.
