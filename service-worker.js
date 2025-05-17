@@ -3,19 +3,22 @@
 const CACHE_NAME   = 'liturgia-v1';
 const MAX_AGE      = 5 * 24 * 60 * 60 * 1000; // 5 dias em ms
 const STATIC_ASSETS = [
-  '/', 
+  '/',
   '/index.html',
   '/manifest.json',
   '/offline.html',
   '/css/variables.css',
   '/css/style.css',
   '/css/tema_claro.css',
+  '/css/tema_escuro.css',
   '/js/app.js',
   '/js/tema.js',
-  '/content/index.json'
+  '/content/index.json',
+  '/img/icons/compartilhar.png',
+  '/img/icons/compartilhar_100.png'  // opcional, se você usar essa resolução também
 ];
 
-// detecta localhost
+// detecta ambiente local para pular cache em dev
 const isLocalhost = self.location.hostname === 'localhost'
                  || self.location.hostname === '127.0.0.1'
                  || self.location.hostname === '[::1]';
@@ -27,7 +30,7 @@ self.addEventListener('install', evt => {
   }
   evt.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    // pré‐cache estático
+    // pré-cache estéreo (arquivos estáticos)
     await Promise.all(
       STATIC_ASSETS.map(async file => {
         try {
@@ -37,7 +40,8 @@ self.addEventListener('install', evt => {
         }
       })
     );
-    // pré‐cache do conteúdo dinâmico
+
+    // pré-cache dinâmico de conteúdo
     try {
       const res   = await fetch('/content/index.json');
       const index = await res.json();
@@ -59,6 +63,7 @@ self.addEventListener('install', evt => {
     } catch (err) {
       console.error('SW pré-cache de conteúdo falhou:', err);
     }
+
     await self.skipWaiting();
   })());
 });
@@ -77,12 +82,16 @@ self.addEventListener('activate', evt => {
 });
 
 self.addEventListener('fetch', evt => {
-  if (isLocalhost) return;
+  if (isLocalhost) {
+    // modo dev: deixar tudo passar para a rede
+    return;
+  }
   evt.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
     const cachedResponse = await cache.match(evt.request);
 
     if (cachedResponse) {
+      // revalida se estiver “stale”
       const dateHeader = cachedResponse.headers.get('date');
       if (dateHeader) {
         const fetchedTime = new Date(dateHeader).getTime();
@@ -99,12 +108,14 @@ self.addEventListener('fetch', evt => {
       return cachedResponse;
     }
 
+    // não estava em cache: tenta rede, e cacheia
     try {
       const netRes = await fetch(evt.request);
       cache.put(evt.request, netRes.clone());
       return netRes;
     } catch (err) {
       if (evt.request.mode === 'navigate') {
+        // fallback para offline.html em navegação
         return caches.match('/offline.html');
       }
       throw err;

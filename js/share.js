@@ -1,22 +1,42 @@
 // js/share.js
 
-const btn = document.getElementById('share-button');
+/**
+ * Centraliza toda a lógica de compartilhamento de link.
+ * Usa a Web Share API quando disponível, ou fallback para WhatsApp.
+ */
 
-btn.addEventListener('click', async () => {
+const DEFAULT_MESSAGE = 'Não tem um Sidur em mãos? Prefere acompanhar pelo celular? Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.';
+
+async function sharePage() {
   const url   = window.location.href;
   const title = document.title;
-  try {
-    if (navigator.share) {
-      // Web Share API (Chrome Mobile, Safari iOS, etc.)
-      await navigator.share({ title, url });
-    } else {
-      // fallback para WhatsApp Web
-      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
-        title + ' - ' + url
-      )}`;
-      window.open(whatsappUrl, '_blank');
+  const text  = `${DEFAULT_MESSAGE} `;
+
+  // Web Share API nativa
+  if (navigator.share) {
+    try {
+      await navigator.share({ title, text, url });
+    } catch (err) {
+      console.error('Compartilhamento cancelado ou falhou:', err);
     }
-  } catch (err) {
-    console.error('Erro ao compartilhar:', err);
+  } else {
+    // Fallback para WhatsApp (pode ajustar para outras redes)
+    const msg = `${text}${url}`;
+    const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, '_blank');
   }
-});
+}
+
+function initShareButton(buttonId = 'share-button') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById(buttonId);
+    if (!btn) return;
+    btn.addEventListener('click', sharePage);
+  });
+}
+
+// Inicializa automaticamente ao importar este módulo
+initShareButton();
+
+// Exporta para uso manual, se necessário
+export { sharePage, initShareButton };
