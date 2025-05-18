@@ -2,11 +2,19 @@
   "title": "SHABAT SHALOM",
   "page": "",
   "lyrics": [
-    "Shabat Shalom, Shabat Shalom, Shabat Shalom",
+    "Shabat Shalom, Shabat Shalom, Shabat Shabat Shabat Shabat Shalom",
     "Am Yisrael, Am Yisrael, Am Yisrael Chai",
     "Od Avinu Chai ! Od Avinu Chai ! Od Avinu, Od Avinu, Od Avinu Chai !",
-    "Hevenu Shalom Aleichem! (2X)",
+    "<estrofe r=2X>",
+    "Hevenu Shalom Aleichem!",
+    "</estrofe>",
     "Hevenu Shalom, Shalom, Shalom Aleichem",
-    "Shalu Shalom Yerushalayim (3X)"
+    "<estrofe r=4X>",
+    "Shalu Shalom Yerushalayim",
+    "</estrofe>",
+    "<estrofe r=3X>",
+    "Shalu Shalom",
+    "</estrofe>",
+    "Shalu Shalom Yerushalayim"
   ]
 }

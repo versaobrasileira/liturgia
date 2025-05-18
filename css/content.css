@@ -11,9 +11,6 @@
   margin: 1.5rem auto 0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   text-align: left;
-  /* overflow removido daqui! */
-  /* overflow-y: auto;
-     overflow-x: hidden; */
 }
 
 /* 6.1) Zebra striping nas linhas */
@@ -28,6 +25,41 @@
 }
 
 /* 8) Letras */
+
+
+/* bloco de estrofe */
+.est-block {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 0.75rem;
+  border-left: 2px dashed var(--accent);
+  border-right: 2px dashed var(--accent);
+}
+
+.est-block::before {
+  content: ''; 
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  border-top: 2px dashed var(--accent);     /* NOVO: divisor superior */
+}
+.est-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  border-bottom: 2px dashed var(--accent);  /* NOVO: divisor inferior */
+}
+
+/* rótulo no topo do bloco */
+.est-label {
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 0.9em;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+}
+
 .lyrics-container {
   font-size: 1rem;
   line-height: 1.6;
@@ -35,6 +67,8 @@
   padding: 1rem;
   word-wrap: break-word;
 }
+
+
 
 /* 9) Scrollbars personalizadas e overflow interno */
 .content-scroll {
@@ -65,3 +99,4 @@
   font-size: 0.75rem;
   margin-top: 0.2rem;
 }
+
