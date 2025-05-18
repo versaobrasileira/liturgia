@@ -11,20 +11,9 @@
   margin: 1.5rem auto 0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   text-align: left;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-#content-display.visible h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.05rem;
-  color: var(--accent);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0;
-}
-#content-display.visible p {
-  margin-bottom: 0.35rem;
-  line-height: 1.3;
-  color: var(--text-light);
+  /* overflow removido daqui! */
+  /* overflow-y: auto;
+     overflow-x: hidden; */
 }
 
 /* 6.1) Zebra striping nas linhas */
@@ -47,28 +36,32 @@
   word-wrap: break-word;
 }
 
-/* 9) Scrollbars personalizadas */
-#content-display.visible::-webkit-scrollbar,
+/* 9) Scrollbars personalizadas e overflow interno */
+.content-scroll {
+  /* define tamanho máximo e ativa o scrolling */
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* scrollbars agora atreladas ao content-scroll */
 .content-scroll::-webkit-scrollbar {
   width: 8px;
 }
-#content-display.visible::-webkit-scrollbar-track,
 .content-scroll::-webkit-scrollbar-track {
   background: var(--card);
   border-radius: 4px;
 }
-#content-display.visible::-webkit-scrollbar-thumb,
 .content-scroll::-webkit-scrollbar-thumb {
   background: var(--accent);
   border-radius: 4px;
   transition: background 0.3s;
 }
-#content-display.visible::-webkit-scrollbar-thumb:hover,
 .content-scroll::-webkit-scrollbar-thumb:hover {
   background: hsl(275,78%,75%);
 }
 
-.subtitle{
+.subtitle {
   font-size: 0.75rem;
   margin-top: 0.2rem;
 }
