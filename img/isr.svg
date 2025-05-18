@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="11" viewBox="0 0 32 22">
+  <rect width="32" height="22" fill="#fff"/>
+  <rect y="1" width="32" height="4" fill="#005eb8"/>
+  <rect y="17" width="32" height="4" fill="#005eb8"/>
+  <!-- Triângulo para cima -->
+  <polygon points="16,7 20,14 12,14" fill="none" stroke="#005eb8" stroke-width="1.5"/>
+  <!-- Triângulo para baixo -->
+  <polygon points="16,15 20,8 12,8" fill="none" stroke="#005eb8" stroke-width="1.5"/>
+</svg>
