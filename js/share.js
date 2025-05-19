@@ -4,8 +4,7 @@
  * Mensagem padrão que será enviada junto com o link.
  */
 const DEFAULT_MESSAGE =
-  'Não tem um Sidur em mãos? Prefere acompanhar pelo celular? ' +
-  'Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.'+
+  'Tenha acesso prático e intuitivo a cânticos litúgicos.'+
   '\n';
 
 /**
