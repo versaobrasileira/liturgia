@@ -130,3 +130,7 @@ body.fullscreen-mode .lyrics-container{
     margin: 0 0 0 0;
 }
 
+body.fullscreen-mode #fullscreen-toggle{
+    padding-bottom: 0.5rem;
+}
+
