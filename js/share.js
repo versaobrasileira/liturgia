@@ -5,7 +5,8 @@
  */
 const DEFAULT_MESSAGE =
   'Não tem um Sidur em mãos? Prefere acompanhar pelo celular? ' +
-  'Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.';
+  'Este aplicativo foi feito para você! Tenha acesso prático e intuitivo cânticos litúgicos.'+
+  '\n';
 
 /**
  * Abre o diálogo de compartilhamento:
@@ -19,7 +20,7 @@ async function sharePage() {
 
   if (navigator.share) {
     try {
-      await navigator.share({ title, text, url });
+      await navigator.share({ title, text: `${DEFAULT_MESSAGE}\n${url}` });
     } catch (err) {
       console.error('Compartilhamento cancelado ou falhou:', err);
     }
@@ -32,8 +33,6 @@ async function sharePage() {
 
 /**
  * Inicializa o botão de compartilhamento:
- * - tenta carregar o ícone PNG
- * - em onerror, usa emoji de fallback
  * - adiciona listener de click para sharePage()
  */
 function initShareButton(buttonId = 'share-button') {
@@ -41,29 +40,11 @@ function initShareButton(buttonId = 'share-button') {
     const btn = document.getElementById(buttonId);
     if (!btn) return;
 
-    // Caminho absoluto ao ícone (ajuste se necessário)
-    const iconPath = '/img/icons/compartilhar.png';
-    const img = new Image();
-    img.src = iconPath;
-    img.alt = 'Compartilhar';
-    img.style.width  = '1.5rem';
-    img.style.height = '1.5rem';
-
-    img.onload = () => {
-      // substitui qualquer texto existente pelo <img>
-      btn.textContent = '';
-      btn.appendChild(img);
-    };
-
-    img.onerror = () => {
-      // fallback para emoji
-      btn.textContent = '➡️';
-    };
-
-    // clique dispara compartilhamento
+    // Apenas adiciona o evento de clique
     btn.addEventListener('click', sharePage);
   });
 }
+
 
 // inicializa automaticamente
 initShareButton();

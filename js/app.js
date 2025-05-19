@@ -13,6 +13,6 @@ import './tema.js';
 
 import './fullscreen.js';
 
-//import './share.js'; 
+import './share.js'; 
 
 import './lang.js';
