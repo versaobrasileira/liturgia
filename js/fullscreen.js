@@ -21,7 +21,7 @@ export function updateFsUI() {
 
   // 3) Atualiza o placeholder do input
   input.placeholder = fsMode
-    ? 'Digite...'
+    ? 'Digite nº da página ou termo…'
     : 'Digite nº da página ou termo…';
 }
 
