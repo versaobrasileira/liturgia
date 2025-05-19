@@ -1,0 +1,20 @@
+/* js/components/ZoomInButton/ZoomInButton.css */
+.zoom-in-btn {
+  all: unset;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0rem;
+  margin-right: 1.5rem;
+  left: 2rem;
+  position: relative;
+  z-index: 0;
+  
+  border-radius: 0.3em;
+  background: none;
+  transition: color 0.2s;
+  order: 2;
+}
+.zoom-in-btn:hover {
+  color: var(--accent);
+}
+

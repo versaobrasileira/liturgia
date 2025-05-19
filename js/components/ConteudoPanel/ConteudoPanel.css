@@ -1,0 +1,52 @@
+/* js/components/ConteudoPanel/ConteudoPanel.css */
+
+.conteudo-panel {
+  background: var(--card);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  text-align: left;
+  width: 100%;
+}
+
+.conteudo-panel .title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  padding: 0.25rem 0.5rem;
+  z-index: 10;
+  width: 100%;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;      /* era flex-start, agora center */
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: var(--card);
+    padding: 0.25rem 0.5rem;
+    z-index: 10;
+    width: 40%;
+}
+
+.conteudo-panel .subtitle {
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+/* Zebra striping nas linhas */
+.conteudo-panel .lyrics-container p {
+  padding: 0.2rem 0.5rem;
+}
+.conteudo-panel .lyrics-container p:nth-child(odd) {
+  background-color: var(--line-bg-odd);
+}
+.conteudo-panel .lyrics-container p:nth-child(even) {
+  background-color: var(--line-bg-even);
+}

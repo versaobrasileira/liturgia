@@ -9,10 +9,4 @@ import './content.js';
 // 3) Search UI module (antes chamado search.js, agora separado em utils/engine/ui)
 import './search-ui.js';
 
-import './tema.js';
-
-import './fullscreen.js';
-
-import './share.js'; 
-
-import './lang.js';
+import './loader.js';

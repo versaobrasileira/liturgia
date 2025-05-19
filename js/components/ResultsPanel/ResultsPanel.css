@@ -1,0 +1,36 @@
+/* js/components/ResultsPanel/ResultsPanel.css */
+.results-panel {
+  width: 100%;
+  padding: 0.25rem 0;
+}
+.results-panel .result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.results-panel .result-list li {
+  margin-bottom: 0.25rem;
+}
+.results-panel .result-list button {
+  width: 100%;
+  background: var(--surface);
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  border-radius: 0.5rem;
+  transition: background 0.15s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.results-panel .result-list button.low-relevance {
+  opacity: 0.65;
+}
+.results-panel .result-list button:hover {
+  background: var(--surface-hover);
+}
+.results-panel .results-msg {
+  color: var(--text-light);
+  opacity: 0.85;
+  padding: 0.5rem 0;
+  text-align: center;
+}

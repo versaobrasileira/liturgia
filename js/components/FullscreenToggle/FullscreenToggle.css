@@ -1,0 +1,11 @@
+#fullscreen-toggle{
+  width: 1.8rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0.6rem;
+  color: var(--accent);  
+}
+
+#fullscreen-toggle { right: 0.5rem;             color: var(--accent); }

@@ -1,0 +1,9 @@
+#share-button{
+  width: 1.8rem;
+  height: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 3rem;
+  color: var(--accent);
+}

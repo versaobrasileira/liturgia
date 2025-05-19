@@ -1,0 +1,68 @@
+/* js/components/LyricsPanel/LyricsPanel.css */
+
+.content-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.content-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.content-scroll::-webkit-scrollbar-track {
+  background: var(--card);
+  border-radius: 4px;
+}
+.content-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.content-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(275,78%,75%);
+}
+
+.lyrics-container {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  padding: 1rem;
+  word-wrap: break-word;
+}
+
+.lyrics-container p {
+  padding: 0.2rem 0.5rem;
+}
+.lyrics-container p:nth-child(odd) {
+  background-color: var(--line-bg-odd);
+}
+.lyrics-container p:nth-child(even) {
+  background-color: var(--line-bg-even);
+}
+
+.est-block {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 0.75rem;
+  border-left: 2px dashed var(--accent);
+  border-right: 2px dashed var(--accent);
+}
+.est-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  border-top: 2px dashed var(--accent);
+}
+.est-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  border-bottom: 2px dashed var(--accent);
+}
+.est-label {
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-family: 'Dancing Script';
+}

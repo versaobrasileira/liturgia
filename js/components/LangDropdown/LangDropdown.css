@@ -1,0 +1,46 @@
+/* js/components/LangDropdown/LangDropdown.css */
+
+.lang-dropdown {
+  order: 3;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 1;
+}
+
+.lang-dropdown .lang-list {
+  margin-top: 2rem;
+  right: 10rem;
+  padding: 0rem;
+}
+.lang-btn {
+  background: var(--card);
+  border: none;
+  padding: 0rem 1rem 2rem 0rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.lang-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+}
+.lang-list li {
+  padding: 0.25rem 0.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.lang-list li:hover {
+  background: var(--surface-hover);
+}
+.lang-dropdown.open .lang-btn {
+  display: none;
+}

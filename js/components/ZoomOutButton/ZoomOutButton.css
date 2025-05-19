@@ -1,0 +1,16 @@
+/* js/components/ZoomOutButton/ZoomOutButton.css */
+.zoom-out-btn {
+  all: unset;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 2rem 0rem 0rem;
+  margin-right: 0.25rem;
+  order: 1;  
+  border-radius: 0.3em;
+  background: none;
+  transition: color 0.2s;
+   order: 1;
+}
+.zoom-out-btn:hover {
+  color: var(--accent);
+}

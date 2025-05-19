@@ -1,0 +1,19 @@
+/* js/components/ThemeToggle/ThemeToggle.css */
+.theme-toggle-btn {
+  transition: background 0.2s;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5em 0.7em;
+  background: #191919;
+  color: #ffe85c;
+}
+.theme-toggle-btn:hover {
+  background: #333;
+}
+
+#theme-toggle {
+  left: 0.5rem;
+  color: var(--accent);
+}
