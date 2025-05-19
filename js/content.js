@@ -1,6 +1,7 @@
 // js/content.js
 import { fontConfig }        from './fontConfig.js'
 import { setupLangDropdown } from './lang.js'
+import { fsMode, updateFsUI } from './fullscreen.js';
 
 let currentFontSize = null
 
@@ -15,7 +16,7 @@ function populateLyrics(container, lines) {
   lines.forEach(rawLine => {
     const line = rawLine.trim()
 
-    // abre bloco: <estrofe r=3X> ou <estrofe r=[Homens]>
+    
     const open = /^\s*<estrofe\s+r=(?:\[(.+?)\]|([^\]\s>]+))>\s*$/i.exec(line)
     if (open) {
       const labelText = open[1] || open[2]
@@ -53,7 +54,11 @@ export async function loadContent(item) {
   document.body.classList.remove('content-open')
   results .innerHTML = ''
   display.innerHTML = ''
-  display.classList.remove('visible')
+  display.classList.remove('visible');
+  document.body.classList.add('content-open');
+
+  // se já estamos em fullscreen, reaplique
+  if (fsMode) document.body.classList.add('fullscreen-mode');
 
   // fetch
   let data
@@ -104,6 +109,7 @@ export async function loadContent(item) {
 
   display.classList.add('visible')
   document.body.classList.add('content-open')
+  updateFsUI();
   adjustFontSize(lyricsContainer)
 }
 

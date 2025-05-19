@@ -1,0 +1,132 @@
+:root {
+  --fs-ui-height: 3rem;    /* altura dos botões do topo */
+  --fs-ui-width: 30vw;     /* largura do formulário/painel */
+}
+
+/* Botões no topo acima de tudo */
+#theme-toggle, #fullscreen-toggle, #share-button {
+  z-index: 1000;
+}
+
+/* Modo Fullscreen */
+body.fullscreen-mode {
+  align-items: flex-start;
+  padding-top: 3rem;
+}
+
+/* Search container centralizado, largura 33vw */
+body.fullscreen-mode .search-container {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0 0 0 0;
+  padding: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  right: calc(35%);
+  box-shadow: none;
+  border-radius: 0.5rem;
+  background: var(--bg);
+  align-items: center;
+  overflow: visible;
+  left: 0;
+}
+body.fullscreen-mode .search-container h1 { display: none; }
+
+/* Form achatado */
+body.fullscreen-mode #search-form {
+  display: flex;
+  gap: 0.25rem;
+  height: 1rem;
+  align-items: center;
+  margin: 0;
+  width: 99.5vw;
+  max-width: 100vw;
+  align-self: center;
+}
+body.fullscreen-mode #search-input {
+  flex: 1;
+  height: 100%;
+  border-radius: 0.25rem 0 0 0.25rem;
+  margin: 0 auto;
+ 
+  align-self: center;
+  width: 17vh;
+  z-index: 1000;
+}
+body.fullscreen-mode #search-button {
+  height: 100%;
+  border-radius: 0 0.25rem 0.25rem 0;
+  margin: 0;
+  box-shadow: none;
+  visibility: hidden;
+  flex: 0 0 auto;
+}
+
+/* content-display ocupa toda a largura e altura */
+.fullscreen-mode #content-display.visible {
+  position: fixed;
+  top: 2.5rem;
+  bottom: 0; left: 0; right: 0;
+  margin: 0;
+  padding: 0 0 0 0;
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  overflow: hidden;
+  z-index: 400;
+}
+
+/* content-scroll com altura máxima útil */
+body.fullscreen-mode .content-scroll {
+  max-height: calc(100vh - var(--fs-ui-height) - 7rem);
+  overflow-y: auto;
+}
+
+/* Resultados e alinhamento */
+.fullscreen-mode #results:empty {
+  margin-top: 0;
+  width: 5rem;
+}
+
+/* Anula possíveis centralizações herdadas */
+body.fullscreen-mode .lyrics-container,
+body.fullscreen-mode .content-scroll {
+  margin: 0;
+  text-align: left;
+}
+
+/* RESPONSIVO para telas pequenas */
+@media (max-width: 500px) {
+  body.fullscreen-mode .search-container {
+    width: 96vw;
+    max-width: 96vw;
+    right: 2vw;
+    left: 2vw;
+  }
+  body.fullscreen-mode #search-form {
+    width: 100%;
+    max-width: 100%;
+  }
+  body.fullscreen-mode #search-input {
+    width: 20vw;
+    min-width: 0;
+  }
+  .fullscreen-mode #content-display.visible {
+    width: 100vw;
+  }
+
+  
+}
+
+
+
+.fullscreen-mode #theme-toggle,
+.fullscreen-mode #share-button {
+    visibility: hidden;
+}
+
+body.fullscreen-mode .lyrics-container{
+    padding:0 0 0 0.05;
+    margin: 0 0 0 0;
+}
+

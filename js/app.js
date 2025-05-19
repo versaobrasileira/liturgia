@@ -11,6 +11,8 @@ import './search-ui.js';
 
 import './tema.js';
 
+import './fullscreen.js';
+
 import './share.js'; 
 
 import './lang.js';
