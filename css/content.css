@@ -52,7 +52,6 @@
 /* rótulo no topo do bloco */
 .est-label {
   font-style: italic;
-  text-decoration: underline;
   font-size: 0.9em;
   color: var(--text-light);
   margin-bottom: 0.25rem;
