@@ -1,5 +1,11 @@
 // js/components/ContentDisplayPanel/ContentDisplayPanel.js
 
+
+
+import { ConteudoPanel } from '../ConteudoPanel/ConteudoPanel.js';
+import { fullscreenToggle } from '../../loader.js';
+import { resultsPanel } from '../ResultsPanel/ResultsPanel.js';
+
 function injectCss(path) {
   if (!document.querySelector(`link[href="${path}"]`)) {
     const link = document.createElement('link');
@@ -9,9 +15,6 @@ function injectCss(path) {
   }
 }
 injectCss('/js/components/ContentDisplayPanel/ContentDisplayPanel.css');
-
-import { ConteudoPanel } from '../ConteudoPanel/ConteudoPanel.js';
-import { fullscreenToggle } from '../../loader.js';
 
 export class ContentDisplayPanel {
   constructor() {
@@ -25,6 +28,7 @@ export class ContentDisplayPanel {
    * Recebe o item (com .file, .title, .hebrew, .portuguese...) e carrega/exibe o conteúdo
    */
   async showItem(item) {
+    resultsPanel.hide();
     this.clear();
     this.setMessage('Carregando…');
 

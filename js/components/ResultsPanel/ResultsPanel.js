@@ -1,5 +1,17 @@
 // js/components/ResultsPanel/ResultsPanel.js
 
+// js/components/ResultsPanel/ResultsPanel.js
+function injectCss(path) {
+  if (!document.querySelector(`link[href="${path}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = path;
+    document.head.appendChild(link);
+  }
+}
+injectCss('/js/components/ResultsPanel/ResultsPanel.css');
+
+
 export class ResultsPanel {
   constructor() {
     this.element = document.createElement('div');
@@ -47,6 +59,10 @@ export class ResultsPanel {
       li.appendChild(btn);
       ul.appendChild(li);
     }
+    if (document.body.classList.contains('content-open')) {
+        this.hide();
+    return;
+  }
     this.element.appendChild(ul);
     this.show();
   }

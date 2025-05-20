@@ -1,0 +1,31 @@
+#search-form {
+  display: flex;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;   /* Centraliza o form horizontalmente */
+}
+
+#search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+  min-width: 0;
+  /* Ícone dentro do input */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l4.28 4.3a1 1 0 0 1-1.42 1.4l-4.27-4.29zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 1.3rem 1.3rem;
+}
+
+@media (max-width: 500px) {
+  #search-form {
+    max-width: 95vw;
+  }
+}
