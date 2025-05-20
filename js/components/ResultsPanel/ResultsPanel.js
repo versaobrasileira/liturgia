@@ -1,52 +1,63 @@
 // js/components/ResultsPanel/ResultsPanel.js
 
-function injectCss(path) {
-  if (!document.querySelector(`link[href="${path}"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = path;
-    document.head.appendChild(link);
-  }
-}
-injectCss('/js/components/ResultsPanel/ResultsPanel.css');
-
 export class ResultsPanel {
-  constructor({ items = [], onSelect, highlightFn } = {}) {
-    this.container = document.createElement('div');
-    this.container.className = 'results-panel';
-    this.onSelect = onSelect || (() => {});
-    this.highlightFn = highlightFn || ((t) => t);
-    this.update(items);
+  constructor() {
+    this.element = document.createElement('div');
+    this.element.id = 'results';
+    this.element.className = 'results-panel';
   }
 
-  update(items = [], raw = '') {
-    this.container.innerHTML = '';
-    if (!items || !items.length) return;
+  // Limpa o painel
+  clear() {
+    this.element.innerHTML = '';
+    this.hide();
+  }
 
+  // Exibe mensagem simples
+  setMessage(msg) {
+    this.element.innerHTML = `<div class="results-message">${msg}</div>`;
+    this.show();
+  }
+
+  // Exibe lista de itens (array de objetos)
+  setList(items, { onClick, highlightTerm = '' } = {}) {
+    this.clear();
+    if (!items?.length) {
+      this.setMessage('Nenhum resultado encontrado.');
+      return;
+    }
     const ul = document.createElement('ul');
     ul.className = 'result-list';
+
     for (const item of items) {
-      const li  = document.createElement('li');
+      const li = document.createElement('li');
       const btn = document.createElement('button');
-      btn.innerHTML = this.highlightFn(item.title, raw) +
-        ` <span style="font-weight:normal">(pg. ${item.page})</span>`;
+      // Destaque termo se solicitado
+      let titleHtml = item.title;
+      if (highlightTerm && highlightTerm.length >= 2) {
+        const esc = highlightTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        titleHtml = titleHtml.replace(new RegExp(esc, 'gi'), m => `<strong>${m}</strong>`);
+      }
+      btn.innerHTML = `
+        ${titleHtml}
+        <span style="font-weight:normal">(pg. ${item.page})</span>
+      `;
       if (item._lowRelev) btn.classList.add('low-relevance');
-      btn.addEventListener('click', () => this.onSelect(item));
+      btn.addEventListener('click', () => onClick?.(item));
       li.appendChild(btn);
       ul.appendChild(li);
     }
-    this.container.appendChild(ul);
+    this.element.appendChild(ul);
+    this.show();
   }
 
-  setMessage(msg) {
-    this.container.innerHTML = `<div class="results-msg">${msg}</div>`;
+  show() {
+    this.element.style.display = '';
   }
-
-  clear() {
-    this.container.innerHTML = '';
-  }
-
-  get element() {
-    return this.container;
+  hide() {
+    this.element.style.display = 'none';
   }
 }
+
+// Exporta instância única para toda a app
+export const resultsPanel = new ResultsPanel();

@@ -1,22 +1,18 @@
-// js/content.js
 import { fullscreenToggle }  from './loader.js';
 import { ConteudoPanel }     from './components/ConteudoPanel/ConteudoPanel.js';
+import { resultsPanel }      from './components/ResultsPanel/ResultsPanel.js';
+import { contentDisplayPanel } from './components/ContentDisplayPanel/ContentDisplayPanel.js';
 
 let conteudoPanel = null;
 
 export async function loadContent(item) {
-  const results = document.getElementById('results');
-  const display = document.getElementById('content-display');
+  // Oculta resultados ao abrir conteúdo
+  resultsPanel.clear();
 
-  document.body.classList.remove('content-open');
-  results.innerHTML = '';
-  display.innerHTML = '';
-  display.classList.remove('visible');
+  contentDisplayPanel.clear();
   document.body.classList.add('content-open');
-
   if (fullscreenToggle?.fsMode) document.body.classList.add('fullscreen-mode');
 
-  // fetch
   let data;
   try {
     const res = await fetch(`./content/${item.file}`);
@@ -24,19 +20,17 @@ export async function loadContent(item) {
     data = await res.json();
   } catch (err) {
     console.error(err);
-    display.textContent = `Erro ao carregar "${item.title}".`;
-    display.classList.add('visible');
+    contentDisplayPanel.setMessage(`Erro ao carregar "${item.title}".`);
     return;
   }
 
-  // Monta o painel inteiro
   conteudoPanel = new ConteudoPanel({
     title: data.title,
     page: data.page,
     lyrics: data.lyrics,
     controlsProps: {
       langDropdownProps: {
-        item,  
+        item,
         onLanguageChange: async (fname, lang) => {
           try {
             const res = await fetch(`./content/${fname}`);
@@ -52,10 +46,6 @@ export async function loadContent(item) {
     }
   });
 
-  display.append(conteudoPanel.element);
-  display.classList.add('visible');
-  document.body.classList.add('content-open');
+  contentDisplayPanel.setContent(conteudoPanel.element);
   fullscreenToggle?.updateFsUI();
 }
-
-

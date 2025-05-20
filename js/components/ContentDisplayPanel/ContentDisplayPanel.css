@@ -1,3 +1,5 @@
+/* js/components/ContentDisplayPanel/ContentDisplayPanel.css */
+
 #content-display {
   display: none;
 }
@@ -12,7 +14,9 @@
   text-align: left;
 }
 
-
-
-
-
+.content-message {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--accent);
+  font-weight: bold;
+}
