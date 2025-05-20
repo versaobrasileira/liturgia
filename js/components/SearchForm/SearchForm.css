@@ -1,7 +1,7 @@
 #search-form {
   display: flex;
   margin-bottom: 1.5rem;
-  width: 100%;
+  width: 70vw;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;   /* Centraliza o form horizontalmente */
@@ -22,6 +22,7 @@
   background-repeat: no-repeat;
   background-position: right 0.9rem center;
   background-size: 1.3rem 1.3rem;
+  
 }
 
 @media (max-width: 500px) {

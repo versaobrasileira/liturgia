@@ -33,7 +33,6 @@ const FLAG_SVGS = {
 
 export class LangDropdown {
   constructor({ item, onLanguageChange } = {}) {
-    // item é o objeto com .file, .hebrew, .portuguese, etc.
     this.item = item || {};
     this.onLanguageChange = onLanguageChange;
 
@@ -45,7 +44,7 @@ export class LangDropdown {
         ${FLAG_SVGS.default}
       </button>
       <ul class="lang-list" hidden>
-        <li data-lang="default">${FLAG_SVGS.default}</li>
+        ${item.file ? `<li data-lang="default">${FLAG_SVGS.default}</li>` : ''}
         ${item.hebrew     ? `<li data-lang="hebrew">${FLAG_SVGS.hebrew}</li>` : ''}
         ${item.portuguese ? `<li data-lang="portuguese">${FLAG_SVGS.portuguese}</li>` : ''}
       </ul>
@@ -55,19 +54,25 @@ export class LangDropdown {
     this.list = this.dropdown.querySelector('.lang-list');
     this.currentSVG = FLAG_SVGS.default;
 
-    // Eventos
+    // Conta opções visíveis (li) para saber se mostra dropdown
+    this.optionCount = this.list.querySelectorAll('li').length;
+
+    // Só abre dropdown se há mais de uma opção
     this.btn.addEventListener('click', e => {
       e.stopPropagation();
+      if (this.optionCount <= 1) return;
       if (this.list.hidden) this.openDropdown();
       else                  this.closeDropdown();
     });
 
+    // Fecha dropdown ao clicar fora
     document.addEventListener('click', e => {
       if (!this.dropdown.contains(e.target)) {
         this.closeDropdown();
       }
     });
 
+    // Clique em uma opção do menu
     this.list.addEventListener('click', async e => {
       const li = e.target.closest('li');
       if (!li) return;

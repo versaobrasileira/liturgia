@@ -59,10 +59,8 @@ export class ResultsPanel {
       li.appendChild(btn);
       ul.appendChild(li);
     }
-    if (document.body.classList.contains('content-open')) {
-        this.hide();
-    return;
-  }
+    
+  
     this.element.appendChild(ul);
     this.show();
   }

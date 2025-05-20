@@ -29,6 +29,7 @@ body.fullscreen-mode .search-container {
   align-items: center;
   overflow: visible;
   left: 0;
+  
 }
 body.fullscreen-mode .search-container h1 { display: none; }
 
@@ -39,8 +40,8 @@ body.fullscreen-mode #search-form {
   height: 1rem;
   align-items: center;
   margin: 0;
-  width: 96vw;
-  max-width: 96vw;
+  width: 92vw;
+  max-width: 92vw;
   align-self: center;
 }
 body.fullscreen-mode #search-input {
@@ -103,9 +104,16 @@ body.fullscreen-mode .content-scroll {
 
   .fullscreen-mode #content-display.visible {
     width: 100vw;
-  }
+  }  
+}
 
-  
+@media (max-width: 1000px) {
+  body.fullscreen-mode .search-container {
+    width: 80vw;
+    max-width: 80vw;
+    left: 0.2vw;
+    right: 2vw;
+  }
 }
 
 

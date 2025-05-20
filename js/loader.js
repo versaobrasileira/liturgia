@@ -3,30 +3,19 @@
 import { ThemeToggle } from './components/ThemeToggle/ThemeToggle.js';
 import { ShareButton } from './components/ShareButton/ShareButton.js';
 import { FullscreenToggle } from './components/FullscreenToggle/FullscreenToggle.js';
-import { resultsPanel } from './components/ResultsPanel/ResultsPanel.js';
-import { contentDisplayPanel } from './components/ContentDisplayPanel/ContentDisplayPanel.js';
+import { SearchContainer } from './components/SearchContainer/SearchContainer.js';
 
-// Instâncias globais únicas dos controles de UI fixos
+// Instâncias globais de toggles
 let themeToggle, shareButton;
 export const fullscreenToggle = new FullscreenToggle();
 
-// Setup inicial do DOM assim que o documento está pronto
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. Botões globais
   themeToggle = new ThemeToggle();
   shareButton = new ShareButton();
 
-  // Substitui o <div id="results"> pelo painel de resultados, se necessário
-  const resultsDiv = document.getElementById('results');
-  if (resultsDiv && resultsDiv !== resultsPanel.element) {
-    resultsDiv.replaceWith(resultsPanel.element);
-  }
-
-  // Substitui o <div id="content-display"> pelo painel de conteúdo, se necessário
-  const displayDiv = document.getElementById('content-display');
-  if (displayDiv && displayDiv !== contentDisplayPanel.element) {
-    displayDiv.replaceWith(contentDisplayPanel.element);
-  }
+  // 2. Monta SearchContainer no ponto principal
+  const main = document.getElementById('search-main');
+  const container = new SearchContainer();
+  main.appendChild(container.element);
 });
-
-// Exporta também os painéis para uso em outros módulos, se necessário
-export { resultsPanel, contentDisplayPanel };
