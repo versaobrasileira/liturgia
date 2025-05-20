@@ -1,9 +1,6 @@
 // js/components/ContentDisplayPanel/ContentDisplayPanel.js
 
-
-
 import { ConteudoPanel } from '../ConteudoPanel/ConteudoPanel.js';
-import { fullscreenToggle } from '../../loader.js';
 import { resultsPanel } from '../ResultsPanel/ResultsPanel.js';
 
 function injectCss(path) {
@@ -31,10 +28,6 @@ export class ContentDisplayPanel {
     resultsPanel.hide();
     this.clear();
     this.setMessage('Carregando…');
-
-    // Aplica/remover fullscreen
-    if (fullscreenToggle?.fsMode) document.body.classList.add('fullscreen-mode');
-    else document.body.classList.remove('fullscreen-mode');
 
     let data;
     try {

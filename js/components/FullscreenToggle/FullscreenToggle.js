@@ -1,6 +1,6 @@
 // js/components/FullscreenToggle/FullscreenToggle.js
 
-// Injeta o CSS do componente (ou só mantém para padrão, se não precisar extra)
+// Injeta CSS do botão
 function injectCss(path) {
   if (!document.querySelector(`link[href="${path}"]`)) {
     const link = document.createElement('link');
@@ -12,49 +12,35 @@ function injectCss(path) {
 injectCss('/js/components/FullscreenToggle/FullscreenToggle.css');
 
 export class FullscreenToggle {
-  constructor({
-    btnSelector = '#fullscreen-toggle',
-    inputSelector = '#search-input',
-    searchBtnSelector = '#search-button',
-    contentDisplaySelector = '#content-display'
-  } = {}) {
-    this.fsMode = false;
+  constructor() {
+    // Cria o botão se não existir no DOM
+    this.element = document.createElement('button');
+    this.element.id = 'fullscreen-toggle';
+    this.element.title = 'Tela cheia';
+    this.active = false;
+    this.onToggle = null; // função definida pelo controlador
 
-    this.btn    = document.querySelector(btnSelector);
-    this.input  = document.querySelector(inputSelector);
-    this.searchBtn = document.querySelector(searchBtnSelector);
-    this.contentDisplay = document.querySelector(contentDisplaySelector);
+    this.element.textContent = '⛶'; // Padrão: expandir
 
-    if (!this.btn) throw new Error('fullscreen-toggle não encontrado');
-
-    this.btn.addEventListener('click', () => {
-      this.fsMode = !this.fsMode;
-      this.updateFsUI();
+    // Toggle on click (delegando decisão para quem usa)
+    this.element.addEventListener('click', () => {
+      this.active = !this.active;
+      this.updateVisual();
+      if (typeof this.onToggle === 'function') {
+        this.onToggle(this.active); // comunica ao Fullscreen.js
+      }
     });
-
-    // Inicializa o estado da UI
-    this.updateFsUI();
-
-    // Sai do content-display ao focar input/botão
-    [this.input, this.searchBtn].forEach(el => {
-      if (!el) return;
-      el.addEventListener('focus', () => this.exitContent());
-      el.addEventListener('click', () => this.exitContent());
-    });
+    this.updateVisual();
   }
 
-  updateFsUI() {
-    document.body.classList.toggle('fullscreen-mode', this.fsMode);
-    this.btn.textContent = this.fsMode ? '🗗' : '⛶';
-
-    // O placeholder, atualmente, não muda nunca (poderia customizar aqui se mudar futuramente)
-    if (this.input) {
-      this.input.placeholder = 'Digite nº da página ou termo… 🔍';
-    }
+  setActive(active) {
+    this.active = !!active;
+    this.updateVisual();
   }
 
-  exitContent() {
-    this.contentDisplay?.classList.remove('visible');
-    document.body.classList.remove('content-open');
+  updateVisual() {
+    // Altera o ícone visual
+    this.element.textContent = this.active ? '🗗' : '⛶';
+    this.element.classList.toggle('active', this.active);
   }
 }
