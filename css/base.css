@@ -36,3 +36,55 @@ body.content-open .search-container {
 body.content-open .search-container h1 {
   display: none;
 }
+
+:root {
+  --top-btn-size: 2.5rem;  /* ajuste ao seu gosto */
+}
+
+
+/* 10) Botões fixos */
+#theme-toggle,
+#fullscreen-toggle, 
+#share-button {
+  position: fixed;
+  top: 0.5rem;
+  background: var(--card);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  padding: 0 0 0 0;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.2s, color 0.2s;
+}
+
+#theme-toggle:hover,
+#fullscreen-toggle,
+#share-button:hover  { background: var(--accent); color: var(--card); }
+#theme-toggle:active,
+#fullscreen-toggle,
+#share-button:active { background: var(--card);   color: var(--accent); }
+
+
+
+/* 11) Versão */
+#version {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+  z-index: 100;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .search-container { padding: 1.5rem; }
+  #content-display.visible { max-height: 90vh; }
+  .content-scroll { min-height: 30vh; }
+}
+
