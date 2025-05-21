@@ -75,6 +75,7 @@ body.fullscreen-mode #search-input {
 body.fullscreen-mode .content-scroll {
   max-height: calc(100vh - var(--fs-ui-height) - 7rem);
   overflow-y: auto;
+  
 }
 
 /* Resultados e alinhamento */
@@ -95,18 +96,46 @@ body.fullscreen-mode .content-scroll {
   body.fullscreen-mode .search-container {
     width: 96vw;
     max-width: 96vw;
-    right: 2vw;
-    left: 2vw;
+    margin: 0;
+    
   }
   body.fullscreen-mode #search-form {
     width: 84vw;
     max-width: 84vw;
+    
+  }
+  .fullscreen-mode #content-display.visible {
+    width: 95vw;
+    max-width: 95vw;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+  .fullscreen-mode #content-display .content-scroll {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .fullscreen-mode #content-display .conteudo-panel,
+  .fullscreen-mode #content-display .lyrics-panel {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .fullscreen-mode #content-display.visible {
-    width: 100vw;
-  }  
+  body.fullscreen-mode #search-form {
+    width: 84vw;
+    max-width: 84vw;
+    display: flex;
+    justify-content: flex-start !important;   /* Alinha conteúdo do form à esquerda */
+  }
+
+  
 }
+
+
 
 @media (max-width: 1000px) {
   body.fullscreen-mode .search-container {
