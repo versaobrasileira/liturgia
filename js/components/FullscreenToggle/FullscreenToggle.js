@@ -11,23 +11,43 @@ function injectCss(path) {
 }
 injectCss('/js/components/FullscreenToggle/FullscreenToggle.css');
 
+// Função de detecção
+function isCharSupported(char) {
+  const span = document.createElement('span');
+  span.textContent = char;
+  span.style.position = 'absolute';
+  span.style.opacity = 0;
+  span.style.fontFamily = 'Arial,Segoe UI Emoji,NotoColorEmoji,AppleColorEmoji,sans-serif';
+  document.body.appendChild(span);
+
+  span.textContent = '\uFFFD';
+  const notDefWidth = span.offsetWidth;
+  span.textContent = char;
+  const charWidth = span.offsetWidth;
+
+  document.body.removeChild(span);
+  return charWidth !== notDefWidth;
+}
+
+// Componente atualizado
 export class FullscreenToggle {
   constructor() {
-    // Cria o botão se não existir no DOM
     this.element = document.createElement('button');
     this.element.id = 'fullscreen-toggle';
     this.element.title = 'Tela cheia';
     this.active = false;
-    this.onToggle = null; // função definida pelo controlador
+    this.onToggle = null;
 
-    this.element.textContent = '⛶'; // Padrão: expandir
+    this.FS_ICON = isCharSupported('🗗') ? '🗗' : '□'; // Fallback para menos
+    this.NORMAL_ICON = '⛶';
 
-    // Toggle on click (delegando decisão para quem usa)
+    this.element.textContent = this.NORMAL_ICON;
+
     this.element.addEventListener('click', () => {
       this.active = !this.active;
       this.updateVisual();
       if (typeof this.onToggle === 'function') {
-        this.onToggle(this.active); // comunica ao Fullscreen.js
+        this.onToggle(this.active);
       }
     });
     this.updateVisual();
@@ -39,8 +59,8 @@ export class FullscreenToggle {
   }
 
   updateVisual() {
-    // Altera o ícone visual
-    this.element.textContent = this.active ? '🗗' : '⛶';
+    this.element.textContent = this.active ? this.FS_ICON : this.NORMAL_ICON;
     this.element.classList.toggle('active', this.active);
   }
 }
+
