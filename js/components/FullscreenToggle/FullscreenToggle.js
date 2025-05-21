@@ -1,6 +1,7 @@
 // js/components/FullscreenToggle/FullscreenToggle.js
 
 // Injeta CSS do botão
+/*
 function injectCss(path) {
   if (!document.querySelector(`link[href="${path}"]`)) {
     const link = document.createElement('link');
@@ -9,7 +10,7 @@ function injectCss(path) {
     document.head.appendChild(link);
   }
 }
-injectCss('/js/components/FullscreenToggle/FullscreenToggle.css');
+injectCss('/js/components/FullscreenToggle/FullscreenToggle.css');*/
 
 // Função de detecção
 function isCharSupported(char) {
@@ -20,7 +21,7 @@ function isCharSupported(char) {
   span.style.fontFamily = 'Arial,Segoe UI Emoji,NotoColorEmoji,AppleColorEmoji,sans-serif';
   document.body.appendChild(span);
 
-  span.textContent = '\uFFFD';
+  span.textContent = '\uFFFD'; // Replacement character
   const notDefWidth = span.offsetWidth;
   span.textContent = char;
   const charWidth = span.offsetWidth;
@@ -29,7 +30,14 @@ function isCharSupported(char) {
   return charWidth !== notDefWidth;
 }
 
-// Componente atualizado
+// Função para pegar o melhor ícone disponível
+function getBestFsIcon() {
+  if (isCharSupported('🗗')) return '🗗';
+  if (isCharSupported('□')) return '□';
+  if (isCharSupported('−')) return '−'; // sinal de menos matemático
+  return '-';
+}
+
 export class FullscreenToggle {
   constructor() {
     this.element = document.createElement('button');
@@ -38,7 +46,7 @@ export class FullscreenToggle {
     this.active = false;
     this.onToggle = null;
 
-    this.FS_ICON = isCharSupported('🗗') ? '🗗' : '□'; // Fallback para menos
+    this.FS_ICON = getBestFsIcon();
     this.NORMAL_ICON = '⛶';
 
     this.element.textContent = this.NORMAL_ICON;
@@ -63,4 +71,3 @@ export class FullscreenToggle {
     this.element.classList.toggle('active', this.active);
   }
 }
-
