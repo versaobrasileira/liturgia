@@ -1,0 +1,17 @@
+/* css/components-bundle.css */
+
+@import url("../js/components/ContentDisplayPanel/ContentDisplayPanel.css");
+@import url("../js/components/ConteudoPanel/ConteudoPanel.css");
+@import url("../js/components/Controls/Controls.css");
+@import url("../js/components/Fullscreen/Fullscreen.css");
+@import url("../js/components/FullscreenToggle/FullscreenToggle.css");
+@import url("../js/components/LangDropdown/LangDropdown.css");
+@import url("../js/components/LyricsPanel/LyricsPanel.css");
+@import url("../js/components/ResultsPanel/ResultsPanel.css");
+@import url("../js/components/SearchContainer/SearchContainer.css");
+@import url("../js/components/SearchForm/SearchForm.css");
+@import url("../js/components/SearchButton/SearchButton.css");
+@import url("../js/components/ThemeToggle/ThemeToggle.css");
+@import url("../js/components/TitleBar/ThemeBar.css");
+@import url("../js/components/ZoomInButton/ZoomInButton.css");
+@import url("../js/components/ZoomOutButton/ZoomOutButton.css");
