@@ -49,13 +49,13 @@ export class ThemeToggle {
   applyTheme(mode) {
     // Ativa/desativa tema claro
     this.linkClaro.disabled = !mode.startsWith('light');
-    // Marca inverção de cores se necessário
+    // Marca inversão de cores se necessário
     if (mode.endsWith('invert')) {
       this.root.setAttribute('data-invert', '');
     } else {
       this.root.removeAttribute('data-invert');
     }
-    // Emoji correto
-    this.btn.textContent = this.emojis[mode] || '🌙';
+    // Emoji centralizado em span
+    this.btn.innerHTML = `<span class="theme-emoji">${this.emojis[mode] || '🌙'}</span>`;
   }
 }

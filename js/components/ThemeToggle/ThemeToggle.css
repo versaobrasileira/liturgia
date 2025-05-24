@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--surface, #23232b);    /* mesma cor de fundo do fullscreen-toggle */
-  color: var(--accent, #bb86fc);          /* mesma cor do ícone */
+  background: var(--surface, #23232b);
+  color: var(--accent, #bb86fc);
   border: none;
   border-radius: 50%;
   box-shadow: 0 2px 10px rgba(0,0,0,0.18);
@@ -25,7 +25,7 @@
   z-index: 1000;
 }
 
-/* Hover e active: mesma resposta do fullscreen-toggle */
+/* Hover e active: igual ao fullscreen-toggle */
 #theme-toggle:hover,
 #theme-toggle:active {
   background: var(--accent, #bb86fc);
@@ -40,13 +40,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   font-size: 1.18rem;
   line-height: 1.8rem;
   text-align: center;
-  /* Ajuste fino para emoji (desça ou suba até centralizar) */
   position: relative;
-  left: 5rem;
-  top: 0.00em;  /* aumente ou diminua este valor até ficar perfeito para todos os emojis */
+  top: 0.03em; /* ajuste fino, aumente/diminua se necessário */
+  left: 0;
+  pointer-events: none;
+  user-select: none;
 }
