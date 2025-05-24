@@ -1,10 +1,52 @@
-/* js/components/SearchButton/SearchButton.css */
-#share-button{
-  width: 1.8rem;
-  height: 1.7rem;
+#share-button {
+  position: fixed;
+  top: 0.5rem;
+  right: 3.5rem;
+  width: 2rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 3rem;
-  color: var(--accent);
+  background: var(--surface, #23232b);
+  color: var(--accent, #bb86fc); /* cor do ícone */
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  font-size: 1.18rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    color 0.18s,
+    box-shadow 0.18s,
+    transform 0.10s;
+  outline: none;
+  z-index: 1000;
+}
+
+/* Hover e active igual aos outros */
+#share-button:hover,
+#share-button:active {
+  background: var(--accent, #bb86fc);
+  color: var(--surface, #23232b);
+  box-shadow: 0 4px 14px rgba(100, 80, 220, 0.13);
+}
+#share-button:active {
+  transform: scale(0.95);
+}
+
+#share-button .share-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 100vh;
+}
+#share-button .share-svg svg {
+  width: 1em;
+  height: 1em;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 0.03em; /* ajuste fino */
 }

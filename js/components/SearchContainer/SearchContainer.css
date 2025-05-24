@@ -4,7 +4,7 @@
   background: var(--card);
   padding: 2rem;
   border-radius: 1rem;
-  width: 100vw;
+  width: 80vw;
   max-width: 1200px;
   box-sizing: border-box;
   text-align: center;
@@ -23,11 +23,20 @@
 }
 
 @media (max-width: 600px) {
-  .search-container {
+  body.content-open .search-container {
     padding-left: 0.1rem;
     padding-right: 0.1rem;
     padding-bottom: 0.5rem;
     bottom: 1rem;
     height: 90vh;
+    margin: 0 auto;
+    width: 98vw;        /* ou ajuste conforme desejado */
+    max-width: 98vw;
+    left: 0;
+    right: 0;
+    position: fixed;    /* mantenha se já for fixed */
+    align-items: center;
+    justify-content: center;
   }
 }
+

@@ -6,11 +6,13 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;   /* Centraliza o form horizontalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 #search-input {
   flex: 1;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0rem;
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background: var(--surface);
@@ -23,11 +25,29 @@
   background-repeat: no-repeat;
   background-position: right 0.9rem center;
   background-size: 1.3rem 1.3rem;
-  
+  margin-left: 0;
+  margin-right: auto;   /* Centraliza o form horizontalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 500px) {
   #search-form {
-    max-width: 95vw;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: flex-start; /* ou remova! */
+    align-items: center;
+  }
+  #search-input {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.5rem;
+    width: 100%;         /* ocupa toda a largura do form */
+    min-width: 0;
+    margin: 0;
   }
 }
+
+
+
