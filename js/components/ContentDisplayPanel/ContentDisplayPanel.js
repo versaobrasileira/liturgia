@@ -30,21 +30,25 @@ export class ContentDisplayPanel {
     this.clear();
     this.setMessage('Carregando…');
 
-    let data;
+    let data, lang = 'default';
     try {
       data = await loadContent(item.file);  // ← pega do all.json em memória
       if (!data) throw new Error('Arquivo não encontrado no all.json');
+      // Detecta o idioma inicial
+      if (item.file && item.hebrew && item.file === item.hebrew) lang = 'hebrew';
+      else if (item.file && item.portuguese && item.file === item.portuguese) lang = 'portuguese';
+      else lang = 'default';
     } catch (err) {
       console.error(err);
       this.setMessage(`Erro ao carregar "${item.title}".`);
       return;
     }
 
-
     this.conteudoPanel = new ConteudoPanel({
       title: data.title,
       page: data.page,
       lyrics: data.lyrics,
+      lang: lang, // <- importante: envia idioma inicial
       controlsProps: {
         langDropdownProps: {
           item,
@@ -53,6 +57,8 @@ export class ContentDisplayPanel {
               const dataLang = await loadContent(fname); 
               if (!dataLang) throw new Error('Arquivo não encontrado no all.json');
               this.conteudoPanel.lyricsPanel.updateLyrics(dataLang.lyrics);
+              // Atualiza a direção do texto
+              this.conteudoPanel.lyricsPanel.setDirection(lang);
             } catch (err) {
               console.error('Erro ao trocar idioma:', err);
               this.setMessage('Erro ao trocar idioma.');
@@ -62,6 +68,9 @@ export class ContentDisplayPanel {
         onZoom: (delta) => this.conteudoPanel.lyricsPanel.changeFontSize(delta),
       }
     });
+
+    // Sempre seta direção inicial ao abrir conteúdo (cobre reuso)
+    this.conteudoPanel.lyricsPanel.setDirection(lang);
 
     this.setContent(this.conteudoPanel.element);
   }

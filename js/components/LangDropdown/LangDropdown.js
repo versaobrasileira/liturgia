@@ -88,8 +88,9 @@ export class LangDropdown {
       if (sel === 'hebrew') fname = item.hebrew;
       else if (sel === 'portuguese') fname = item.portuguese;
 
+      // Chama o callback passando (nome do arquivo, idioma)
       if (this.onLanguageChange) {
-        this.onLanguageChange(fname, sel);
+        this.onLanguageChange(fname, sel); // ← O sel será 'hebrew', 'portuguese' ou 'default'
       }
     });
   }

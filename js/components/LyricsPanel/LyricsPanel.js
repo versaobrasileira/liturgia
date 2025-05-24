@@ -13,7 +13,7 @@ injectCss('/js/components/LyricsPanel/LyricsPanel.css');
 import { fontConfig } from '../../fontConfig.js';
 
 export class LyricsPanel {
-  constructor({ lines }) {
+  constructor({ lines, lang = 'default' }) {
     // Cria o container rolável
     this.scroll = document.createElement('div');
     this.scroll.className = 'content-scroll';
@@ -21,6 +21,9 @@ export class LyricsPanel {
     // Cria o container das letras
     this.lyricsContainer = document.createElement('div');
     this.lyricsContainer.className = 'lyrics-container';
+
+    // Define direção inicial
+    this.setDirection(lang);
 
     // Popula as linhas
     this.populateLyrics(lines);
@@ -37,6 +40,18 @@ export class LyricsPanel {
         this.adjustFontSize();
       }
     });
+  }
+
+  /**
+   * Atualiza a direção do texto conforme o idioma.
+   * @param {string} lang 
+   */
+  setDirection(lang) {
+    if (lang === 'hebrew') {
+      this.lyricsContainer.setAttribute('dir', 'rtl');
+    } else {
+      this.lyricsContainer.setAttribute('dir', 'ltr');
+    }
   }
 
   populateLyrics(lines) {
@@ -74,8 +89,14 @@ export class LyricsPanel {
     this.adjustFontSize(); // Ajusta fonte sempre que atualiza linhas
   }
 
-  updateLyrics(lines) {
+  /**
+   * Atualiza as linhas e/ou o idioma/direção do texto.
+   * @param {Array<string>} lines 
+   * @param {string|null} lang 
+   */
+  updateLyrics(lines, lang = null) {
     this.populateLyrics(lines);
+    if (lang) this.setDirection(lang); // só atualiza direção se lang vier
     this.adjustFontSize();
   }
 

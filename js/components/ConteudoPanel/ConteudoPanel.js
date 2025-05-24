@@ -1,9 +1,9 @@
 import { TitleBar } from '../TitleBar/TitleBar.js';
-import { Controls } from '../Controls/Controls.js';
+import { Controls } from '../Controls/Controls.js';   
 import { LyricsPanel } from '../LyricsPanel/LyricsPanel.js';
 
 export class ConteudoPanel {
-  constructor({ title, page, lyrics, controlsProps }) {
+  constructor({ title, page, lyrics, controlsProps, lang = 'default' }) {
     this.container = document.createElement('div');
     this.container.className = 'conteudo-panel';
 
@@ -17,8 +17,9 @@ export class ConteudoPanel {
       controls
     });
 
-    // LyricsPanel
-    this.lyricsPanel = new LyricsPanel({ lines: lyrics });
+    // LyricsPanel, agora passando lang para direção inicial
+    this.lyricsPanel = new LyricsPanel({ lines: lyrics, lang });
+    // já recebe lang corretamente
 
     this.container.append(titleBar.element, this.lyricsPanel.element);
   }

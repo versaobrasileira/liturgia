@@ -44,3 +44,14 @@
 .lang-dropdown.open .lang-btn {
   display: none;
 }
+
+.lyrics-container[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+.lyrics-container[dir="ltr"], .lyrics-container[dir="auto"] {
+  text-align: left;
+  direction: ltr;
+}
+
+
