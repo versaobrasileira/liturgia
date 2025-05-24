@@ -1,18 +1,5 @@
 // js/components/FullscreenToggle/FullscreenToggle.js
 
-// Injeta CSS do botão
-/*
-function injectCss(path) {
-  if (!document.querySelector(`link[href="${path}"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = path;
-    document.head.appendChild(link);
-  }
-}
-injectCss('/js/components/FullscreenToggle/FullscreenToggle.css');*/
-
-// Função de detecção
 function isCharSupported(char) {
   const span = document.createElement('span');
   span.textContent = char;
@@ -49,7 +36,7 @@ export class FullscreenToggle {
     this.FS_ICON = getBestFsIcon();
     this.NORMAL_ICON = '⛶';
 
-    this.element.textContent = this.NORMAL_ICON;
+    this.element.innerHTML = `<span>${this.NORMAL_ICON}</span>`;
 
     this.element.addEventListener('click', () => {
       this.active = !this.active;
@@ -67,8 +54,18 @@ export class FullscreenToggle {
   }
 
   updateVisual() {
-    this.element.textContent = this.active ? this.FS_ICON : this.NORMAL_ICON;
+    const icon = this.active ? this.FS_ICON : this.NORMAL_ICON;
+    this.element.innerHTML = `<span>${icon}</span>`;
     this.element.classList.toggle('active', this.active);
     this.element.setAttribute('aria-pressed', this.active ? 'true' : 'false');
+    const span = this.element.querySelector('span');
+    // Remove todos os ajustes antes
+    span.classList.remove('fs-alticon', 'fs-normalicon');
+    // Aplica ajuste fino dependendo do estado
+    if (this.active && this.FS_ICON !== '⛶') {
+      span.classList.add('fs-alticon');
+    } else if (!this.active && this.NORMAL_ICON === '⛶') {
+      span.classList.add('fs-normalicon');
+    }
   }
 }
