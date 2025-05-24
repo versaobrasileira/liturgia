@@ -15,22 +15,21 @@ body.fullscreen-mode {
   padding-top: 3rem;
 }
 
-/* Search container centralizado, largura 33vw */
+/* Search container ocupa toda a largura entre left e right */
 body.fullscreen-mode .search-container {
-  width: 100vw;
-  max-width: 95vw;
-  margin: 0 0 0 0;
+  width: auto;
+  margin: 0;
   padding: 0.25rem;
-  position: absolute;
+  position: fixed;
   top: 0.5rem;
-  right: calc(35%);
+  left: 1rem;          /* distância fixa da esquerda */
+  right: 2.5rem;       /* espaço até o botão fullscreen-toggle */
   box-shadow: none;
   border-radius: 0.5rem;
   background: var(--bg);
   align-items: center;
   overflow: visible;
-  left: 0;
-  
+  z-index: 900;
 }
 body.fullscreen-mode .search-container h1 { display: none; }
 
@@ -41,27 +40,29 @@ body.fullscreen-mode #search-form {
   height: 1rem;
   align-items: center;
   margin: 0;
-  width: 92vw;
-  max-width: 92vw;
+  width: 100%;
+  max-width: 100%;
   align-self: center;
 }
+
 body.fullscreen-mode #search-input {
   flex: 1;
   height: 100%;
   border-radius: 0.25rem 0 0 0.25rem;
   margin: 0 auto;
- 
   align-self: center;
-  width: 17vw;
+  min-width: 5rem;
+  max-width: 100%;
   z-index: 1000;
 }
-
 
 /* content-display ocupa toda a largura e altura */
 .fullscreen-mode #content-display.visible {
   position: fixed;
   top: 2.5rem;
-  bottom: 0; left: 0; right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: 0;
   padding: 0 0 0 0;
   width: 100%;
@@ -75,7 +76,6 @@ body.fullscreen-mode #search-input {
 body.fullscreen-mode .content-scroll {
   max-height: calc(100vh - var(--fs-ui-height) - 7rem);
   overflow-y: auto;
-  
 }
 
 /* Resultados e alinhamento */
@@ -94,15 +94,18 @@ body.fullscreen-mode .content-scroll {
 /* RESPONSIVO para telas pequenas */
 @media (max-width: 500px) {
   body.fullscreen-mode .search-container {
-    width: 96vw;
-    max-width: 96vw;
-    margin: 0;
-    
+    width: auto;
+    max-width: none;
+    left: 1.5rem;
+    right: 0.3rem;
+    margin-left: 0.5rem;
   }
   body.fullscreen-mode #search-form {
-    width: 84vw;
-    max-width: 84vw;
-    
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;   /* Alinha conteúdo do form à esquerda */
+    gap: 0.18rem;
   }
   .fullscreen-mode #content-display.visible {
     width: 95vw;
@@ -124,18 +127,7 @@ body.fullscreen-mode .content-scroll {
     padding-left: 0;
     padding-right: 0;
   }
-
-  body.fullscreen-mode #search-form {
-    width: 84vw;
-    max-width: 84vw;
-    display: flex;
-    justify-content: flex-start !important;   /* Alinha conteúdo do form à esquerda */
-  }
-
-  
 }
-
-
 
 @media (max-width: 1000px) {
   body.fullscreen-mode .search-container {
@@ -146,19 +138,17 @@ body.fullscreen-mode .content-scroll {
   }
 }
 
-
-
 .fullscreen-mode #theme-toggle,
 .fullscreen-mode #share-button {
-    visibility: hidden;
+  visibility: hidden;
 }
 
-body.fullscreen-mode .lyrics-container{
-    padding:0 0 0 0.05;
-    margin: 0 0 0 0;
+body.fullscreen-mode .lyrics-container {
+  padding:0 0 0 0.05;
+  margin: 0 0 0 0;
 }
 
-body.fullscreen-mode #fullscreen-toggle{
-    padding-bottom: 0.5rem;
+body.fullscreen-mode #fullscreen-toggle {
+  padding-bottom: 0.5rem;
+  top: 0.4rem;
 }
-
