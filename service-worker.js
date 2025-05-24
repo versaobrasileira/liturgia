@@ -1,5 +1,3 @@
-// public/service-worker.js
-
 const CACHE_NAME   = 'liturgia-v1';
 const MAX_AGE      = 5 * 24 * 60 * 60 * 1000; // 5 dias em ms
 const STATIC_ASSETS = [
@@ -17,7 +15,6 @@ const STATIC_ASSETS = [
   '/img/icons/compartilhar.png',
 ];
 
-// detecta ambiente local para pular cache em dev
 const isLocalhost = self.location.hostname === 'localhost'
                  || self.location.hostname === '127.0.0.1'
                  || self.location.hostname === '[::1]';
@@ -29,11 +26,12 @@ self.addEventListener('install', evt => {
   }
   evt.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    // pré-cache estéreo (arquivos estáticos)
+    // pré-cache estático
     await Promise.all(
       STATIC_ASSETS.map(async file => {
         try {
           await cache.add(file);
+          console.log('SW: Cacheado', file);
         } catch (err) {
           console.warn('SW: falhou ao cachear', file, err);
         }
@@ -54,8 +52,9 @@ self.addEventListener('install', evt => {
         contentFiles.map(async file => {
           try {
             await cache.add(file);
+            console.log('SW: Cacheado conteúdo', file);
           } catch (err) {
-            console.warn('SW: falhou ao cachear', file, err);
+            console.warn('SW: falhou ao cachear conteúdo', file, err);
           }
         })
       );
@@ -107,14 +106,18 @@ self.addEventListener('fetch', evt => {
       return cachedResponse;
     }
 
-    // não estava em cache: tenta rede, e cacheia
+    // não estava em cache: tenta rede e cacheia se relevante
     try {
       const netRes = await fetch(evt.request);
-      cache.put(evt.request, netRes.clone());
+      // cacheia apenas se for arquivo estático ou de conteúdo
+      if (evt.request.url.match(/\.(json|js|css|svg|png|jpg|jpeg|woff2?)$/)) {
+        cache.put(evt.request, netRes.clone());
+      }
       return netRes;
     } catch (err) {
+      const fallbackCache = await cache.match(evt.request);
+      if (fallbackCache) return fallbackCache;
       if (evt.request.mode === 'navigate') {
-        // fallback para offline.html em navegação
         return caches.match('/offline.html');
       }
       throw err;
