@@ -49,10 +49,10 @@ body.fullscreen-mode #search-input {
   flex: 1;
   height: 100%;
   border-radius: 0.25rem 0 0 0.25rem;
-  margin: 0 auto;
+
   align-self: center;
   min-width: 5rem;
-  max-width: 100%;
+  max-width: 80vw;
   z-index: 1000;
 }
 
@@ -102,8 +102,8 @@ body.fullscreen-mode .content-scroll {
     height: 94vh;
   }
   body.fullscreen-mode #search-form {
-    width: 100%;
-    max-width: 100%;
+    width: 95vw;
+    max-width: 95vw;
     display: flex;
     justify-content: flex-start;   /* Alinha conteúdo do form à esquerda */
     gap: 0.18rem;
