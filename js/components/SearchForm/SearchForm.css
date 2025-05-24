@@ -3,7 +3,7 @@
   display: flex;
   margin-bottom: 1.5rem;
   width: 70vw;
-  max-width: 600px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;   /* Centraliza o form horizontalmente */
   justify-content: center;

@@ -18,7 +18,7 @@ export class SearchForm {
 
     this.input = document.createElement('input');
     this.input.type = 'text';
-    this.input.placeholder = 'Digite nº da página ou termo…';
+    this.input.placeholder = ' Digite nº da página ou termo…';
     this.input.id = 'search-input';
 
     this.form.append(this.input);
