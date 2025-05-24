@@ -75,8 +75,9 @@
 
 @media (max-width: 500px) {
   #fullscreen-toggle {
-    right: 1rem;
-    top: 0.5rem;
+    right: max(1.18rem, env(safe-area-inset-right));
+    left: auto;          /* Garante que left não sobrescreva */
   }
 }
+
 
