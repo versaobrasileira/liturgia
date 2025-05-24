@@ -69,5 +69,6 @@ export class FullscreenToggle {
   updateVisual() {
     this.element.textContent = this.active ? this.FS_ICON : this.NORMAL_ICON;
     this.element.classList.toggle('active', this.active);
+    this.element.setAttribute('aria-pressed', this.active ? 'true' : 'false');
   }
 }

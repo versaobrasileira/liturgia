@@ -1,13 +1,36 @@
-/* js/components/FullscreenToggle/FullscreenToggle.css */
-
-#fullscreen-toggle{
+#fullscreen-toggle {
+  position: fixed; /* ou absolute, se preferir */
+  top: 0.5rem;      /* ajuste conforme seu layout original */
+  right: 0.5rem;    /* ajuste conforme seu layout original */
   width: 1.8rem;
-  height: 1.7rem;
+  height: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 0.6rem;
-  color: var(--accent);  
+  background: var(--surface, #23232b);
+  color: var(--accent, #bb86fc);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  font-size: 1.18rem;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    color 0.18s,
+    box-shadow 0.18s,
+    transform 0.10s;
+  outline: none;
+  z-index: 1000;
 }
 
-#fullscreen-toggle { right: 0.5rem;             color: var(--accent); }
+#fullscreen-toggle.active,
+#fullscreen-toggle:active,
+#fullscreen-toggle:hover {
+  background: var(--accent, #bb86fc);
+  color: var(--surface, #23232b);
+  box-shadow: 0 4px 14px rgba(100, 80, 220, 0.13);
+}
+
+#fullscreen-toggle:active {
+  transform: scale(0.95);
+}
