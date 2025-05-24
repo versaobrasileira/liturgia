@@ -1,18 +1,17 @@
-/* js/components/SearchForm/SearchForm.css */
 #search-form {
   display: flex;
   margin-bottom: 1.5rem;
   width: 70vw;
   max-width: 1000px;
   margin-left: auto;
-  margin-right: auto;   /* Centraliza o form horizontalmente */
+  margin-right: auto;
   justify-content: center;
   align-items: center;
 }
 
 #search-input {
   flex: 1;
-  padding: 0.75rem 0rem;
+  padding: 0.75rem 0rem 0.75rem 1rem; /* espaço à esquerda aumentado */
   border: 1px solid var(--border);
   border-radius: 0.5rem;
   background: var(--surface);
@@ -20,34 +19,28 @@
   font-size: 1rem;
   transition: background 0.2s, border-color 0.2s;
   min-width: 0;
-  /* Ícone dentro do input */
   background-image: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l4.28 4.3a1 1 0 0 1-1.42 1.4l-4.27-4.29zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/></svg>');
   background-repeat: no-repeat;
   background-position: right 0.9rem center;
   background-size: 1.3rem 1.3rem;
-  margin-left: 0;
-  margin-right: auto;   /* Centraliza o form horizontalmente */
-  justify-content: center;
-  align-items: center;
+  /* Removido margin-left e margin-right */
 }
 
+/* Media Query para telas pequenas */
 @media (max-width: 500px) {
   #search-form {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    justify-content: flex-start; /* ou remova! */
+    justify-content: flex-start;
     align-items: center;
   }
   #search-input {
     font-size: 0.85rem;
-    padding: 0.75rem 0.5rem;
-    width: 100%;         /* ocupa toda a largura do form */
+    padding: 0.75rem 0.5rem 0.75rem 1rem; /* mantém padding esquerdo */
+    width: 100%;
     min-width: 0;
     margin: 0;
   }
 }
-
-
-

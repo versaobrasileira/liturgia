@@ -1,0 +1,1127 @@
+﻿{
+    "index":  {
+                  "value":  [
+                                {
+                                    "id":  "yedid_nefesh",
+                                    "file":  "yedid_nefesh.json",
+                                    "title":  "YEDID NEFESH",
+                                    "page":  "245",
+                                    "hebrew":  "yedid_nefesh_he.json",
+                                    "portuguese":  "yedid_nefesh_pt.json"
+                                },
+                                {
+                                    "id":  "shiviti",
+                                    "file":  "shiviti.json",
+                                    "title":  "SHIVITI",
+                                    "page":  "284",
+                                    "hebrew":  "shiviti_he.json"
+                                },
+                                {
+                                    "id":  "mode_ani",
+                                    "file":  "mode_ani.json",
+                                    "title":  "MODE ANI",
+                                    "page":  "284",
+                                    "hebrew":  "mode_ani_he.json"
+                                },
+                                {
+                                    "id":  "asher_yatsar",
+                                    "file":  "asher_yatsar.json",
+                                    "title":  "ASHER YATSAR",
+                                    "page":  "284",
+                                    "hebrew":  "asher_yatsar_he.json",
+                                    "portuguese":  "asher_yatsar_pt.json"
+                                },
+                                {
+                                    "id":  "birkat_hatora",
+                                    "file":  "birkat_hatora.json",
+                                    "title":  "BIRKAT HA TORÁ",
+                                    "page":  "285",
+                                    "hebrew":  "birkat_hatora_he.json",
+                                    "portuguese":  "birkat_hatora_pt.json"
+                                },
+                                {
+                                    "id":  "elohai_neshama",
+                                    "file":  "elohai_neshama.json",
+                                    "title":  "ELOHAI NESHAMÁ",
+                                    "page":  "285",
+                                    "portuguese":  "elohai_neshama_pt.json"
+                                },
+                                {
+                                    "id":  "birkat_kohanim",
+                                    "file":  "birkat_kohanim.json",
+                                    "title":  "BIRKAT KOHANIM",
+                                    "page":  "286",
+                                    "hebrew":  "birkat_kohanim_he.json",
+                                    "portuguese":  "birkat_kohanim_pt.json"
+                                },
+                                {
+                                    "id":  "ma_tovu",
+                                    "file":  "ma_tovu.json",
+                                    "title":  "MA TOVU",
+                                    "page":  "288",
+                                    "hebrew":  "ma_tovu_he.json"
+                                },
+                                {
+                                    "id":  "vaani_tefilati",
+                                    "file":  "vaani_tefilati.json",
+                                    "title":  "VA’ANI TEFILATI",
+                                    "page":  "288",
+                                    "hebrew":  "vaani_tefilati_he.json",
+                                    "portuguese":  "vaani_tefilati_pt.json"
+                                },
+                                {
+                                    "id":  "adon_olam",
+                                    "file":  "adon_olam.json",
+                                    "title":  "ADON OLAM",
+                                    "page":  "288",
+                                    "hebrew":  "adon_olam_he.json",
+                                    "portuguese":  "adon_olam_pt.json"
+                                },
+                                {
+                                    "id":  "birkot_hashachar",
+                                    "file":  "birkot_hashachar.json",
+                                    "title":  "BIRKOT HASHACHAR",
+                                    "page":  "289",
+                                    "hebrew":  "birkot_hashachar_he.json",
+                                    "portuguese":  "birkot_hashachar_pt.json"
+                                },
+                                {
+                                    "id":  "ana_bechoach",
+                                    "file":  "ana_bechoach.json",
+                                    "title":  "ANA BECHOACH",
+                                    "page":  "299",
+                                    "hebrew":  "ana_bechoach_he.json",
+                                    "portuguese":  "ana_bechoach_pt.json"
+                                },
+                                {
+                                    "id":  "adonai_tsevaot_imanu",
+                                    "file":  "adonai_tsevaot_imanu.json",
+                                    "title":  "YHWH TS’VAOT IMANU",
+                                    "page":  "306",
+                                    "portuguese":  "adonai_tsevaot_imanu_pt.json"
+                                },
+                                {
+                                    "id":  "hashem_melech",
+                                    "file":  "hashem_melech.json",
+                                    "title":  "HASHEM MELECH",
+                                    "page":  "308",
+                                    "hebrew":  "hashem_melech_he.json"
+                                },
+                                {
+                                    "id":  "shir_lamaalot",
+                                    "file":  "shir_lamaalot.json",
+                                    "title":  "SHIR LAMAALOT",
+                                    "page":  "313",
+                                    "hebrew":  "shir_lamaalot_he.json",
+                                    "portuguese":  "shir_lamaalot_pt.json"
+                                },
+                                {
+                                    "id":  "hodu_lashem",
+                                    "file":  "hodu_lashem.json",
+                                    "title":  "HODU LASHEM KI TOV",
+                                    "page":  "316"
+                                },
+                                {
+                                    "id":  "shabat_shalom",
+                                    "file":  "shabat_shalom.json",
+                                    "title":  "SHABAT SHALOM",
+                                    "page":  "",
+                                    "hebrew":  "shabat_shalom_he.json",
+                                    "portuguese":  "shabat_shalom_pt.json"
+                                },
+                                {
+                                    "id":  "shema",
+                                    "file":  "shema.json",
+                                    "title":  "SHEMÁ",
+                                    "page":  "339/61"
+                                },
+                                {
+                                    "id":  "vaiehi",
+                                    "file":  "vaiehi.json",
+                                    "title":  "VAIEHÍ",
+                                    "page":  "353",
+                                    "hebrew":  "vaiehi_he.json",
+                                    "portuguese":  "vaiehi_pt.json"
+                                },
+                                {
+                                    "id":  "ki_mitsion",
+                                    "file":  "ki_mitsion.json",
+                                    "title":  "KI MITSION",
+                                    "page":  "353",
+                                    "hebrew":  "ki_mitsion_he.json",
+                                    "portuguese":  "ki_mitsion_pt.json"
+                                },
+                                {
+                                    "id":  "barechu",
+                                    "file":  "barechu.json",
+                                    "title":  "BARECHÚ",
+                                    "page":  "357",
+                                    "hebrew":  "barechu_he.json",
+                                    "portuguese":  "barechu_pt.json"
+                                },
+                                {
+                                    "id":  "bracha_antes_leitura_tora",
+                                    "file":  "bracha_antes_leitura_tora.json",
+                                    "title":  "B’RACHÁ ANTES DA LEITURA DA TORÁ",
+                                    "page":  "357",
+                                    "hebrew":  "bracha_antes_leitura_tora_he.json",
+                                    "portuguese":  "bracha_antes_leitura_tora_pt.json"
+                                },
+                                {
+                                    "id":  "bracha_apos_leitura_tora",
+                                    "file":  "bracha_apos_leitura_tora.json",
+                                    "title":  "B’RACHÁ APÓS A LEITURA DA TORÁ",
+                                    "page":  "357",
+                                    "hebrew":  "bracha_apos_leitura_tora_he.json"
+                                },
+                                {
+                                    "id":  "vezot_hatora",
+                                    "file":  "vezot_hatora.json",
+                                    "title":  "VEZOT HATORÁ",
+                                    "page":  "361",
+                                    "hebrew":  "vezot_hatora_he.json",
+                                    "portuguese":  "vezot_hatora_pt.json"
+                                },
+                                {
+                                    "id":  "ets_chayim",
+                                    "file":  "ets_chayim.json",
+                                    "title":  "ETS CHAYIM",
+                                    "page":  "369",
+                                    "hebrew":  "ets_chayim_he.json",
+                                    "portuguese":  "ets_chayim_pt.json"
+                                }
+                            ],
+                  "Count":  25
+              },
+    "files":  {
+                  "yedid_nefesh.json":  {
+                                            "title":  "YEDID NEFESH",
+                                            "page":  "245",
+                                            "lyrics":  [
+                                                           "Yedid nefesh, Av harachaman,",
+                                                           "meshoch Avdecha el Retzonecha.",
+                                                           "Yarutz avdecha kemo ayal,",
+                                                           "yishtachave mul hadarach.",
+                                                           "Ki ye’rev lo yedidutach, minofet tsuf vechol ta’am.",
+                                                           "",
+                                                           "Hadur naeh ziv haolam, nafshi cholat ahavatach.",
+                                                           "Anah El nah refah nah lah, b’harot lah noam zivach,",
+                                                           "Az titchazek v’titrapeih, v’hay’tah lah shifchat olam.",
+                                                           "",
+                                                           "Vatik yehemu rachamecha v’chus na al ben ohavach.",
+                                                           "Ki zeh kama’h nichsof nichsaf, lir’ot b’tiferet uzach.",
+                                                           "Anah Eyli, machmad libi, chushah nah v’al titalam.",
+                                                           "",
+                                                           "Higaleh nah uf’ros chaviv alai, et sukkat shelomach",
+                                                           "Tair eretz mikevodach, nagilah v’nismechah bach.",
+                                                           "Maher ahuv, ki va moed, v’choneneni kimei olam."
+                                                       ]
+                                        },
+                  "mode_ani.json":  {
+                                        "title":  "MODE ANI",
+                                        "page":  "284",
+                                        "lyrics":  [
+                                                       "\u003cestrofe r=3X\u003e",
+                                                       "Mode ani lefanêcha",
+                                                       "Melech chái vecaiam,",
+                                                       "\u003c/estrofe\u003e",
+                                                       "shehechezárta bi",
+                                                       "nishmati nishmati bechemlá",
+                                                       "nishmati bechemlá",
+                                                       "shehechezárta bi",
+                                                       "Rabá emunatecha.",
+                                                       "Irararaaaaai",
+                                                       "\u003cestrofe r=2X\u003e",
+                                                       "Mode ani lefanecha",
+                                                       "Melech chái vecaiam,",
+                                                       "\u003c/estrofe\u003e",
+                                                       "shehechezárta bi",
+                                                       "nishmati nishmati bechemlá",
+                                                       "shehechezárta bi",
+                                                       "nishmati bechemlá",
+                                                       "Rabá emunatecha.",
+                                                       "\u003cestrofe r=2X\u003e",
+                                                       "Agradeço",
+                                                       "Peranti a Ti,",
+                                                       "\u003c/estrofe\u003e",
+                                                       "\u003cestrofe r=4X\u003e",
+                                                       "Rei vivo e eterno,",
+                                                       "\u003c/estrofe\u003e",
+                                                       "\u003cestrofe r=2X\u003e",
+                                                       "Devolveste a mim,",
+                                                       "minha alma",
+                                                       "\u003c/estrofe\u003e",
+                                                       "\u003cestrofe r=2X\u003e",
+                                                       "Com grande compaixão",
+                                                       "És Tua fidelidade.",
+                                                       "\u003c/estrofe\u003e"
+                                                   ]
+                                    },
+                  "elohai_neshama.json":  {
+                                              "title":  "ELOHAI NESHAMÁ",
+                                              "page":  "285",
+                                              "lyrics":  [
+                                                             "\u003cestrofe r=4X\u003e",
+                                                             "Elohai Neshama sh’natatah bee t’horah hee",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Atah b’arata, Atah yatzarta, Atah n’fachta bee",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=4X\u003e",
+                                                             "Elohai Neshama sh’natatah bee t’horah hee",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Atah b’arata, Atah, Atah, Atah n’fachta bee",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Elohai Neshama sh’natatah bee t’horah hee",
+                                                             "\u003c/estrofe\u003e"
+                                                         ]
+                                          },
+                  "ki_mitsion_pt.json":  {
+                                             "title":  "KI MITSION",
+                                             "page":  "353",
+                                             "lyrics":  [
+                                                            "Porque de Tsion sairá a Torá, e a palavra de ADONAI de Yerushalayim."
+                                                        ]
+                                         },
+                  "birkot_hashachar_pt.json":  {
+                                                   "title":  "BIRKOT HASHACHAR",
+                                                   "page":  "289",
+                                                   "lyrics":  [
+                                                                  "Bendito és Tu, A-do-nai, Nosso D-us, Rei do Universo,",
+                                                                  "que dá ao galo o entendimento para distinguir entre o dia e a noite."
+                                                              ]
+                                               },
+                  "asher_yatsar_he.json":  {
+                                               "id":  "asher_yatsar",
+                                               "title":  "ASHER YATSAR",
+                                               "page":  "284",
+                                               "lyrics":  [
+                                                              "בָּרוּךְ אַתָּה ה׳ אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, אֲשֶׁר יָצַר אֶת הָאָדָם בְּחָכְמָה, וּבָרָא בוֹ נְקָבִים",
+                                                              "נְקָבִים חַלּוּלִים חַלּוּלִים. גָּלוּי וְיָדוּעַ לִפְנֵי כִסֵּא כְבוֹדֶךָ, שֶׁאִם יִפָּתֵחַ אֶחָד מֵהֶם, אוֹ יִסָּתֵם אֶחָד מֵהֶם, אֵין אָדָם עָמוּד לִפְנֵי שָׁעָה אַחַת.",
+                                                              "בָּרוּךְ אַתָּה ה׳, רוֹפֵא כָּל בָּשָׂר וּמַפְלִיא לַעֲשׂוֹת."
+                                                          ]
+                                           },
+                  "birkat_hatora_he.json":  {
+                                                "title":  "BIRKAT HA TORÁ",
+                                                "page":  "285",
+                                                "lyrics":  [
+                                                               "ברוך אתה ה׳ אלוקינו מלך העולם אשר קדשנו במצותיו וצונו לעסוק בדברי תורה."
+                                                           ]
+                                            },
+                  "birkat_kohanim.json":  {
+                                              "title":  "BIRKAT KOHANIM",
+                                              "page":  "286",
+                                              "lyrics":  [
+                                                             "Uhhhh, uhhhhhh",
+                                                             "Yivarechecha, HaShem viyishmirecha",
+                                                             "Ya\u0027er HaShem panav elecha",
+                                                             "Yivarechecha, HaShem viyishmirecha",
+                                                             "Ya\u0027er HaShem panav elecha veechuneka",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Yeesa HaShem panav elecha",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "viyasem lecha",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Shalom",
+                                                             "\u003c/estrofe\u003e",
+                                                             "Yivarechecha, HaShem viyishmirecha",
+                                                             "Ya\u0027er HaShem panav elecha veechuneka",
+                                                             "Yivarechecha, HaShem viyishmirecha",
+                                                             "Ya\u0027er HaShem panav elecha veechuneka",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Yeesa HaShem panav elecha",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "viyasem lecha",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=2X\u003e",
+                                                             "Shalom",
+                                                             "\u003c/estrofe\u003e",
+                                                             "Ommm",
+                                                             "Shalom",
+                                                             "Yivarechecha, HaShem viyishmirecha",
+                                                             "Ya\u0027er HaShem panav elecha veechuneka"
+                                                         ]
+                                          },
+                  "bracha_antes_leitura_tora.json":  {
+                                                         "title":  "B’RACHÁ ANTES DA LEITURA DA TORÁ",
+                                                         "page":  "357",
+                                                         "lyrics":  [
+                                                                        "Hazan: Baruch atá ADONAI Eloheinu mélech haolam asher bachar banu mikol haamim, venatan lanu et toratô.",
+                                                                        "Todos: Baruch atá ADONAI noten hatorá."
+                                                                    ]
+                                                     },
+                  "asher_yatsar_pt.json":  {
+                                               "title":  "ASHER YATSAR",
+                                               "page":  "284",
+                                               "lyrics":  [
+                                                              "Bendito sejas, Adonai, nosso Deus, Rei do universo, que formaste o homem com sabedoria e criaste dentro dele muitas aberturas e muitos espaços ocos.",
+                                                              "É óbvio e conhecido diante de Seu Trono de Honra que se mesmo um deles fosse aberto,",
+                                                              "ou se mesmo um deles fosse selado, seria impossível sobreviver e ficar diante de Você mesmo por uma hora.",
+                                                              "Bendito sejas, Adonai, que cura toda a carne e age maravilhosamente."
+                                                          ]
+                                           },
+                  "shabat_shalom_pt.json":  {
+                                                "title":  "SHABAT SHALOM",
+                                                "page":  "",
+                                                "lyrics":  [
+                                                               "Sábado de Paz, Sábado de Paz, Sábado de Paz",
+                                                               "O povo de Israel, o povo de Israel, o povo de Israel vive!",
+                                                               "Nosso pai vive! Nosso pai vive! Nosso pai, nosso pai, nosso pai vive!",
+                                                               "Trazemos paz sobre vocês! Trazemos paz sobre vocês! Trazemos paz sobre vocês! Trazemos paz, paz, paz sobre vocês!",
+                                                               "Orem pela paz de Jerusalém! Orem pela paz de Jerusalém! Orem pela paz de Jerusalém!"
+                                                           ]
+                                            },
+                  "hashem_melech.json":  {
+                                             "title":  "HASHEM MELECH",
+                                             "page":  "308",
+                                             "lyrics":  [
+                                                            "\u003cestrofe r=2X\u003e",
+                                                            "HaShem melech, HaShem malach, HaShem yimloch leolam vaed.",
+                                                            "\u003c/estrofe\u003e",
+                                                            "\u003cestrofe r=2X\u003e",
+                                                            "Vehaia HaShem lemélech al col haárets, baiom hahu yihie HaShem echad ushemo echad.",
+                                                            "\u003c/estrofe\u003e",
+                                                            "\u003cestrofe r=2X\u003e",
+                                                            "O Eterno é Rei, O Eterno reina, Ele reinará para todo o sempre.",
+                                                            "\u003c/estrofe\u003e",
+                                                            "\u003cestrofe r=2X\u003e",
+                                                            "E o Eterno reinará sobre toda a Terra; e o Eterno será um e o Seu Nome será Um.",
+                                                            "\u003c/estrofe\u003e"
+                                                        ]
+                                         },
+                  "vezot_hatora_pt.json":  {
+                                               "title":  "VEZOT HATORÁ",
+                                               "page":  "361",
+                                               "lyrics":  [
+                                                              "E esta é a Torá que pôs Moshé diante dos filhos de Yisrael, conforme a boca de ADONAI, pela mão de Moshé."
+                                                          ]
+                                           },
+                  "shiviti_he.json":  {
+                                          "title":  "SHIVITI",
+                                          "page":  "284",
+                                          "lyrics":  [
+                                                         "שִׁוִּיתִי הָוָּה לְנֶגְדִּי תָּמִיד",
+                                                         "הָוָּה, אַהֲבָה"
+                                                     ]
+                                      },
+                  "vaani_tefilati.json":  {
+                                              "title":  "VA’ANI TEFILATI",
+                                              "page":  "288",
+                                              "lyrics":  [
+                                                             "\u003cestrofe r=[Homens]\u003e",
+                                                             "Va’ani Tefilati",
+                                                             "lecha HaShem eit ratzon",
+                                                             "Elohim b’rov chasdecha, Aneini b’emet yish’echa",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=[Mulheres]\u003e",
+                                                             "Va’ani Tefilati",
+                                                             "lecha HaShem eit ratzon",
+                                                             "Elohim b’rov chasdecha, Aneini b’emet yish’echa",
+                                                             "\u003c/estrofe\u003e",
+                                                             "\u003cestrofe r=[Todos]\u003e",
+                                                             "Va’ani Tefilati",
+                                                             "lecha HaShem eit ratzon",
+                                                             "Elohim b’rov chasdecha, Aneini b’emet yish’echa",
+                                                             "\u003c/estrofe\u003e"
+                                                         ]
+                                          },
+                  "shema.json":  {
+                                     "title":  "SHEMÁ",
+                                     "page":  "339/61",
+                                     "lyrics":  [
+                                                    "\u003cestrofe r=4X\u003e",
+                                                    "Shemá Yisrael, A-donai E-lo-hê-nu, A-donai Echad.",
+                                                    "\u003c/estrofe\u003e",
+                                                    "\u003cestrofe r=2X\u003e",
+                                                    "Baruch shem kevod malchutô leolam vaed.",
+                                                    "\u003c/estrofe\u003e",
+                                                    "\u003cestrofe r=2X\u003e",
+                                                    "Shemá Yisrael, A-donai E-lo-hê-nu, A-donai Echad.",
+                                                    "\u003c/estrofe\u003e",
+                                                    "Shemá Yisrael, A-donai E-lo-hê-nu, A-donai Echad.",
+                                                    "[Em voz baixa] Baruch shem kevod malchutô leolam vaed.",
+                                                    "",
+                                                    "Veahavtá et A-donai E-lo-hê-cha, bechol levave-chá uvchol nafshechá uvchol meodêcha.",
+                                                    "Vehayu ha-devarim haêle, asher Anochi metsavechá hayom al levavêcha.",
+                                                    "Veshinantam levanêcha vedibartá bam, beshivtechá bevetêcha, uvlechtechá vadêrech uv-shochbechá uvcumêcha.",
+                                                    "Ucshartam leot al yadê-cha vehayu letotafot ben enêcha.",
+                                                    "Uchtavtam al mezuzot betêcha uvish’arêcha.",
+                                                    "",
+                                                    "Vehayá im shamôa tishmeú el mitsvotai, asher Anochi metsavê et’chêm hayom, leahavá et A-donai E-lo-he-chêm, ul’ovdô bechol levavchêm uvchol nafshechêm.",
+                                                    "Venatati metar artsechêm be‘i-tô, yorê umalcosh, veassaftá deganêcha vetiro-shechá veyits‘harêcha.",
+                                                    "Venatati êssev bessadechá livhemtêcha veachaltá vessavá’ta.",
+                                                    "Hishameru la-chêm pen yiftê levavchêm, vessartêm vaavadtêm elohim acherim, vehishtachavitêm lahêm.",
+                                                    "Vecha-rá af A-donai bachêm, veatsar et hashamáyim, velô yihyê matar, vehaadamá lo titen et yevulá.",
+                                                    "Vaavadtêm meherá meal haárets hatová asher A-do-nai noten lachêm.",
+                                                    "Vessamtêm et devarai êle al levavchêm veal nafshechêm, ucshartêm otam leot al yedchêm, vehayu letotafot ben enechêm.",
+                                                    "Veli-madtêm otam et benechêm, ledaber bam, beshiv-techá bevetêcha, uvlechtechá vadêrech, uvshoch-bechá uvcumêcha, uchtavtam al mezuzot betêcha uvish’arêcha.",
+                                                    "Lemáan yirbu yemechêm vimê vene-chêm, al haadamá asher nishbá A-do-nai laavotê-chem, latet lahêm, kimê hashamáyim al haárets.",
+                                                    "",
+                                                    "Vayômer A-donai el Moshê lemor: Daber el Benê Yisrael veamartá alehêm, veassu lahêm tsitsit al canfê vigdehêm ledorotam.",
+                                                    "Venatenu al tsitsit ha-canaf, petil techêlet. Vehayá lachêm letsitsit, ur‘-itêm otô, uzchartêm el col mitsvot A-do-nai, vaas-sitêm otam, velô tatúru acharê levavchêm veacha- tizkeru vaassitêm et col mitsvotai, vihyitêm kedoshim l’E-lo-he-chêm.",
+                                                    "Ani A-donai, E-lo-he-chêm, asher hotsêti et’chêm meêrets Mitsráyim, lihyot lachêm l’E-lo-him.",
+                                                    "Ani A-donai E-lo-he-chêm. Ani A-donai E-lo-he-chêm Emet.",
+                                                    "",
+                                                    "Ouve, Israel, A-donai é nosso D’us, A-donai é Um.",
+                                                    "(Em voz baixa:) Bendito seja o nome da glória de Seu reino para toda a eternidade.",
+                                                    "",
+                                                    "Amarás a A-donai, teu D’us, com todo teu coração; estas palavras que Eu te ordeno hoje ficarão sobre teu coração.",
+                                                    "Inculca-las-ás diligentemente em teus filhos e falarás a respeito delas, estando em tua casa e andando por teu caminho, e ao te deitares e ao te levantares.",
+                                                    "Ata-las-ás como sinal sobre tua mão e serão por filactérios entre teus olhos.",
+                                                    "Escreve-las-ás nos umbrais de tua casa e em teus portões.",
+                                                    "",
+                                                    "Acontecerá, se obedecerdes diligentemente Meus preceitos, que Eu vos ordeno neste dia, de amar a A-do-nai, vosso D’us, e servi-Lo com todo vosso coração e com toda vossa alma;",
+                                                    "então darei a chuva para vossa terra a seu tempo, a chuva precoce e a chuva tardia; colherás teu grão, teu mosto e teu azeite.",
+                                                    "Darei erva em teu campo para teu gado, e comerás e te saciarás.",
+                                                    "Guardai-vos para que vosso coração não seja seduzido e desvieis e sirvais outros deuses e vos prostreis diante deles.",
+                                                    "Pois então se inflamará contra vós a ira de A-do-nai, e Ele fechará os céus e não haverá chuva, e a terra não dará seu produto.",
+                                                    "Então perecereis rapidamente da boa Terra que A-do-nai vos dá.",
+                                                    "Portanto, colocai estas Minhas palavras sobre vosso coração e sobre vossa alma, e atá-las-eis como sinal sobre vossa mão e serão por filactérios entre vossos olhos.",
+                                                    "Ensiná-las-eis a vossos filhos, a falar a respeito delas, estando em tua casa e andando por teu caminho, e ao te deitares e ao te levantares.",
+                                                    "Escreve-las-ás nos umbrais de tua casa e em teus portões.",
+                                                    "A fim de que se multipliquem vossos dias e os dias de vossos filhos na Terra que jurou A-do-nai a vossos antepassados dar-lhes por todo o tempo em que os Céus estiverem sobre a Terra.",
+                                                    "",
+                                                    "Disse A-do-nai a Moshê o seguinte:",
+                                                    "Fala aos filhos de Israel e dize-lhes que façam para si franjas nos cantos de suas vestimentas, por todas suas gerações.",
+                                                    "Prenderão na franja de cada borda um cordão azul-celeste.",
+                                                    "Serão para vós por tsitsit e os olhareis e recordareis todos os preceitos de A-do-nai, e os cumprireis;",
+                                                    "e não seguireis atrás de vosso coração e atrás de vossos olhos, por meio dos quais vos desviareis.",
+                                                    "Para que vos lembreis e cumprais todos Meus mandamentos e sejais santos para vosso D’us.",
+                                                    "Sou A-do-nai, vosso D’us, que vos tirou da terra do Egito para ser vosso D’us.",
+                                                    "Eu, A-do-nai, sou vosso D’us (Eu, A-do-nai, sou vosso D’us). É verdade."
+                                                ]
+                                 },
+                  "shiviti.json":  {
+                                       "title":  "SHIVITI",
+                                       "page":  "284",
+                                       "lyrics":  [
+                                                      "\u003cestrofe r=2X\u003e",
+                                                      "Shiviti HaVaYaH, l’negdi tamid",
+                                                      "\u003c/estrofe\u003e",
+                                                      "Havayah, Havayah, Havayah.",
+                                                      "Ahava, Ahava, Ahava",
+                                                      "Havayah, Havayah, Havayah.",
+                                                      "Ahava, Ahava, Ahava",
+                                                      "\u003cestrofe r=[Repete Shiviti e havayah]\u003e",
+                                                      "",
+                                                      "\u003c/estrofe\u003e",
+                                                      "\u003cestrofe r=[Violinos]\u003e",
+                                                      "",
+                                                      "\u003c/estrofe\u003e",
+                                                      "\u003cestrofe r=[Repete Shiviti e havayah]\u003e",
+                                                      "",
+                                                      "\u003c/estrofe\u003e",
+                                                      "Sempre estará diante de mim.",
+                                                      "És Senhor, és Senhor, és Senhor",
+                                                      "És amor, és amor, és amor."
+                                                  ]
+                                   },
+                  "birkat_hatora.json":  {
+                                             "title":  "BIRKAT HA TORÁ",
+                                             "page":  "285",
+                                             "lyrics":  [
+                                                            "Baruch atá Adonai, Eloheinu, Melech haolam, asher kidshánu bemitsvotav vetsivánu la\u0027assok bedivrei Torá."
+                                                        ]
+                                         },
+                  "shir_lamaalot.json":  {
+                                             "title":  "SHIR LAMAALOT",
+                                             "page":  "313",
+                                             "lyrics":  [
+                                                            "Shir lamaalot",
+                                                            "Essá einai el heharim",
+                                                            "Meayin yavo ezri",
+                                                            "Ezri meim HaShem",
+                                                            "Ossê shamaim vaarets",
+                                                            "Al yiten lamot rag’lêcha",
+                                                            "Al yanum shomerêcha",
+                                                            "Hinê lô yanum",
+                                                            "velo yishan Shomer Yisrael.",
+                                                            "HaShem shomerêcha",
+                                                            "HaShem tsil’chá",
+                                                            "al yad yeminêcha",
+                                                            "Yomam hashemesh",
+                                                            "lô yakeka Veyareach balaila",
+                                                            "HaShem Yishmorchá mikol rá",
+                                                            "Yishmor et nafshêcha",
+                                                            "HaShem yishmor tsetechá uvoecha",
+                                                            "Meatá vead olam"
+                                                        ]
+                                         },
+                  "birkat_hatora_pt.json":  {
+                                                "id":  "birkat_hatora",
+                                                "title":  "BIRKAT HATORÁ",
+                                                "page":  "285",
+                                                "lyrics":  [
+                                                               "Bendito és Tu, Adonai, nosso D’us, Rei do Universo, que nos santificaste com as tuas mitsvot, e nos ordenaste que nos ocupássemos com as palavras da Torá."
+                                                           ]
+                                            },
+                  "ma_tovu.json":  {
+                                       "title":  "MA TOVU",
+                                       "page":  "288",
+                                       "lyrics":  [
+                                                      "Ma Tovu o halecha Yakov",
+                                                      "Mishkenotecha Yisrael",
+                                                      "Váni b\u0027rov chasdecha",
+                                                      "Avo b\u0027techa",
+                                                      "Eshtachave elhe chal",
+                                                      "Kodshecha b\u0027iratecha",
+                                                      "Quão amáveis são",
+                                                      "suas tendas oh Jacó",
+                                                      "Seus tabernáculos",
+                                                      "Israel",
+                                                      "Em tua grande compaixão",
+                                                      "Entrarei em tua casa",
+                                                      "Me prostrarei, lá temerei",
+                                                      "A seus pés o Santo Senhor."
+                                                  ]
+                                   },
+                  "ets_chayim_pt.json":  {
+                                             "title":  "ETS CHAYIM",
+                                             "page":  "369",
+                                             "lyrics":  [
+                                                            "É a árvore da vida aos que nela se fortalecem, e os que são sustentados por ela são abençoados.",
+                                                            "Os seus caminhos são caminhos agradáveis (deliciosos), e todas as suas veredas são de shalom.",
+                                                            "Faça com que retornemos, ADONAI, a Ti, e retornaremos.",
+                                                            "Renova nossos dias como na antiguidade."
+                                                        ]
+                                         },
+                  "ki_mitsion.json":  {
+                                          "title":  "KI MITSION",
+                                          "page":  "353",
+                                          "lyrics":  [
+                                                         "Ki mitsion tetsê Torá, udevar ADONAI mirushaláyim."
+                                                     ]
+                                      },
+                  "vaiehi_he.json":  {
+                                         "title":  "VAIEHÍ",
+                                         "page":  "353",
+                                         "lyrics":  [
+                                                        "וַיְהִי בְּנְסֹעַ הָאָרֹן, וַיֹּאמֶר מֹשֶׁה׃",
+                                                        "קוּמָה יְ־הוָה וִיפָּצוּ אוֹיְבֶיךָ וְיָנוּסוּ מְשַׂנְאֶיךָ מִפָּנֶיךָ׃",
+                                                        "כִּי מִצִּיוֹן תֵּצֵא תּוֹרָה, וּדְבַר יְ־הוָה מִירוּשָׁלַיִם׃",
+                                                        "בָּרוּךְ שֶׁנָּתַן תּוֹרָה לְעַם יִשְׂרָאֵל בִּקְדֻשָּׁתוֹ׃"
+                                                    ]
+                                     },
+                  "bracha_apos_leitura_tora.json":  {
+                                                        "title":  "B’RACHÁ APÓS A LEITURA DA TORÁ",
+                                                        "page":  "357",
+                                                        "lyrics":  [
+                                                                       "Hazan: Baruch atá ADONAI Eloheinu mélech haolam asher natan lanu torat êmet vechaiê olam natá betochênu.",
+                                                                       "Todos: Baruch atá ADONAI noten hatorá."
+                                                                   ]
+                                                    },
+                  "ana_bechoach.json":  {
+                                            "title":  "ANA BECHOACH",
+                                            "page":  "299",
+                                            "lyrics":  [
+                                                           "Ana Bechoach gedullat yemincha, tatir tzerurah.",
+                                                           "Kabbel rinnat ammcha; Saggevenu taharenu, nora.",
+                                                           "Na gibbor, doreshei yichudecha, kevabbat shamerem.",
+                                                           "Barechem, taharem, rachamei. Tzidkatecha tamid gamelem.",
+                                                           "Chasin kadosh, berov tevecha nahel adatecha.",
+                                                           "Yachid ge\u0027eh. Le\u0027ammecha penei zocherei kedushettecha.",
+                                                           "Shav\u0027atenu kabbel veshama tza\u0027akatenu, yodea ta\u0027alumot.",
+                                                           "Baruch shem kevod malchuto, le\u0027olam va\u0027ed."
+                                                       ]
+                                        },
+                  "asher_yatsar.json":  {
+                                            "title":  "ASHER YATSAR",
+                                            "page":  "284",
+                                            "lyrics":  [
+                                                           "Baruch Atá A-do-nai,",
+                                                           "E-lo-hê-nu Mêlech haolam,",
+                                                           "asher yatsar et haadam bechochmá,",
+                                                           "uvára-vô necavim necavim, chalulim chalulim.",
+                                                           "Galui veyadúa lifnê Chissê chevodêcha,",
+                                                           "she’im yipatêach echad mehêm, oyissatem echad",
+                                                           "mehêm, i efshar lehitcayêm velaamod",
+                                                           "\u003cestrofe r=3X\u003e",
+                                                           "lefanecha",
+                                                           "\u003c/estrofe\u003e",
+                                                           "Baruch Atá A-do-nai, rofê chol bassar umafli laassot."
+                                                       ]
+                                        },
+                  "vezot_hatora.json":  {
+                                            "title":  "VEZOT HATORÁ",
+                                            "page":  "361",
+                                            "lyrics":  [
+                                                           "Vezot hatorá asher sam Moshé, lifnêi b’nei Yisrael al pi ADONAI, beyad Moshé."
+                                                       ]
+                                        },
+                  "vaani_tefilati_pt.json":  {
+                                                 "title":  "VA’ANI TEFILATI",
+                                                 "page":  "288",
+                                                 "lyrics":  [
+                                                                "E que eu seja a minha tefilá (oração) para Ti, Eterno;",
+                                                                "[que este seja um] momento propício, Deus, [para que a recebas] com a Tua imensa bondade.",
+                                                                "Responde-me com a verdade da Tua redenção."
+                                                            ]
+                                             },
+                  "birkot_hashachar.json":  {
+                                                "title":  "BIRKOT HASHACHAR",
+                                                "page":  "289",
+                                                "lyrics":  [
+                                                               "Baruch Atá A-do-nai,",
+                                                               "E-lo-hêi-nu Melech haolam,",
+                                                               "hanotem lassêchvi viná",
+                                                               "lehavchin ben yom uven láyla."
+                                                           ]
+                                            },
+                  "yedid_nefesh_pt.json":  {
+                                               "title":  "YEDID NEFESH",
+                                               "page":  "245",
+                                               "lyrics":  [
+                                                              "Amado da alma, o Pai da Compaixão,",
+                                                              "atrai o Teu servo à Tua Vontade;",
+                                                              "Seu servo se apressará como um cervo",
+                                                              "curvar-se diante de Vossa majestade;",
+                                                              "para ele Sua amizade será mais doce",
+                                                              "do que o qotejamento do favo de mel e qualquer sabor.",
+                                                              "Majestoso, Belo, Brilho do universo,",
+                                                              "Minha alma anseia [lit: está doente por] pelo seu amor.",
+                                                              "Por favor, ó Deus, cure-a agora",
+                                                              "mostrando-lhe a simpatia de Seu esplendor;",
+                                                              "então ela será fortalecida e curada,",
+                                                              "e a alegria eterna será dela.",
+                                                              "Perseverante, que Tua misericórdia seja despertada",
+                                                              "e, por favor, tenha piedade do filho do seu amado,",
+                                                              "porque é tão longo que ansiei intensamente",
+                                                              "para ver rapidamente o esplendor de Sua força;",
+                                                              "apenas estes meu coração desejou,",
+                                                              "então, por favor, tenha pena e não se esconda.",
+                                                              "Por favor, meu Amado, revele-se e espalhe sobre mim",
+                                                              "o abrigo da Tua paz;",
+                                                              "ilumina a Terra com a Tua glória,",
+                                                              "para que nos regozijemos e nos alegremos contigo;",
+                                                              "Apress e-se, mostre amor, pois chegou a hora,",
+                                                              "e mostra-nos graça como nos dias antigos."
+                                                          ]
+                                           },
+                  "ets_chayim_he.json":  {
+                                             "title":  "ETS CHAYIM",
+                                             "page":  "369",
+                                             "lyrics":  [
+                                                            "עֵץ־חַיִּים הִיא לַמַּחֲזִיקִים בָּהּ וּתְמָכָהּ מְאוּשָׁר׃",
+                                                            "דְּרָכֶיךָ דֶּרֶךְ נוֹעַם וְכָל נְתִיבוֹתֶיךָ שָׁלוֹם׃",
+                                                            "הַשִּׁיבֵנוּ יְהֹוָה אֵלֶיךָ וְנָשׁוּבָה חַדֵּשׁ יְמֵינוּ כְּקֶדֶם׃"
+                                                        ]
+                                         },
+                  "adon_olam.json":  {
+                                         "title":  "ADON OLAM",
+                                         "page":  "288",
+                                         "lyrics":  [
+                                                        "Adon olam, asher malach,",
+                                                        "betérem col ietsir nivrá",
+                                                        "Leet naassá berchefsto col,",
+                                                        "Azai melêch shemô nikrá",
+                                                        "",
+                                                        "Veacharê quichlôt hacol",
+                                                        "Levadô imlôch norá",
+                                                        "Vehu haiá vehu hovê",
+                                                        "Vehu ihië betifará",
+                                                        "",
+                                                        "Vehu eli vechai goali",
+                                                        "vetsur chevli beiom tsará",
+                                                        "Vehu nissi umanosli",
+                                                        "menat kossi beyom ekrá",
+                                                        "",
+                                                        "Adon olam, asher malach,",
+                                                        "betérem col ietsir nivrá",
+                                                        "Leet naassá berchefsto col,",
+                                                        "Azai melêch shemô nikrá"
+                                                    ]
+                                     },
+                  "shabat_shalom.json":  {
+                                             "title":  "SHABAT SHALOM",
+                                             "page":  "",
+                                             "lyrics":  [
+                                                            "Shabat Shalom, Shabat Shalom, Shabat Shabat Shabat Shabat Shalom",
+                                                            "Am Yisrael, Am Yisrael, Am Yisrael Chai",
+                                                            "Od Avinu Chai ! Od Avinu Chai ! Od Avinu, Od Avinu, Od Avinu Chai !",
+                                                            "\u003cestrofe r=2X\u003e",
+                                                            "Hevenu Shalom Aleichem!",
+                                                            "\u003c/estrofe\u003e",
+                                                            "Hevenu Shalom, Shalom, Shalom Aleichem",
+                                                            "\u003cestrofe r=4X\u003e",
+                                                            "Shalu Shalom Yerushalayim",
+                                                            "\u003c/estrofe\u003e",
+                                                            "\u003cestrofe r=3X\u003e",
+                                                            "Shalu Shalom",
+                                                            "\u003c/estrofe\u003e",
+                                                            "Shalu Shalom Yerushalayim"
+                                                        ]
+                                         },
+                  "adon_olam_pt.json":  {
+                                            "title":  "ADON OLAM",
+                                            "page":  "288",
+                                            "lyrics":  [
+                                                           "Senhor do Mundo, sobre o qual reinou",
+                                                           "antes de toda criatura ser formada.",
+                                                           "Quando tudo concluiu por Sua vontade,",
+                                                           "então foi proclamado Rei Altíssimo.",
+                                                           "",
+                                                           "E depois de tudo acabado,",
+                                                           "apenas o Temido reinará.",
+                                                           "E Ele estava, e Ele está",
+                                                           "e estará em esplendor.",
+                                                           "",
+                                                           "E Ele é meu D’US e meu Redentor vivo,",
+                                                           "rocha que me auxilia no dia de tribulações.",
+                                                           "E Ele é meu estandarte e meu refúgio,",
+                                                           "partilha do meu cálice no dia em que o invocar.",
+                                                           "",
+                                                           "Senhor do Mundo, sobre o qual reinou",
+                                                           "antes de toda criatura ser formada.",
+                                                           "Quando tudo concluiu por Sua vontade,",
+                                                           "então foi proclamado Rei Altíssimo."
+                                                       ]
+                                        },
+                  "bracha_antes_leitura_tora_pt.json":  {
+                                                            "title":  "B’RACHÁ ANTES DA LEITURA DA TORÁ",
+                                                            "page":  "357",
+                                                            "lyrics":  [
+                                                                           "Bendito Sejas Tu ADONAI, nosso Elohim, Rei do Universo, que nos escolheste dentre todos os povos, e nos deste a Tua Torá.",
+                                                                           "Bendito Sejas Tu ADONAI, que nos deste a Torá.",
+                                                                           "Todos juntos: Baruch atá ADONAI noten hatorá.",
+                                                                           "Bendito Sejas Tu ADONAI, que nos deste a Torá."
+                                                                       ]
+                                                        },
+                  "mode_ani_he.json":  {
+                                           "title":  "MODE ANI",
+                                           "page":  "284",
+                                           "lyrics":  [
+                                                          "מוֹדֶה אֲנִי לְפָנֶיךָ, מֶלֶךְ חַי וְקַיָּם,",
+                                                          "שֶׁהֶחֱזַרְתָּ בִּי נִשְׁמָתִי בְּחֶמְלָה, רַבָּה אֱמוּנָתֶךָ."
+                                                      ]
+                                       },
+                  "ana_bechoach_pt.json":  {
+                                               "title":  "ANA BECHOACH",
+                                               "page":  "299",
+                                               "lyrics":  [
+                                                              "Nós imploramos! Com a força e a grandeza do seu braço direito, desamarre nossos pecados agrupados.",
+                                                              "Aceite a canção de sua nação; eleva-nos e purifica-nos, ó Incrível.",
+                                                              "Por favor, ó Heróico, aqueles que promovem sua Unidade, guardem-nos como a pupila de um olho.",
+                                                              "Abençoe-os, purifique-os, tenha pena deles. Que a Tua justiça sempre os recompense.",
+                                                              "Poderoso Santo, em muita bondade guie Sua congregação.",
+                                                              "Único e Exaltado, volte-se para Sua nação que proclama Sua santidade.",
+                                                              "Aceite nossa súplica e ouça nossos gritos, ó Conhecedor dos Mistérios.",
+                                                              "Bendito seja o nome de Seu reino glorioso, para todo o sempre."
+                                                          ]
+                                           },
+                  "hodu_lashem.json":  {
+                                           "title":  "HODU LASHEM KI TOV",
+                                           "page":  "316",
+                                           "lyrics":  [
+                                                          "Hodu LaShem Ki Tov, Ki LeOlam Chasdo"
+                                                      ]
+                                       },
+                  "elohai_neshama_pt.json":  {
+                                                 "title":  "ELOHAI NESHAMÁ",
+                                                 "page":  "285",
+                                                 "lyrics":  [
+                                                                "Meu Deus, a alma que Tu me deste é pura.",
+                                                                "Tu a criaste, Tu a formaste, Tu a sopraste em mim,",
+                                                                "Tu a proteges dentro de mim e um dia a retirarás do meu corpo",
+                                                                "e a devolverás a mim no mundo vindouro."
+                                                            ]
+                                             },
+                  "adonai_tsevaot_imanu.json":  {
+                                                    "title":  "YHWH TS’VAOT IMANU",
+                                                    "page":  "306",
+                                                    "lyrics":  [
+                                                                   "Adonai Tsevaot, ashrê adam botêach bach.",
+                                                                   "Adonai hoshía; ha\u0027Mêlech yaanênu veyom cor\u0027ênu."
+                                                               ]
+                                                },
+                  "bracha_apos_leitura_tora_he.json":  {
+                                                           "title":  "B’RACHÁ APÓS A LEITURA DA TORÁ",
+                                                           "page":  "357",
+                                                           "lyrics":  [
+                                                                          "בָּרוּךְ אַתָּה יְ־הוָה אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם אֲשֶׁר נָתַן לָנוּ תּוֹרַת אֱמֶת וְחַיֵּי עוֹלָם נָתַן בְּתוֹכֵנוּ׃",
+                                                                          "בָּרוּךְ אַתָּה יְ־הוָה נֹתֵן הַתּוֹרָה׃"
+                                                                      ]
+                                                       },
+                  "shir_lamaalot_pt.json":  {
+                                                "title":  "SHIR LAMAALOT",
+                                                "page":  "313",
+                                                "lyrics":  [
+                                                               "Elevo meus olhos para os montes, de onde virá o meu socorro?",
+                                                               "Meu socorro vem de YHWH que fez os céus e a terra.",
+                                                               "Não deixará vacilar o teu pé, não dormirá o que te guarda.",
+                                                               "Eis que não dorme e não dormirá o guarda de Israel.",
+                                                               "YHWH é teu guarda, YHWH é a tua sombra à tua mão direita.",
+                                                               "De dia o sol não te molestará nem a lua de noite.",
+                                                               "YHWH te guardará de todo mal, guardará a tua vida.",
+                                                               "YHWH guardará tua saída e tua entrada desde agora e para sempre."
+                                                           ]
+                                            },
+                  "barechu.json":  {
+                                       "title":  "BARECHÚ",
+                                       "page":  "357",
+                                       "lyrics":  [
+                                                      "Hazan: Barechu et YHWH HaMevorach",
+                                                      "Kehilá: Baruch YHWH HaMevorach leolam vaed.",
+                                                      "Hazan: Baruch YHWH HaMevorach leolam vaed."
+                                                  ]
+                                   },
+                  "birkat_kohanim_he.json":  {
+                                                 "title":  "BIRKAT KOHANIM",
+                                                 "page":  "286",
+                                                 "lyrics":  [
+                                                                "יְבָרֶכְךָ",
+                                                                "ה׳",
+                                                                "וְיִשְׁמְרֶךָ",
+                                                                "יָאֵר",
+                                                                "ה׳",
+                                                                "פָּנָיו",
+                                                                "אֵלֶיךָ",
+                                                                "וִיחֻנֶּךָ",
+                                                                "יִשָּׂא",
+                                                                "ה׳",
+                                                                "פָּנָיו",
+                                                                "אֵלֶיךָ",
+                                                                "וְיָשֵׂם",
+                                                                "לְךָ",
+                                                                "שָׁלוֹם"
+                                                            ]
+                                             },
+                  "ki_mitsion_he.json":  {
+                                             "title":  "KI MITSION",
+                                             "page":  "353",
+                                             "lyrics":  [
+                                                            "כִּי מִצִּיּוֹן תֵּצֵא תּוֹרָה׃",
+                                                            "וּדְבַר יְ־הוָה מִירוּשָׁלַיִם׃"
+                                                        ]
+                                         },
+                  "vaiehi.json":  {
+                                      "title":  "VAIEHÍ",
+                                      "page":  "353",
+                                      "lyrics":  [
+                                                     "Vaiehí binsôa haaron",
+                                                     "vaiomêr Moshé. Kúma ADONAI",
+                                                     "veiafútsu oivêcha veianússu",
+                                                     "messanêcha mipanêcha. Ki mitsion",
+                                                     "tetsê Torá, udevar ADONAI",
+                                                     "mirushaláyim. Baruch shenatan Torá",
+                                                     "leamô Yisrael bikdushatô."
+                                                 ]
+                                  },
+                  "barechu_he.json":  {
+                                          "title":  "BARECHÚ",
+                                          "page":  "357",
+                                          "lyrics":  [
+                                                         "בָּרְכוּ אֶת יְהֹוָה הַמְבֹרָךְ׃",
+                                                         "בָּרוּךְ יְהֹוָה הַמְבֹרָךְ לְעוֹלָם וָעֶד׃",
+                                                         "בָּרוּךְ יְהֹוָה הַמְבֹרָךְ לְעוֹלָם וָעֶד׃"
+                                                     ]
+                                      },
+                  "adon_olam_he.json":  {
+                                            "title":  "ADON OLAM",
+                                            "page":  "288",
+                                            "lyrics":  [
+                                                           "אדון עולם אשר מלך׃",
+                                                           "בטרם כל יציר נברא",
+                                                           "לעת נעשה בחפצו כל",
+                                                           "אזי מלך שמו נקרא׃",
+                                                           "",
+                                                           "ואחרי כְּללות הכל",
+                                                           "לבדו מלך נורא׃",
+                                                           "והוא היה והוא הוה",
+                                                           "והוא יהיה בתפארתה׃",
+                                                           "",
+                                                           "והוא אלי וחי גואלי",
+                                                           "וצור תבלין ביום צרה",
+                                                           "והוא נסי ומנוסי׃",
+                                                           "",
+                                                           "אדון עולם אשר מלך׃",
+                                                           "בטרם כל יציר נברא",
+                                                           "לעת נעשה בחפצו כל",
+                                                           "אזי מלך שמו נקרא׃"
+                                                       ]
+                                        },
+                  "ma_tovu_he.json":  {
+                                          "id":  "ma_tovu",
+                                          "file":  "ma_tovu.json",
+                                          "title":  "MA TOVU",
+                                          "page":  "288",
+                                          "hebrew":  "ma_tovu_he.json",
+                                          "portuguese":  "ma_tovu_pt.json"
+                                      },
+                  "yedid_nefesh_he.json":  {
+                                               "title":  "YEDID NEFESH",
+                                               "page":  "245",
+                                               "lyrics":  [
+                                                              "יְדִיד נֶפֶשׁ אַב הָרַחֲמָן",
+                                                              "מָשׁוֹךְ עַבְדְּךָ אֶל רְצוֹנְךָ",
+                                                              "יָרוּץ עַבְדְּךָ כְּמוֹ אֵיל",
+                                                              "יִשְׁתַּחֶה מוּל הַדָּרֶךְ",
+                                                              "כִּי יֵעָבֵר לוֹ יְדִידוּתָךְ",
+                                                              "מִנוֹפֶת צוּף וְכָל טַעַם",
+                                                              "",
+                                                              "הַדּוֹר נָאֶה זִיו הָעוֹלָם",
+                                                              "נַפְשִׁי חוֹלַת אַהֲבָתֶךָ",
+                                                              "אָנָּא אֶל נָּא רְפָא נָּא לָהּ",
+                                                              "כְּהָרָאוֹת לָהּ נֹעַם יִנֶּהָ",
+                                                              "אָז תִּתְחַזֵּק וְתִרְפָּא",
+                                                              "וְהָיִיתָה לָהּ שִׂמְחַת עוֹלָם",
+                                                              "",
+                                                              "וְתִיק יְהַמוּ נָא רַחֲמֶיךָ",
+                                                              "וְחֹסֶה נָא עַל בֶּן אַהֲבֶךָ",
+                                                              "כִּי זֶה פִּדָּה נִכְסָפוֹף וְנִכְסָפְתִּי",
+                                                              "לִרְאוֹת בְּתִפְאָרְתְּךָ עוֹד",
+                                                              "אָנָּא אֵלֶה חֶמְדָּה לִבִּי",
+                                                              "חוֹסֶה נָא וְאַל תַּעֲזֹלֵם",
+                                                              "",
+                                                              "הַגְלָה נָא וּפָרֹשׂ תָּחִּירִי עָלַי",
+                                                              "אֵת סַפַּת שָׁלוֹמְךָ",
+                                                              "תְּאִיר אֶרֶץ מִכְבוֹדֶךָ",
+                                                              "נְגִילָה וְנִשְׂמַחָה בָּךְ",
+                                                              "מָהֵר אֲהוֹב כִּי בָא מוֹעֵד",
+                                                              "וְחַנֵּנוּ יְמֵי עוֹלָם"
+                                                          ]
+                                           },
+                  "vaani_tefilati_he.json":  {
+                                                 "title":  "VA’ANI TEFILATI",
+                                                 "page":  "288",
+                                                 "lyrics":  [
+                                                                "וְאָנִי תְּפִלָּתִי לְפָנֶיךָ בְּחֶסֶדְךָ",
+                                                                "וְאֶלֹהִים בְּרֹב חַסְדְּךָ, עֲנֵנִי בֶּאֱמֶת יִשְׁעֶךָ"
+                                                            ]
+                                             },
+                  "adonai_tsevaot_imanu_pt.json":  {
+                                                       "title":  "YHWH TS’VAOT IMANU",
+                                                       "page":  "306",
+                                                       "lyrics":  [
+                                                                      "A-do-nai dos Exércitos, louvado é o homem que confia em Ti.",
+                                                                      "Salva, A-do-nai; responde-nos, ó Rei, neste dia em que chamamos."
+                                                                  ]
+                                                   },
+                  "birkot_hashachar_he.json":  {
+                                                   "title":  "BIRKOT HASHACHAR",
+                                                   "page":  "289",
+                                                   "lyrics":  [
+                                                                  "בָּרוּךְ אַתָּה יהוה אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,",
+                                                                  "אֲשֶׁר נָתַן לִשׁוֹנֵנוּ בִּינָה לְהָבִין בֵּין יוֹם וּבֵּין לַיְלָה׃"
+                                                              ]
+                                               },
+                  "barechu_pt.json":  {
+                                          "title":  "BARECHÚ",
+                                          "page":  "357",
+                                          "lyrics":  [
+                                                         "Bendizei a ADONAI que é Bendito",
+                                                         "Bendito seja ADONAI, que é Bendito para todo o sempre.",
+                                                         "Bendito seja ADONAI, que é Bendito para todo o sempre."
+                                                     ]
+                                      },
+                  "ets_chayim.json":  {
+                                          "title":  "ETS CHAYIM",
+                                          "page":  "369",
+                                          "lyrics":  [
+                                                         "Ets chayim hi",
+                                                         "lamachazikim bá",
+                                                         "vetomchêiha meushar.",
+                                                         "Derachêiha darchei noam,",
+                                                         "vechol netivotêiha shalom",
+                                                         "Hashivênu ADONAI",
+                                                         "elêichá venashuvá",
+                                                         "chadesh",
+                                                         "chadesh iameinu",
+                                                         "kekedem"
+                                                     ]
+                                      },
+                  "shabat_shalom_he.json":  {
+                                                "title":  "SHABAT SHALOM",
+                                                "page":  "",
+                                                "lyrics":  [
+                                                               "שַׁבָּת שָׁלוֹם",
+                                                               "עַם יִשְׂרָאֵל חַי",
+                                                               "עוֹד אֲבִינוּ חַי",
+                                                               "הֵבָאנוּ שָׁלוֹם עֲלֵיכֶם",
+                                                               "שָׁאֻלוּ שָׁלוֹם יְרוּשָׁלַיִם"
+                                                           ]
+                                            },
+                  "hashem_melech_he.json":  {
+                                                "title":  "HASHEM MELECH",
+                                                "page":  "308",
+                                                "lyrics":  [
+                                                               "יי מֶלֶךְ, יי מָלַךְ, יי יִמְלֹךְ לְעוֹלָם וָעֶד׃",
+                                                               "",
+                                                               "וִיהִי יי לְמֶלֶךְ עַל כָּל הָאָרֶץ; בַּיּוֹם הַהוּא יִהְיֶה יי אֶחָד וּשְׁמוֹ אֶחָד׃"
+                                                           ]
+                                            },
+                  "vezot_hatora_he.json":  {
+                                               "title":  "VEZOT HATORÁ",
+                                               "page":  "361",
+                                               "lyrics":  [
+                                                              "וְזֹאת הַתּוֹרָה אֲשֶׁר שָׂם מֹשֶׁה לִפְנֵי בְּנֵי יִשְׂרָאֵל עַל פִּי יְ־הוָה בְּיַד מֹשֶׁה׃",
+                                                              "כִּי מִצִּיּוֹן תֵּצֵא תּוֹרָה וּדְבַר יְ־הוָה מִירוּשָׁלַיִם׃"
+                                                          ]
+                                           },
+                  "ana_bechoach_he.json":  {
+                                               "title":  "ANA BECHOACH",
+                                               "page":  "299",
+                                               "lyrics":  [
+                                                              "אָנָא בְּכֹחַ גְּדוּלַּת יְמִינֶךָ, תַּתִּיר צְרוּרָה׃",
+                                                              "קַבֵּל רִנַּת עַמֶּךָ, שֶׁגָּבְרוּ טַהֲרֵנוּ נוֹרָא׃",
+                                                              "נָא גִּבּוֹר, דוֹרְשֵׁי יְחֻדֶּךָ, כַּבֵּד שַׁמְרֵם׃",
+                                                              "חָסִין קָדוֹשׁ, בְּרוֹב טוּבְךָ, נְהַל עֲדָתֶךָ׃",
+                                                              "שַׁוְעָתֵנוּ קַבֵּל, וּשְׁמַע צִעֲקָתֵנוּ׃",
+                                                              "יוֹדֵעַ תַּעֲלֻמוֹת׃",
+                                                              "בָּרוּךְ שֵׁם כְּבוֹד מַלְכוּתוֹ לְעוֹלָם וָעֶד׃"
+                                                          ]
+                                           },
+                  "bracha_antes_leitura_tora_he.json":  {
+                                                            "title":  "B’RACHÁ ANTES DA LEITURA DA TORÁ",
+                                                            "page":  "357",
+                                                            "lyrics":  [
+                                                                           "בָּרוּךְ אַתָּה יְ־הוָה אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, אֲשֶׁר בָּחַר בָּנוּ מִכָּל הָעַמִּים, וְנָתַן לָנוּ אֶת תּוֹרָתֹו׃",
+                                                                           "בָּרוּךְ אַתָּה יְ־הוָה נֹתֵן הַתּוֹרָה׃"
+                                                                       ]
+                                                        },
+                  "vaiehi_pt.json":  {
+                                         "title":  "VAIEHÍ",
+                                         "page":  "353",
+                                         "lyrics":  [
+                                                        "E quando viajava a Arca, dizia Moshé: Levanta-te ADONAI, e disperse os teus inimigos, e fujam os que te odeiam diante de Tua face.",
+                                                        "Porque de Tsion sairá a Torá, e a palavra de ADONAI de Yerushalayim.",
+                                                        "Bendito é Aquele que deu a Torá a seu povo Israel em Sua santidade."
+                                                    ]
+                                     },
+                  "shir_lamaalot_he.json":  {
+                                                "title":  "SHIR LAMAALOT",
+                                                "page":  "313",
+                                                "lyrics":  [
+                                                               "שִׁיר לַמַּעֲלוֹת",
+                                                               "אֶשָּׂא עֵינַי אֶל הֶהָרִים",
+                                                               "מֵאַיִן יָבֹא עֶזְרִי׃",
+                                                               "עֲזָרִי מֵעִם יְהֹוָה",
+                                                               "עֹשֶׂה שָׁמַיִם וָאָרֶץ,",
+                                                               "    אֵל יְהֹוָה יִתֵּן לִמְשׁוֹט רַגְלֶךָ",
+                                                               "    אֵל יִנּוֹם שׁוֹמְרֶךָ׃",
+                                                               "הִנֵּה לֹא יִינוֹם, וְלֹא יִישָׁן",
+                                                               "שׁוֹמֵר יִשְׂרָאֵל׃",
+                                                               "יְהֹוָה שׁוֹמְרְךָ, יְהֹוָה צִלְּךָ",
+                                                               "    עַל יְדֵי יָמִינֶךָ׃",
+                                                               "יוֹמָם הַשֶּׁמֶשׁ לֹא יִכֵּךְ",
+                                                               "וְיָרֵחַ בַּלָּיְלָה׃",
+                                                               "יְהֹוָה יִשְׁמָרְךָ מִכֹּל רָע,",
+                                                               "    יִשְׁמֹר אֶת נַפְשֶׁךָ׃",
+                                                               "יְהֹוָה יִשְׁמָר צֵאתְךָ וּבוֹאֶךָ",
+                                                               "    מֵעַתָּה וְעַד עוֹלָם׃"
+                                                           ]
+                                            },
+                  "birkat_kohanim_pt.json":  {
+                                                 "title":  "BIRKAT KOHANIM",
+                                                 "page":  "286",
+                                                 "lyrics":  [
+                                                                "Que [D\u0027us] te abençoe e guarde você",
+                                                                "Que [D\u0027us] brilhe Seu semblante sobre você e seja gentil com você",
+                                                                "Que [D\u0027us] vire Seu semblante em sua direção e conceda a você a paz"
+                                                            ]
+                                             }
+              }
+}

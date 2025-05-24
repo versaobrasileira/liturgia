@@ -7,14 +7,33 @@ import { Scorer }        from './scorer.js';
 let _indexCache = null;
 
 /**
- * Faz fetch de ./content/index.json, faz cache em memória
+ * Faz fetch de ./content/all.json, faz cache em memória
  */
+let _allCache = null;
+
 export async function loadIndex() {
-  if (_indexCache) return _indexCache;
-  const res = await fetch('./content/index.json');
-  if (!res.ok) throw new Error(`Erro ${res.status} ao carregar índice`);
-  _indexCache = await res.json();
-  return _indexCache;
+  if (_allCache) {
+    // Corrige para garantir que sempre retorna o array (compatível com "index": { "value": [...] })
+    return Array.isArray(_allCache.index)
+      ? _allCache.index
+      : (_allCache.index.value || _allCache.index);
+  }
+  const res = await fetch('./content/all.json');
+  if (!res.ok) throw new Error(`Erro ${res.status} ao carregar all.json`);
+  _allCache = await res.json();
+  return Array.isArray(_allCache.index)
+    ? _allCache.index
+    : (_allCache.index.value || _allCache.index);
+}
+
+// Nova função para buscar um arquivo de conteúdo específico:
+export async function loadContent(filename) {
+  if (!_allCache) {
+    const res = await fetch('./content/all.json');
+    if (!res.ok) throw new Error(`Erro ${res.status} ao carregar all.json`);
+    _allCache = await res.json();
+  }
+  return _allCache.files[filename];
 }
 
 /**
@@ -104,24 +123,6 @@ export class SearchEngine {
 
       return { item: cand.item, score: scoreResult };
     });
-
-    // LOG: Todos os scores, do maior para o menor
-    /*
-    console.group(`🔍 Todos os scores para "${raw.raw}"`);
-    scored
-      .sort((a, b) => b.score - a.score)
-      .forEach((s, idx) => {
-        console.log(
-          `[${idx+1}] ${s.item.title}`, {
-            score:          s.score,
-            method:         s.item._method,
-            relevancia:     s.item._relevanciaResultado,
-            penalConsoantes:s.item._penalConsoantes,
-            penalFactor:    s.item._penalFactor
-          }
-        );
-      });
-    console.groupEnd();*/
 
     // 3) filtro e marcações
     const maxScore = Math.max(...scored.map(s => s.score));

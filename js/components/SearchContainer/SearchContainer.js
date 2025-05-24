@@ -1,12 +1,7 @@
-// js/components/SearchContainer/SearchContainer.js
-
 import { SearchEngine, loadIndex } from './search/engine.js';
 import { SearchForm } from '../SearchForm/SearchForm.js';
 import { ResultsPanel } from '../ResultsPanel/ResultsPanel.js';
 import { ContentDisplayPanel } from '../ContentDisplayPanel/ContentDisplayPanel.js';
-
-
-// js/components/SearchContainer/SearchContainer.js
 
 function injectCss(path) {
   if (!document.querySelector(`link[href="${path}"]`)) {
@@ -17,7 +12,6 @@ function injectCss(path) {
   }
 }
 injectCss('/js/components/SearchContainer/SearchContainer.css');
-
 
 export class SearchContainer {
   constructor() {
@@ -54,6 +48,9 @@ export class SearchContainer {
     // Inicialmente só mostra form/result
     this.resultsPanel.clear();
     this.contentDisplayPanel.clear();
+
+    // Carrega o índice uma vez ao inicializar
+    this._initialIndexLoadPromise = this.ensureIndex();
   }
 
   async ensureIndex() {
@@ -82,7 +79,7 @@ export class SearchContainer {
     }
     this.resultsPanel.setList(matches, {
       onClick: item => {
-        this.resultsPanel.clear();          // <-- isso garante sumir a lista!
+        this.resultsPanel.clear();
         this.contentDisplayPanel.showItem(item);
       }
     });
@@ -106,48 +103,50 @@ export class SearchContainer {
   }
 
   async performSearch(autoLoad) {
-  const raw = this.searchForm.value.trim();
-  this.contentDisplayPanel.clear();
-  clearTimeout(this.noResultTimer);
-  clearTimeout(this.fallbackTimer);
+    const raw = this.searchForm.value.trim();
+    this.contentDisplayPanel.clear();
+    clearTimeout(this.noResultTimer);
+    clearTimeout(this.fallbackTimer);
 
-  this.resultsPanel.setMessage('<span class="loading">Buscando...</span>');
+    this.resultsPanel.setMessage('<span class="loading">Buscando...</span>');
 
-  let matches;
-  try {
-    matches = await this.engine.search(raw);
-  } catch (err) {
-    console.error("Erro no search:", err);
-    this.resultsPanel.setMessage('Erro na busca.');
-    return;
-  }
-
-  if (matches.length === 0) {
-    this.resultsPanel.setMessage('Nenhum resultado encontrado.');
-    if (!autoLoad) {
-      this.fallbackTimer = setTimeout(() => this.showFullList(), 2000);
-    } else {
-      await this.showFullList();
+    let matches;
+    try {
+      // Aguarda garantir que o índice foi carregado pelo menos uma vez
+      await this._initialIndexLoadPromise;
+      matches = await this.engine.search(raw);
+    } catch (err) {
+      console.error("Erro no search:", err);
+      this.resultsPanel.setMessage('Erro na busca.');
+      return;
     }
-    return;
+
+    if (matches.length === 0) {
+      this.resultsPanel.setMessage('Nenhum resultado encontrado.');
+      if (!autoLoad) {
+        this.fallbackTimer = setTimeout(() => this.showFullList(), 2000);
+      } else {
+        await this.showFullList();
+      }
+      return;
+    }
+
+    if (matches.length === 1 && autoLoad) {
+      this.resultsPanel.clear();
+      this.contentDisplayPanel.showItem(matches[0]);
+      return;
+    }
+
+    clearTimeout(this.fallbackTimer);
+
+    this.resultsPanel.setList(matches, {
+      onClick: item => {
+        this.resultsPanel.clear();
+        this.contentDisplayPanel.showItem(item);
+      },
+      highlightTerm: raw,
+    });
   }
-
-  if (matches.length === 1 && autoLoad) {
-    this.resultsPanel.clear(); // <-- ADICIONADO!
-    this.contentDisplayPanel.showItem(matches[0]);
-    return;
-  }
-
-  clearTimeout(this.fallbackTimer);
-
-  this.resultsPanel.setList(matches, {
-    onClick: item => {
-      this.resultsPanel.clear(); // <-- ADICIONADO!
-      this.contentDisplayPanel.showItem(item);
-    },
-    highlightTerm: raw,
-  });
-}
 
   // Para inserir na página
   get element() { return this.container; }

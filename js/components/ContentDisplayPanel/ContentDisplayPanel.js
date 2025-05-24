@@ -2,6 +2,7 @@
 
 import { ConteudoPanel } from '../ConteudoPanel/ConteudoPanel.js';
 import { resultsPanel } from '../ResultsPanel/ResultsPanel.js';
+import { loadContent } from '../SearchContainer/search/engine.js'; 
 
 function injectCss(path) {
   if (!document.querySelector(`link[href="${path}"]`)) {
@@ -31,16 +32,15 @@ export class ContentDisplayPanel {
 
     let data;
     try {
-      const res = await fetch(`./content/${item.file}`);
-      if (!res.ok) throw new Error(res.status);
-      data = await res.json();
+      data = await loadContent(item.file);  // ← pega do all.json em memória
+      if (!data) throw new Error('Arquivo não encontrado no all.json');
     } catch (err) {
       console.error(err);
       this.setMessage(`Erro ao carregar "${item.title}".`);
       return;
     }
 
-    // Instancia o painel de conteúdo (Componente inteligente)
+
     this.conteudoPanel = new ConteudoPanel({
       title: data.title,
       page: data.page,
@@ -50,9 +50,9 @@ export class ContentDisplayPanel {
           item,
           onLanguageChange: async (fname, lang) => {
             try {
-              const res = await fetch(`./content/${fname}`);
-              const data = await res.json();
-              this.conteudoPanel.lyricsPanel.updateLyrics(data.lyrics);
+              const dataLang = await loadContent(fname); 
+              if (!dataLang) throw new Error('Arquivo não encontrado no all.json');
+              this.conteudoPanel.lyricsPanel.updateLyrics(dataLang.lyrics);
             } catch (err) {
               console.error('Erro ao trocar idioma:', err);
               this.setMessage('Erro ao trocar idioma.');

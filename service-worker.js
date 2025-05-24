@@ -13,7 +13,6 @@ const STATIC_ASSETS = [
   '/css/components-bundle.css',
   '/js/app.js',
   '/js/loader.js',
-
   '/js/components/ContentDisplayPanel/ContentDisplayPanel.js',
   '/js/components/ContentDisplayPanel/ContentDisplayPanel.css',
   '/js/components/ConteudoPanel/ConteudoPanel.js',
@@ -44,15 +43,12 @@ const STATIC_ASSETS = [
   '/js/components/ZoomInButton/ZoomInButton.css',
   '/js/components/ZoomOutButton/ZoomOutButton.js',
   '/js/components/ZoomOutButton/ZoomOutButton.css',
-
   '/js/components/SearchContainer/search/engine.js',
   '/js/components/SearchContainer/search/scorer.js',
   '/js/components/SearchContainer/search/search-utils.js',
   '/js/components/SearchContainer/search/strategies.js',
   '/js/components/SearchContainer/search/utils.js',
-  
-  
-  '/content/index.json',
+  '/content/all.json',    // <<=== BASTA ISSO!
   '/img/icons/compartilhar.png',
 ];
 
@@ -78,31 +74,6 @@ self.addEventListener('install', evt => {
         }
       })
     );
-
-    // pré-cache dinâmico de conteúdo
-    try {
-      const res   = await fetch('/content/index.json');
-      const index = await res.json();
-      const contentFiles = index.flatMap(item => {
-        const out = [`/content/${item.file}`];
-        if (item.hebrew)     out.push(`/content/${item.hebrew}`);
-        if (item.portuguese) out.push(`/content/${item.portuguese}`);
-        return out;
-      });
-      await Promise.all(
-        contentFiles.map(async file => {
-          try {
-            await cache.add(file);
-            console.log('SW: Cacheado conteúdo', file);
-          } catch (err) {
-            console.warn('SW: falhou ao cachear conteúdo', file, err);
-          }
-        })
-      );
-    } catch (err) {
-      console.error('SW pré-cache de conteúdo falhou:', err);
-    }
-
     await self.skipWaiting();
   })());
 });
@@ -150,7 +121,6 @@ self.addEventListener('fetch', evt => {
     // não estava em cache: tenta rede e cacheia se relevante
     try {
       const netRes = await fetch(evt.request);
-      // cacheia apenas se for arquivo estático ou de conteúdo
       if (evt.request.url.match(/\.(json|js|css|svg|png|jpg|jpeg|woff2?)$/)) {
         cache.put(evt.request, netRes.clone());
       }
