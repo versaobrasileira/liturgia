@@ -1,5 +1,14 @@
 // js/components/FullscreenToggle/FullscreenToggle.js
 
+const janelaSVG = `
+<svg viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg"
+     width="1.15em" height="1.15em" style="display:block;margin:auto;">
+  <rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"/>
+  <rect x="7" y="7" width="10" height="10" stroke="currentColor" stroke-width="2" fill="none"/>
+</svg>
+`;
+
 function isCharSupported(char) {
   const span = document.createElement('span');
   span.textContent = char;
@@ -17,11 +26,10 @@ function isCharSupported(char) {
   return charWidth !== notDefWidth;
 }
 
-// Função para pegar o melhor ícone disponível
 function getBestFsIcon() {
   if (isCharSupported('🗗')) return '🗗';
   if (isCharSupported('□')) return '□';
-  if (isCharSupported('−')) return '−'; // sinal de menos matemático
+  if (isCharSupported('−')) return '−';
   return '-';
 }
 
@@ -33,7 +41,7 @@ export class FullscreenToggle {
     this.active = false;
     this.onToggle = null;
 
-    this.FS_ICON = getBestFsIcon();
+    this.FS_SVG = janelaSVG;
     this.NORMAL_ICON = '⛶';
 
     this.element.innerHTML = `<span>${this.NORMAL_ICON}</span>`;
@@ -54,18 +62,23 @@ export class FullscreenToggle {
   }
 
   updateVisual() {
-    const icon = this.active ? this.FS_ICON : this.NORMAL_ICON;
-    this.element.innerHTML = `<span>${icon}</span>`;
+    if (this.active) {
+      // SVG no modo fullscreen
+      this.element.innerHTML = `<span class="fs-svg">${this.FS_SVG}</span>`;
+    } else {
+      // Ícone normal (caractere) no modo normal
+      this.element.innerHTML = `<span>${this.NORMAL_ICON}</span>`;
+    }
     this.element.classList.toggle('active', this.active);
     this.element.setAttribute('aria-pressed', this.active ? 'true' : 'false');
-    const span = this.element.querySelector('span');
-    // Remove todos os ajustes antes
-    span.classList.remove('fs-alticon', 'fs-normalicon');
-    // Aplica ajuste fino dependendo do estado
-    if (this.active && this.FS_ICON !== '⛶') {
-      span.classList.add('fs-alticon');
-    } else if (!this.active && this.NORMAL_ICON === '⛶') {
-      span.classList.add('fs-normalicon');
+
+    // Ajuste fino (apenas para caractere normal, se necessário)
+    if (!this.active) {
+      const span = this.element.querySelector('span');
+      span.classList.remove('fs-alticon', 'fs-normalicon', 'fs-svg');
+      if (this.NORMAL_ICON === '⛶') {
+        span.classList.add('fs-normalicon');
+      }
     }
   }
 }
