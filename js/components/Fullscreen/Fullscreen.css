@@ -99,6 +99,7 @@ body.fullscreen-mode .content-scroll {
     left: 1.5rem;
     right: 0.3rem;
     margin-left: 0.5rem;
+    height: 94vh;
   }
   body.fullscreen-mode #search-form {
     width: 100%;
@@ -106,12 +107,14 @@ body.fullscreen-mode .content-scroll {
     display: flex;
     justify-content: flex-start;   /* Alinha conteúdo do form à esquerda */
     gap: 0.18rem;
+    
   }
   .fullscreen-mode #content-display.visible {
     width: 95vw;
     max-width: 95vw;
     margin: 0 auto;
     padding-top: 0;
+    height: 94vh;
   }
   .fullscreen-mode #content-display .content-scroll {
     width: 100%;
@@ -120,12 +123,14 @@ body.fullscreen-mode .content-scroll {
     padding: 0;
   }
   .fullscreen-mode #content-display .conteudo-panel,
-  .fullscreen-mode #content-display .lyrics-panel {
+  .fullscreen-mode #content-display .lyrics-panel,
+  .fullscreen-mode #content-display .content-scroll {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;
+    height: 94vh;
   }
 }
 
