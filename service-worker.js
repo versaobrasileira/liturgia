@@ -10,6 +10,7 @@ const STATIC_ASSETS = [
   '/css/base.css',
   '/css/tema_claro.css',
   '/css/tema_invert.css',
+  '/css/components-bundle.css',
   '/js/app.js',
   '/js/loader.js',
 
